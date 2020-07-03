@@ -10,7 +10,7 @@ const ConstructionWrapper = styled.div`
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	@media (max-height: 400px) {
+	@media (max-height: 544px) {
 		height: 160vh;
 	}
 `;

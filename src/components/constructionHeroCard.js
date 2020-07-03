@@ -4,6 +4,7 @@ import Logo from '../images/bwe-logo.png';
 import InstaLogo from '../images/insta-logo.svg';
 import MailLogo from '../images/mail-logo.svg';
 import PhoneLogo from '../images/phone-logo.svg';
+import { GlobalStyle } from '../components/globalStyle';
 
 const HeroCardWrapper = styled.div`
 	display: flex;
@@ -24,6 +25,8 @@ const HeroCardWrapper = styled.div`
 	}
 	#intro-text-wrapper {
 		text-align: center;
+		font-family: PT-Serif;
+		font-weight: 400;
 	}
 	#intro-text {
 		font-size: 24px;
@@ -45,6 +48,8 @@ const HeroCardWrapper = styled.div`
 	li {
 		margin: 10px;
 		padding: 15px;
+		font-family: PT-Serif;
+		font-weight: 400;
 	}
 	a {
 		margin: 0;
@@ -63,32 +68,35 @@ const HeroCardWrapper = styled.div`
 
 const ConstructionHeroCard = () => {
 	return (
-		<HeroCardWrapper>
-			<img id="logo" alt="Brand Wine Estates Logo" src={Logo} />
-			<div id="intro-text-wrapper">
-				<p id="intro-text">Hemsidan är under uppbyggnad</p>
-				<p>Under tiden får du gärna kontakta oss genom följande sätt:</p>
-			</div>
+		<React.Fragment>
+			<GlobalStyle />
+			<HeroCardWrapper>
+				<img id="logo" alt="Brand Wine Estates Logo" src={Logo} />
+				<div id="intro-text-wrapper">
+					<p id="intro-text">Hemsidan är under uppbyggnad</p>
+					<p>Under tiden får du gärna kontakta oss via följande sätt:</p>
+				</div>
 
-			<ul>
-				<li>
-					<img id="contact-logos" alt="Instagram logotype" src={PhoneLogo} />Frida
-					Brunnström: +46 700 43 3010
-				</li>
-				<li>
-					<img id="contact-logos" alt="Instagram logotype" src={MailLogo} />
-					<a href="mailto:frida@brandwineestates.com" className="send-email-link">
-						frida@brandwineestates.com
-					</a>
-				</li>
-				<li>
-					<img id="contact-logos" alt="Instagram logotype" src={InstaLogo} />
-					<a href="https://www.instagram.com/brandwineestates/?hl=sv">
-						Brand Wine Estates på Instagram
-					</a>
-				</li>
-			</ul>
-		</HeroCardWrapper>
+				<ul>
+					<li>
+						<img id="contact-logos" alt="Instagram logotype" src={PhoneLogo} />Frida
+						Brunnström: +46 700 43 3010
+					</li>
+					<li>
+						<img id="contact-logos" alt="Instagram logotype" src={MailLogo} />
+						<a href="mailto:frida@brandwineestates.com" className="send-email-link">
+							frida@brandwineestates.com
+						</a>
+					</li>
+					<li>
+						<img id="contact-logos" alt="Instagram logotype" src={InstaLogo} />
+						<a href="https://www.instagram.com/brandwineestates/?hl=sv">
+							Brand Wine Estates på Instagram
+						</a>
+					</li>
+				</ul>
+			</HeroCardWrapper>
+		</React.Fragment>
 	);
 };
 
