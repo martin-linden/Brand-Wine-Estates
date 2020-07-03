@@ -17,9 +17,9 @@ export const GlobalStyle = createGlobalStyle`
     overflow: hidden;
   }
   body {
-    margin: 30px;
-    padding: 30px;
-    background: orange;
+    margin: 0px;
+    padding: 0px;
+    
   }
   main {
     flex: 1 0 auto;

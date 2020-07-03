@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'gatsby';
-import GlobalStyle from '../components/globalStyle';
+import { GlobalStyle } from '../components/globalStyle';
 
 import Layout from '../components/layout';
 import Image from '../components/image';
