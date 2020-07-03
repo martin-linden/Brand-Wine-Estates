@@ -1,13 +1,12 @@
-/* import React from 'react';
+import React from 'react';
 import styled from 'styled-components';
 import { graphql, StaticQuery } from 'gatsby';
 import BackgroundImage from 'gatsby-background-image';
 import ConstructionHeroCard from '../components/constructionHeroCard';
 
 const ConstructionWrapper = styled.div`
-	padding: 0;
-	margin: 0;
 	height: 100vh;
+	width: 100vw;
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -33,8 +32,10 @@ const UnderConstruction = () => (
 			// Set ImageData.
 			const imageData = data.desktop.childImageSharp.fluid;
 			return (
-				<BackgroundImage Tag="section" fluid={imageData} classname= backgroundColor={`#040e18`} fadeIn>
-					<ConstructionHeroCard />
+				<BackgroundImage Tag="section" fluid={imageData} backgroundColor={`#040e18`} fadeIn>
+					<ConstructionWrapper>
+						<ConstructionHeroCard />
+					</ConstructionWrapper>
 				</BackgroundImage>
 			);
 		}}
@@ -42,4 +43,3 @@ const UnderConstruction = () => (
 );
 
 export default UnderConstruction;
- */

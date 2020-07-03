@@ -1,4 +1,4 @@
-import { createGlobalStyle } from "styled-components"
+import { createGlobalStyle } from 'styled-components';
 
 export const GlobalStyle = createGlobalStyle`
   @import url('https://fonts.googleapis.com/css?family=Karla|Lato');
@@ -14,10 +14,12 @@ export const GlobalStyle = createGlobalStyle`
     -ms-text-size-adjust: 100%;
     -webkit-text-size-adjust: 100%;
     touch-action: manipulation;
-    over-flow: hidden;
+    overflow: hidden;
   }
   body {
-    margin: 0;
+    margin: 30px;
+    padding: 30px;
+    background: orange;
   }
   main {
     flex: 1 0 auto;
@@ -223,6 +225,8 @@ export const GlobalStyle = createGlobalStyle`
     box-sizing: inherit;
   }
   body {
+    margin:0;
+    padding: 0;
     color: hsla(0, 0%, 0%, 0.8);
     font-family: georgia, serif;
     font-weight: normal;
@@ -644,4 +648,4 @@ export const GlobalStyle = createGlobalStyle`
       font-size: 100%;
     }
   }
-`
+`;

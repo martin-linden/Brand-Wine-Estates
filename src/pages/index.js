@@ -1,19 +1,19 @@
 import React from 'react';
-import Helmet from 'react-helmet';
-import ConstructionHeroCard from '../components/constructionHeroCard';
+import { Link } from 'gatsby';
+import GlobalStyle from '../components/globalStyle';
+
+import Layout from '../components/layout';
+import Image from '../components/image';
+import { Container } from '../components/layoutComponents';
+import SEO from '../components/seo';
+import UnderConstruction from '../components/underConstruction';
 
 const IndexPage = () => (
 	<React.Fragment>
-		<Helmet>
-			<title>Brand Wine Estates</title>
-			<meta
-				name="description"
-				content="Wine Import - Wine Producers, Simpsons, blanc de noirs, Flint Fields, Wine, Vin, Vinimport, Systembolaget, Brand Wine Estates, Frida Brunnström"
-			/>
-			<meta property="og:title" content="Brand Wine Estates" />
-		</Helmet>
-
-		<ConstructionHeroCard />
+		<GlobalStyle />
+		<UnderConstruction>
+			<SEO title="Home" keywords={[ `gatsby`, `application`, `react` ]} />
+		</UnderConstruction>
 	</React.Fragment>
 );
 
