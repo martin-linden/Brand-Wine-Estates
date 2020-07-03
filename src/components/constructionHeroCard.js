@@ -31,6 +31,9 @@ const HeroCardWrapper = styled.div`
 	#intro-text {
 		font-size: 24px;
 	}
+	#intro-text2 {
+		font-size: 19px;
+	}
 	#logo {
 		width: 200px;
 		margin-top: 10%;
@@ -50,6 +53,7 @@ const HeroCardWrapper = styled.div`
 		padding: 15px;
 		font-family: PT-Serif;
 		font-weight: 400;
+		font-size: 19px;
 	}
 	a {
 		margin: 0;
@@ -57,7 +61,7 @@ const HeroCardWrapper = styled.div`
 		color: inherit;
 		text-decoration: none;
 		&:hover {
-			color: darkgray;
+			color: #b62729;
 		}
 	}
 	img {
@@ -74,7 +78,7 @@ const ConstructionHeroCard = () => {
 				<img id="logo" alt="Brand Wine Estates Logo" src={Logo} />
 				<div id="intro-text-wrapper">
 					<p id="intro-text">Hemsidan är under uppbyggnad</p>
-					<p>Under tiden får du gärna kontakta oss via följande sätt:</p>
+					<p id="intro-text2">Under tiden får du gärna kontakta oss via följande sätt:</p>
 				</div>
 
 				<ul>
