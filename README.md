@@ -11,7 +11,7 @@ Brand Wine Estates work with producers from the classic wine countries and regio
 
 * [GatsbyJS](https://www.gatsbyjs.org/) - React Framework
 * [Styled Components](https://styled-components.com/) - Visual primitives for the component age
-  [Prismic](https://prismic.io/) - Headless CMS 
+* [Prismic](https://prismic.io/) - Headless CMS 
 * [Lottie](https://www.npmjs.com/package/react-lottie) - Lottie Animation View for React 
 
 ## Authors
