@@ -25,8 +25,7 @@ const HeroCardWrapper = styled.div`
 	}
 	#intro-text-wrapper {
 		text-align: center;
-		font-family: PT-Serif;
-		font-weight: 400;
+		font-family: adobe-heiti-std, sans-serif;
 	}
 	#intro-text {
 		font-size: 24px;
@@ -51,8 +50,7 @@ const HeroCardWrapper = styled.div`
 	li {
 		margin: 10px;
 		padding: 15px;
-		font-family: PT-Serif;
-		font-weight: 400;
+		font-family: adobe-heiti-std, sans-serif;
 		font-size: 19px;
 	}
 	a {
