@@ -25,11 +25,13 @@ const HeroCardWrapper = styled.div`
 	}
 	#intro-text-wrapper {
 		text-align: center;
-		font-family: PT-Serif;
-		font-weight: 400;
+		font-family: adobe-heiti-std, sans-serif;
 	}
 	#intro-text {
 		font-size: 24px;
+	}
+	#intro-text2 {
+		font-size: 19px;
 	}
 	#logo {
 		width: 200px;
@@ -48,8 +50,8 @@ const HeroCardWrapper = styled.div`
 	li {
 		margin: 10px;
 		padding: 15px;
-		font-family: PT-Serif;
-		font-weight: 400;
+		font-family: adobe-heiti-std, sans-serif;
+		font-size: 19px;
 	}
 	a {
 		margin: 0;
@@ -57,7 +59,7 @@ const HeroCardWrapper = styled.div`
 		color: inherit;
 		text-decoration: none;
 		&:hover {
-			color: darkgray;
+			color: #b62729;
 		}
 	}
 	img {
@@ -74,7 +76,7 @@ const ConstructionHeroCard = () => {
 				<img id="logo" alt="Brand Wine Estates Logo" src={Logo} />
 				<div id="intro-text-wrapper">
 					<p id="intro-text">Hemsidan är under uppbyggnad</p>
-					<p>Under tiden får du gärna kontakta oss via följande sätt:</p>
+					<p id="intro-text2">Under tiden får du gärna kontakta oss via följande sätt:</p>
 				</div>
 
 				<ul>
