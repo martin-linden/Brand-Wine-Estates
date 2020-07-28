@@ -59,7 +59,7 @@ const HeroCardWrapper = styled.div`
 		color: inherit;
 		text-decoration: none;
 		&:hover {
-			color: #b62729;
+			${ tw`text-primary`}
 		}
 	}
 	img {
