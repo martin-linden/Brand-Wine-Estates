@@ -7,6 +7,42 @@ import PhoneLogo from '../images/phone-logo.svg';
 import { GlobalStyle } from '../components/globalStyle';
 import tw from 'twin.macro'
 
+
+
+const ConstructionHeroCard = () => {
+	return (
+		<React.Fragment>
+			<GlobalStyle />
+			<HeroCardWrapper>
+				<img id="logo" alt="Brand Wine Estates Logo" src={Logo} />
+				<div id="intro-text-wrapper">
+					<p id="intro-text">Hemsidan är under uppbyggnad</p>
+					<p id="intro-text2">Under tiden får du gärna kontakta oss via följande sätt:</p>
+				</div>
+
+				<ul>
+					<li>
+						<img id="contact-logos" alt="Instagram logotype" src={PhoneLogo} />Frida
+						Brunnström: +46 700 43 3010
+					</li>
+					<li>
+						<img id="contact-logos" alt="Instagram logotype" src={MailLogo} />
+						<a href="mailto:frida@brandwineestates.com" className="send-email-link">
+							frida@brandwineestates.com
+						</a>
+					</li>
+					<li>
+						<img id="contact-logos" alt="Instagram logotype" src={InstaLogo} />
+						<a href="https://www.instagram.com/brandwineestates/?hl=sv">
+							Brand Wine Estates på Instagram
+						</a>
+					</li>
+				</ul>
+			</HeroCardWrapper>
+		</React.Fragment>
+	);
+};
+
 const HeroCardWrapper = styled.div`
 	display: flex;
 	justify-content: space-around;
@@ -67,39 +103,5 @@ const HeroCardWrapper = styled.div`
 		padding: 0;
 	}
 `;
-
-const ConstructionHeroCard = () => {
-	return (
-		<React.Fragment>
-			<GlobalStyle />
-			<HeroCardWrapper>
-				<img id="logo" alt="Brand Wine Estates Logo" src={Logo} />
-				<div id="intro-text-wrapper">
-					<p id="intro-text">Hemsidan är under uppbyggnad</p>
-					<p id="intro-text2">Under tiden får du gärna kontakta oss via följande sätt:</p>
-				</div>
-
-				<ul>
-					<li>
-						<img id="contact-logos" alt="Instagram logotype" src={PhoneLogo} />Frida
-						Brunnström: +46 700 43 3010
-					</li>
-					<li>
-						<img id="contact-logos" alt="Instagram logotype" src={MailLogo} />
-						<a href="mailto:frida@brandwineestates.com" className="send-email-link">
-							frida@brandwineestates.com
-						</a>
-					</li>
-					<li>
-						<img id="contact-logos" alt="Instagram logotype" src={InstaLogo} />
-						<a href="https://www.instagram.com/brandwineestates/?hl=sv">
-							Brand Wine Estates på Instagram
-						</a>
-					</li>
-				</ul>
-			</HeroCardWrapper>
-		</React.Fragment>
-	);
-};
 
 export default ConstructionHeroCard;
