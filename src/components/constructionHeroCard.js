@@ -5,6 +5,7 @@ import InstaLogo from '../images/insta-logo.svg';
 import MailLogo from '../images/mail-logo.svg';
 import PhoneLogo from '../images/phone-logo.svg';
 import { GlobalStyle } from '../components/globalStyle';
+import tw from 'twin.macro'
 
 const HeroCardWrapper = styled.div`
 	display: flex;
@@ -49,9 +50,8 @@ const HeroCardWrapper = styled.div`
 	}
 	li {
 		margin: 10px;
-		padding: 15px;
+		${ tw`mb-8 text-base`}
 		font-family: adobe-heiti-std, sans-serif;
-		font-size: 19px;
 	}
 	a {
 		margin: 0;
