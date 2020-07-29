@@ -1,14 +1,15 @@
 module.exports = {
 	plugins: [
 		{
-			resolve: `gatsby-plugin-google-fonts`,
+			resolve: `gatsby-plugin-prefetch-google-fonts`,
 			options: {
 				fonts: [
-					`PT Serif`,
-					`source sans pro\:300,400,400i,700` // you can also specify font weights and styles
+					{
+						family: `Poiret One`,
+						variants: [`400`]
+					},
 				],
-				display: 'swap'
-			}
+			},
 		}
 	],
 	siteMetadata: {
