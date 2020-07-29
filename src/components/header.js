@@ -10,46 +10,51 @@ import Logo from '../images/bwe-logo.png';
 const Header = () => (
 
   <StyledHeader>
-    <img id="logo" alt="Brand Wine Estates Logo" src={Logo} />
-    <NavWrapper>
-      <ul>
-        <li>
-          Sortiment
+    <div className="test">
+      <img id="logo" alt="Brand Wine Estates Logo" src={Logo} />
+    </div>
+    <ul>
+      <li>
+        Sortiment
       </li>
-        <li>
-          Producenter
+      <li>
+        Producenter
       </li>
-        <li>
-          Restaurang
+      <li>
+        Restaurang
       </li>
-        <li>
-          Om oss
+      <li>
+        Recensioner
       </li>
-        <li>
-          Kontakta oss
+      <li>
+        Om oss / kontakt
       </li>
-      </ul>
-    </NavWrapper>
+
+
+    </ul>
+
   </StyledHeader>
 
 )
 
 const StyledHeader = styled.div`
-  ${ tw` text-secondary flex items-center h-20`}
+  ${ tw` border-red-400  text-secondary justify-center items-center h-20 grid lg:grid-cols-9 grid-cols-6`}
+  font-family: adobe-heiti-std, sans-serif;
+  .test{
+    ${ tw`col-start-1 col-end-1 flex justify-center ml-10`}
+  }
   img{
-    ${ tw`w-32 m-0 ml-8`}
+    ${ tw`w-32 m-0`}
   }
   ul{
-    ${ tw`flex mb-0 `}
+    ${ tw`flex justify-around mb-0 col-start-3 col-end-8 text-sm`}
     list-style: none;
     li{
-      ${ tw`m-0 mt-1`}
+      ${ tw`m-0 mt-1 `}
     }
   }
 `
-const NavWrapper = styled.div`
- ${ tw``}
-`;
+
 
 
 export default Header;
