@@ -78,7 +78,7 @@ const StyledHeader = styled.div`
     
     
     li{
-      ${ tw`m-0 mt-1 pl-5 pr-5 `}
+      ${ tw`m-0 mt-1 pl-5 pr-5 hover:text-primary`}
       font-family: Assistant;
       
       
