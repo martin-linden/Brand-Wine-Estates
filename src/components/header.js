@@ -17,20 +17,20 @@ const Header = () => (
     <div className="test2">
       <ul>
         <li>
-          Sortiment
-      </li>
+          <Link to="/" activeClassName="active">sortiment</Link>
+        </li>
         <li>
-          Producenter
-      </li>
+          <Link to="/producenter">producent</Link>
+        </li>
         <li>
-          Restaurang
-      </li>
+          <Link to="/restaurang">Restaurang</Link>
+        </li>
         <li>
-          Recensioner
-      </li>
+          <Link to="/recensioner">Recensioner</Link>
+        </li>
         <li>
-          Om oss / kontakt
-      </li>
+          <Link to="/kontakt">Om oss / kontakt</Link>
+        </li>
       </ul>
     </div>
     <div className="test3">
@@ -46,7 +46,7 @@ const StyledHeader = styled.div`
   ${ tw`  text-secondary  items-center h-24`}
   display: grid;
   grid-template-columns: 300px 1fr 100px;
-  box-shadow: 0 1px 4px #a8a5a3;
+  box-shadow: 0 1px 2px #a8a5a3;
  
   
   .test{
@@ -61,6 +61,11 @@ const StyledHeader = styled.div`
 
   .test3{
     justify-self: start;
+    
+  }
+
+  .active{
+    border-bottom: 1px solid #b6272957; 
     
   }
 
