@@ -55,7 +55,9 @@ class Header extends React.Component {
               </li>
             </ul>
           </div>
-          <div className="active-page">
+          <div
+            className={isExpanded ? 'hidden-menu' : 'active-page'}>
+
             {activeLink === "/" ? <Link to="/" activeClassName="active">sortiment</Link> : null}
             {activeLink === "/producent" ? <Link to="/producent" activeClassName="active">producent</Link> : null}
             {activeLink === "/restaurang" ? <Link to="/restaurang" activeClassName="active">restaurang</Link> : null}
@@ -103,20 +105,18 @@ const StyledHeader = styled.div`
   ${ tw`  text-secondary flex justify-between items-center h-24 uppercase `}
   /* display: grid;
   grid-template-columns: 300px 1fr 100px;*/
-  box-shadow: 0 1px 2px #a8a5a3; 
+  box-shadow: 0 1px  #a8a5a3; 
   font-family: Assistant;
- 
+
   
-  .test{
+ .test{
     ${ tw`flex justify-center items-center`}
     
   }
-/*   .test2{
-    
-    justify-self: end;
 
+  .hidden-menu{
+    display: none;
   }
- */
  
   .active{
     border-bottom: 1px solid #b6272957; 
@@ -131,7 +131,7 @@ const StyledHeader = styled.div`
   }
 
   .hamburger-menu {
-    ${ tw`mr-6 cursor-pointer`}
+    ${ tw`mr-10 cursor-pointer`}
    
     @media (min-width: 805px) {
         display: none;
@@ -141,14 +141,14 @@ const StyledHeader = styled.div`
 
   h5{
     
-    ${ tw`m-0 font-thin mr-6`}
+    ${ tw`m-0 font-thin mr-10`}
    
     @media (max-width: 805px) {
         display: none;
 	}  
   }
   img{
-    ${ tw`w-32 m-0 ml-6`}
+    ${ tw`w-32 m-0 ml-10`}
     @media (max-width: 910px) {
       ${ tw`w-24`}
 	}  
@@ -184,19 +184,15 @@ background: #ededed;
 box-shadow: 0 1px  #a8a5a3;
 max-height: 300px;
 overflow: hidden;
-
+transition: ease-in-out 0.5s;
 transition: max-height 0.5s cubic-bezier(.73,.42,.99,1); 
 
 
 
 
 &.hidden{
-    max-height: 0;
-    
+    max-height: 0px;
     overflow: hidden;
-    
-   
-    
   }
 
 
