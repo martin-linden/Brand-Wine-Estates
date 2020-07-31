@@ -1,24 +1,75 @@
 import { Link } from "gatsby"
-import PropTypes from "prop-types"
 import React from "react"
 import styled from "styled-components"
-import { Container } from "./layoutComponents"
 import tw from 'twin.macro'
 import Logo from '../images/bwe-logo.png'
-import { RiMenu2Line } from 'react-icons/ri';
+import { RiMenu2Line, RiTruckLine } from 'react-icons/ri';
+
 
 
 
 class Header extends React.Component {
+
+  state = {
+    menuClicked: false,
+
+  }
+
+  dropDownMenuHandler() {
+    this.setState({
+      menuClicked: !this.state.menuClicked
+
+    })
+  }
+
+
+
   render() {
 
     const activeLink = window.location.pathname; //show pathname of page
+    console.log(this.state);
+    const { menuClicked } = this.state;
+
 
     return (
-      <StyledHeader>
-        <div className="test">
-          <img id="logo" alt="Brand Wine Estates Logo" src={Logo} />
-          <ul>
+      <React.Fragment>
+        <StyledHeader>
+          <div className="test">
+            <img id="logo" alt="Brand Wine Estates Logo" src={Logo} />
+            <ul className="horizontal-menu">
+              <li>
+                <Link to="/" activeClassName="active">sortiment</Link>
+              </li>
+              <li>
+                <Link to="/producent" activeClassName="active">producent</Link>
+              </li>
+              <li>
+                <Link to="/restaurang" activeClassName="active">Restaurang</Link>
+              </li>
+              <li>
+                <Link to="/recensioner" activeClassName="active">Recensioner</Link>
+              </li>
+              <li>
+                <Link to="/kontakt" activeClassName="active"> Om oss / kontakt</Link>
+              </li>
+            </ul>
+          </div>
+          <div className="active-page">
+            {activeLink === "/" ? <Link to="/" activeClassName="active">sortiment</Link> : null}
+            {activeLink === "/producent" ? <Link to="/producent" activeClassName="active">producent</Link> : null}
+            {activeLink === "/restaurang" ? <Link to="/restaurang" activeClassName="active">restaurang</Link> : null}
+            {activeLink === "/recensioner" ? <Link to="/recensioner" activeClassName="active">recensioner</Link> : null}
+            {activeLink === "/kontakt" ? <Link to="/kontakt" activeClassName="active">kontakt</Link> : null}
+          </div>
+          <h5>SE/NO</h5>
+          <RiMenu2Line
+            className="hamburger-menu"
+            size="30"
+            onClick={() => this.dropDownMenuHandler()} />
+        </StyledHeader>
+
+        <DropDownMenu>
+          <div className={menuClicked ? '' : 'hidden'}>
             <li>
               <Link to="/" activeClassName="active">sortiment</Link>
             </li>
@@ -34,21 +85,13 @@ class Header extends React.Component {
             <li>
               <Link to="/kontakt" activeClassName="active"> Om oss / kontakt</Link>
             </li>
-          </ul>
-        </div>
-        <div className="active-page">
-          {activeLink === "/" ? <Link to="/" activeClassName="active">sortiment</Link> : null}
-          {activeLink === "/producent" ? <Link to="/producent" activeClassName="active">producent</Link> : null}
-          {activeLink === "/restaurang" ? <Link to="/restaurang" activeClassName="active">restaurang</Link> : null}
-          {activeLink === "/recensioner" ? <Link to="/recensioner" activeClassName="active">recensioner</Link> : null}
-          {activeLink === "/kontakt" ? <Link to="/kontakt" activeClassName="active">kontakt</Link> : null}
-        </div>
-        <h5>SE/NO</h5>
-        <RiMenu2Line
-          className="hamburger-menu"
-          size="30" />
-      </StyledHeader>
+
+
+          </div>
+        </DropDownMenu>
+      </React.Fragment>
     )
+
   }
 
 }
@@ -89,7 +132,7 @@ const StyledHeader = styled.div`
   }
 
   .hamburger-menu {
-    ${ tw`mr-6`}
+    ${ tw`mr-6 cursor-pointer`}
    
     @media (min-width: 805px) {
         display: none;
@@ -111,7 +154,8 @@ const StyledHeader = styled.div`
       ${ tw`w-24`}
 	}  
   }
-  ul{
+
+  .horizontal-menu{
     ${ tw`mb-0  text-sm flex`}
     list-style: none;
   
@@ -121,9 +165,8 @@ const StyledHeader = styled.div`
   
   @media (max-width: 805px) {
       ${ tw`hidden`}
-	}  
-    
-    
+  }  
+  
     li{
       ${ tw`m-0 mt-1 pl-5 hover:text-primary`}
       
@@ -131,12 +174,37 @@ const StyledHeader = styled.div`
 
   
 }
-       
-      
+`
 
-      
-      
-  
+const DropDownMenu = styled.ul`
+${ tw`uppercase flex flex-col justify-center items-center m-0 `}
+list-style: none;
+font-family: Assistant;
+text-align: start;
+background: #ededed;
+box-shadow: 0 1px  #a8a5a3;
+max-height: 300px;
+transition: ease-in-out 5s;
+
+.hidden{
+    max-height: 0;
+    overflow: hidden;
+    transition: ease-in-out 5s;
+    display: none;
+  }
+
+
+li {
+  ${ tw`mt-5`}
+}
+
+.active{
+    border-bottom: 1px solid #b6272957; 
+    
+  }
+
+ 
+
 `
 
 
