@@ -1,7 +1,7 @@
 import { createGlobalStyle } from 'styled-components';
 
 export const GlobalStyle = createGlobalStyle`
-  @import url('https://fonts.googleapis.com/css?family=Karla|Lato');
+  @import url('https://fonts.googleapis.com/css2?family=Assistant:wght@200;300;400&display=swap');
   :root {
     --primary-color: rebeccapurple;
     --white: #FFFAFF;
@@ -88,7 +88,8 @@ export const GlobalStyle = createGlobalStyle`
   }
   h1 {
     font-size: 2em;
-    margin: 0.67em 0;
+    margin: 0;
+    padding: 0;
   }
   mark {
     background-color: #ff0;

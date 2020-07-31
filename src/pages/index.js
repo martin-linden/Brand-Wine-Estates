@@ -1,11 +1,12 @@
-import React from 'react';
-import { GlobalStyle } from '../components/globalStyle';
+import React from 'react'
+import { GlobalStyle } from '../components/globalStyle'
 import SEO from '../components/seo';
-import UnderConstruction from '../components/underConstruction';
-import { Helmet } from 'react-helmet';
+import Layout from '../components/layout'
+
+import { Helmet } from 'react-helmet'
 
 const IndexPage = () => (
-	<React.Fragment>
+	<Layout>
 		<Helmet>
 			<title>Brand Wine Estates</title>
 			<meta
@@ -15,10 +16,10 @@ const IndexPage = () => (
 			<meta property="og:title" content="Martin Linden - Front-End Developer" />
 		</Helmet>
 		<GlobalStyle />
-		<UnderConstruction>
-			<SEO title="Home" keywords={[ `Brand Wine Estates`, `Wine import`, `Simpsons Wine` ]} />
-		</UnderConstruction>
-	</React.Fragment>
+
+		<SEO title="Home" keywords={[`Brand Wine Estates`, `Wine import`, `Simpsons Wine`]} />
+
+	</Layout>
 );
 
 export default IndexPage;
