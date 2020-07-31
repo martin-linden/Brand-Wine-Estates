@@ -2,11 +2,14 @@ import React from 'react'
 import { GlobalStyle } from '../components/globalStyle'
 import SEO from '../components/seo';
 import Layout from '../components/layout'
+import WineList from '../components/wineList'
+
 
 import { Helmet } from 'react-helmet'
 
 const IndexPage = () => (
 	<Layout>
+		<WineList />
 		<Helmet>
 			<title>Brand Wine Estates</title>
 			<meta
