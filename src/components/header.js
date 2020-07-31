@@ -11,13 +11,13 @@ import { RiMenu2Line, RiTruckLine } from 'react-icons/ri';
 class Header extends React.Component {
 
   state = {
-    menuClicked: false,
+    isExpanded: false,
 
   }
 
-  dropDownMenuHandler() {
+  handleToggle() {
     this.setState({
-      menuClicked: !this.state.menuClicked
+      isExpanded: !this.state.isExpanded
 
     })
   }
@@ -27,8 +27,9 @@ class Header extends React.Component {
   render() {
 
     const activeLink = window.location.pathname; //show pathname of page
+
     console.log(this.state);
-    const { menuClicked } = this.state;
+    const { isExpanded } = this.state;
 
 
     return (
@@ -65,11 +66,11 @@ class Header extends React.Component {
           <RiMenu2Line
             className="hamburger-menu"
             size="30"
-            onClick={() => this.dropDownMenuHandler()} />
+            onClick={() => this.handleToggle()} />
         </StyledHeader>
 
-        <DropDownMenu>
-          <div className={menuClicked ? '' : 'hidden'}>
+        <DropDownMenu className={isExpanded ? '' : 'hidden'}>
+          <div>
             <li>
               <Link to="/" activeClassName="active">sortiment</Link>
             </li>
@@ -85,8 +86,6 @@ class Header extends React.Component {
             <li>
               <Link to="/kontakt" activeClassName="active"> Om oss / kontakt</Link>
             </li>
-
-
           </div>
         </DropDownMenu>
       </React.Fragment>
@@ -176,7 +175,7 @@ const StyledHeader = styled.div`
 }
 `
 
-const DropDownMenu = styled.ul`
+const DropDownMenu = styled.div`
 ${ tw`uppercase flex flex-col justify-center items-center m-0 `}
 list-style: none;
 font-family: Assistant;
@@ -184,13 +183,20 @@ text-align: start;
 background: #ededed;
 box-shadow: 0 1px  #a8a5a3;
 max-height: 300px;
-transition: ease-in-out 5s;
+overflow: hidden;
 
-.hidden{
+transition: max-height 0.5s cubic-bezier(.73,.42,.99,1); 
+
+
+
+
+&.hidden{
     max-height: 0;
+    
     overflow: hidden;
-    transition: ease-in-out 5s;
-    display: none;
+    
+   
+    
   }
 
 
