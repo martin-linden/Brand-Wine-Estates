@@ -4,93 +4,141 @@ import React from "react"
 import styled from "styled-components"
 import { Container } from "./layoutComponents"
 import tw from 'twin.macro'
-import Logo from '../images/bwe-logo.png';
+import Logo from '../images/bwe-logo.png'
+import { RiMenu2Line } from 'react-icons/ri';
 
 
-const Header = () => (
 
-  <StyledHeader>
-    <div className="test">
-      <img id="logo" alt="Brand Wine Estates Logo" src={Logo} />
-    </div>
+class Header extends React.Component {
+  render() {
 
-    <div className="test2">
-      <ul>
-        <li>
-          <Link to="/" activeClassName="active">sortiment</Link>
-        </li>
-        <li>
-          <Link to="/producenter">producent</Link>
-        </li>
-        <li>
-          <Link to="/restaurang">Restaurang</Link>
-        </li>
-        <li>
-          <Link to="/recensioner">Recensioner</Link>
-        </li>
-        <li>
-          <Link to="/kontakt">Om oss / kontakt</Link>
-        </li>
-      </ul>
-    </div>
-    <div className="test3">
-      <h5>SE/NO</h5>
-    </div>
+    const activeLink = window.location.pathname; //show pathname of page
+
+    return (
+      <StyledHeader>
+        <div className="test">
+          <img id="logo" alt="Brand Wine Estates Logo" src={Logo} />
+          <ul>
+            <li>
+              <Link to="/" activeClassName="active">sortiment</Link>
+            </li>
+            <li>
+              <Link to="/producent" activeClassName="active">producent</Link>
+            </li>
+            <li>
+              <Link to="/restaurang" activeClassName="active">Restaurang</Link>
+            </li>
+            <li>
+              <Link to="/recensioner" activeClassName="active">Recensioner</Link>
+            </li>
+            <li>
+              <Link to="/kontakt" activeClassName="active"> Om oss / kontakt</Link>
+            </li>
+          </ul>
+        </div>
+        <div className="active-page">
+          {activeLink === "/" ? <Link to="/" activeClassName="active">sortiment</Link> : null}
+          {activeLink === "/producent" ? <Link to="/producent" activeClassName="active">producent</Link> : null}
+          {activeLink === "/restaurang" ? <Link to="/restaurang" activeClassName="active">restaurang</Link> : null}
+          {activeLink === "/recensioner" ? <Link to="/recensioner" activeClassName="active">recensioner</Link> : null}
+          {activeLink === "/kontakt" ? <Link to="/kontakt" activeClassName="active">kontakt</Link> : null}
+        </div>
+        <h5>SE/NO</h5>
+        <RiMenu2Line
+          className="hamburger-menu"
+          size="30" />
+      </StyledHeader>
+    )
+  }
+
+}
+export default Header;
 
 
-  </StyledHeader>
 
-)
 
 const StyledHeader = styled.div`
-  ${ tw`  text-secondary  items-center h-24`}
-  display: grid;
-  grid-template-columns: 300px 1fr 100px;
-  box-shadow: 0 1px 2px #a8a5a3;
+  ${ tw`  text-secondary flex justify-between items-center h-24 uppercase `}
+  /* display: grid;
+  grid-template-columns: 300px 1fr 100px;*/
+  box-shadow: 0 1px 2px #a8a5a3; 
+  font-family: Assistant;
  
   
   .test{
-    ${ tw`flex justify-center `}
+    ${ tw`flex justify-center items-center`}
     
   }
-  .test2{
+/*   .test2{
     
-    justify-self: start;
+    justify-self: end;
 
   }
-
-  .test3{
-    justify-self: start;
-    
-  }
-
+ */
+ 
   .active{
     border-bottom: 1px solid #b6272957; 
     
   }
 
+  .active-page{
+    ${ tw`flex justify-center items-center`}
+    @media (min-width: 805px) {
+        display: none;
+	}  
+  }
+
+  .hamburger-menu {
+    ${ tw`mr-6`}
+   
+    @media (min-width: 805px) {
+        display: none;
+        
+	}  
+	}
+
   h5{
     
-    ${ tw`m-0 font-thin`}
-    font-family: Assistant;
+    ${ tw`m-0 font-thin mr-6`}
+   
+    @media (max-width: 805px) {
+        display: none;
+	}  
   }
   img{
-    ${ tw`w-32 m-0`}
+    ${ tw`w-32 m-0 ml-6`}
+    @media (max-width: 910px) {
+      ${ tw`w-24`}
+	}  
   }
   ul{
-    ${ tw`mb-0 text-sm flex uppercase `}
+    ${ tw`mb-0  text-sm flex`}
     list-style: none;
+  
+    @media (max-width: 910px) {
+      ${ tw`text-xs`}
+  }  
+  
+  @media (max-width: 805px) {
+      ${ tw`hidden`}
+	}  
     
     
     li{
-      ${ tw`m-0 mt-1 pl-5 pr-5 hover:text-primary`}
-      font-family: Assistant;
-      
+      ${ tw`m-0 mt-1 pl-5 hover:text-primary`}
       
     }
-  }
+
+  
+}
+       
+      
+
+      
+      
+  
 `
 
 
 
-export default Header;
+

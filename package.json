@@ -20,9 +20,11 @@
 		"gatsby-transformer-sharp": "^2.2.23",
 		"prop-types": "^15.7.2",
 		"react": "^16.10.2",
+		"react-animated-burgers": "^1.2.8",
 		"react-dom": "^16.10.2",
 		"react-helmet": "^5.2.1",
-		"styled-components": "^4.4.0",
+		"react-icons": "^3.10.0",
+		"styled-components": "^4.4.1",
 		"tailwindcss": "^1.5.2",
 		"twin.macro": "^1.6.3"
 	},
