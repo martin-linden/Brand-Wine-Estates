@@ -28,7 +28,7 @@ class Header extends React.Component {
 
     const activeLink = window.location.pathname; //show pathname of page
 
-    console.log(this.state);
+    /* console.log(this.state); */
     const { isExpanded } = this.state;
 
 

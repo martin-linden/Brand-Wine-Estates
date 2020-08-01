@@ -3,28 +3,28 @@ import styled from "styled-components"
 import tw from 'twin.macro'
 import WineCard from '../components/wineCard'
 
-class WineList extends React.Component {
 
+const WineList = (props) => {
+    console.log(props);
+    console.log(props.postData[0].brand);
+    console.log(props.postData[1].brand);
 
-    render() {
+    return (
+        <Wrapper>
+            <WineListWrapper>
+                {props.postData.map(wine =>
+                    <WineCard
+                        {...wine}
+                        key={wine.id}
+                    />
+                )}
 
-        return (
-            <Wrapper>
-                <WineListWrapper>
-                    <WineCard />
-                    <WineCard />
-                    <WineCard />
-                    <WineCard />
-                    <WineCard />
-                    <WineCard />
-                    <WineCard />
-                    <WineCard />
-                </WineListWrapper>
-            </Wrapper>
+            </WineListWrapper>
+        </Wrapper>
 
-        )
-    }
-}
+    )
+
+};
 export default WineList;
 
 

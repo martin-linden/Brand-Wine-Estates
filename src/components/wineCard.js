@@ -3,47 +3,39 @@ import styled from "styled-components"
 import tw from 'twin.macro'
 import Wine from '../images/wines/7352801.jpg'
 import Cow from '../images/Taste/cow.png'
-import '../components/wines'
 
 
 
 
-class Card extends React.Component {
 
 
-    render() {
-        console.log(this.props);
+const WineCard = (props) => {
 
-        return (
-            <CardWrapper>
-                <div className="wine-bottle">
-                    <img
-                        alt="Wine"
-                        src={Wine}
-                        id="wine-img" />
+
+
+    /*  console.log(props); */
+    return (
+
+
+        <CardWrapper>
+            <div className="wine-bottle">
+                <img src={props.img} alt={props.brand} id="wine-img" />
+            </div>
+            <div className="info-section">
+                <h3>{props.brand}</h3>
+                <h5>{props.country}</h5>
+                <h5>{props.number}</h5>
+                <div className="goes-with">
+                    <h5>{props.taste}:</h5>
+                    <img src={props.img} alt={props.brand} id="cow-img" />
                 </div>
-                <div className="info-section">
-                    <h4>Blancs</h4>
-                    <h3>Simpsons</h3>
-                    <h5>England</h5>
-                    <h5>309434</h5>
-                    <div className="goes-with">
-                        <h5>Passar till:</h5>
-                        <img
-                            alt="Cow"
-                            src={Cow}
-                            id="cow-img" />
+                <h5>{props.year}|{props.price} kr</h5>
+            </div>
+        </CardWrapper>
+    )
+};
 
-                    </div>
-                    <h5>2015 | 299 kr</h5>
-
-                </div>
-            </CardWrapper>
-
-        )
-    }
-}
-export default Card;
+export default WineCard;
 
 
 const CardWrapper = styled.div`
