@@ -1,25 +1,25 @@
-import Wine from '../images/wines/7352801.jpg'
+
 
 export const postData = [
     {
         id: 1,
-        img: "../../7352801.jpg",
+        img: "../../1.jpg",
         grape: "Pinot Noir",
-        brand: "Simpsonss",
+        name: "Simpsonss",
         country: "England",
         number: "309434",
-        taste: "../images/Taste/cow.png",
+        taste: ["../../taste/heat.svg", "../../taste/cow.png"],
         year: "2015",
         price: "599"
     },
     {
         id: 2,
-        img: "../../7352801.jpg",
-        grape: "Cabernet Sauvignon",
-        brand: "GW",
-        country: "Tyskland",
+        img: "../../2.jpg",
+        grape: "Barbera",
+        name: "La Gironda Barbera d´Asti",
+        country: "Italien",
         number: "569433",
-        taste: "../images/Taste/cow.png",
+        taste: ["../../taste/elk.svg", "../../taste/fish2.svg", "../../taste/drink2.svg", "../../taste/bird.svg"],
         year: "2018",
         price: "299"
     },
@@ -27,10 +27,10 @@ export const postData = [
         id: 3,
         img: "../images/wines/7352801.jpg",
         grape: "Cabernet",
-        brand: "Test",
+        name: "Test",
         country: "Spanien",
         number: "569433",
-        taste: "../images/Taste/cow.png",
+        taste: "",
         year: "2018",
         price: "299"
     },
@@ -38,10 +38,10 @@ export const postData = [
         id: 4,
         img: "../images/wines/7352801.jpg",
         grape: "Hallo",
-        brand: "hejhej",
+        name: "hejhej",
         country: "Portugal",
         number: "569433",
-        taste: "../images/Taste/cow.png",
+        taste: "",
         year: "2018",
         price: "299"
     },

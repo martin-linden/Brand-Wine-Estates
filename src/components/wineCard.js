@@ -13,7 +13,7 @@ const WineCard = (props) => {
 
 
 
-    /*  console.log(props); */
+    console.log(props);
     return (
 
 
@@ -22,14 +22,17 @@ const WineCard = (props) => {
                 <img src={props.img} id="wine-img" />
             </div>
             <div className="info-section">
-                <h3>{props.brand}</h3>
+                <h6>{props.grape}</h6>
+                <h5>{props.name}</h5>
                 <h5>{props.country}</h5>
-                <h5>{props.number}</h5>
+                {/* <h5>{props.number}</h5> */}
                 <div className="goes-with">
-                    <h5>passar till:</h5>
-                    <img src={Cow} id="cow-img" />
+                    <img src={props.taste[0]} id="icon-img" />
+                    <img src={props.taste[1]} id="icon-img" />
+                    <img src={props.taste[2]} id="icon-img" />
+                    <img src={props.taste[3]} id="icon-img" />
                 </div>
-                <h5>{props.year} | {props.price} kr</h5>
+                <h5>Årgång: {props.year} {/* | {props.price} kr */}</h5>
             </div>
         </CardWrapper >
     )
@@ -49,6 +52,7 @@ font-family: Assistant;
 
 .wine-bottle{
     ${ tw`flex justify-center `}
+    
 }
 
 .info-section{
@@ -58,10 +62,16 @@ font-family: Assistant;
 #wine-img{
     ${ tw` m-0 `}
     width: 70px;
+    max-height: 200px;
+    min-height: 200px;
 }
-#cow-img{
-    ${ tw` ml-1 mt-0 mb-1 `}
-    width: 30px;
+#icon-img{
+    ${ tw` mr-2 mt-0 mb-1`}
+    width: 20px;
+    max-height: 25px;
+    
+    
+    
 }
 
 h4{
@@ -82,7 +92,7 @@ h6{
     ${ tw` mb-1 `}
 }
 .goes-with{
-    ${ tw` mb-5 mt-5 flex items-center `}
+    ${ tw` mb-5 mt-5 flex items-center  `}
 }
 
 
