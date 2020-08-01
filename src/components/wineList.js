@@ -5,9 +5,8 @@ import WineCard from '../components/wineCard'
 
 
 const WineList = (props) => {
-    console.log(props);
-    console.log(props.postData[0].brand);
-    console.log(props.postData[1].brand);
+    /* console.log(props); */
+
 
     return (
         <Wrapper>

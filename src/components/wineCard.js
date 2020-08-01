@@ -1,8 +1,8 @@
 import React from "react"
 import styled from "styled-components"
 import tw from 'twin.macro'
-import Wine from '../images/wines/7352801.jpg'
 import Cow from '../images/Taste/cow.png'
+
 
 
 
@@ -19,19 +19,19 @@ const WineCard = (props) => {
 
         <CardWrapper>
             <div className="wine-bottle">
-                <img src={props.img} alt={props.brand} id="wine-img" />
+                <img src={props.img} id="wine-img" />
             </div>
             <div className="info-section">
                 <h3>{props.brand}</h3>
                 <h5>{props.country}</h5>
                 <h5>{props.number}</h5>
                 <div className="goes-with">
-                    <h5>{props.taste}:</h5>
-                    <img src={props.img} alt={props.brand} id="cow-img" />
+                    <h5>passar till:</h5>
+                    <img src={Cow} id="cow-img" />
                 </div>
-                <h5>{props.year}|{props.price} kr</h5>
+                <h5>{props.year} | {props.price} kr</h5>
             </div>
-        </CardWrapper>
+        </CardWrapper >
     )
 };
 

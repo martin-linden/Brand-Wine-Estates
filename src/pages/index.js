@@ -3,7 +3,7 @@ import { GlobalStyle } from '../components/globalStyle'
 import SEO from '../components/seo';
 import Layout from '../components/layout'
 import WineList from '../components/wineList'
-import postData from '../components/wines.json'
+import { postData } from '../components/wines.js'
 
 
 
@@ -15,8 +15,8 @@ import { Helmet } from 'react-helmet'
 
 const IndexPage = (props) => {
 
-	/* 	console.log(props);
-		console.log(postData); */
+	/* console.log(props);
+	console.log(postData); */
 
 
 	return (
