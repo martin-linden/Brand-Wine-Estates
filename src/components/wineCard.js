@@ -23,7 +23,7 @@ const WineCard = (props) => {
             </div>
             <div className="info-section">
                 <h6>{props.grape}</h6>
-                <h5>{props.name}</h5>
+                <h4>{props.name}</h4>
                 <h5>{props.country}</h5>
                 {/* <h5>{props.number}</h5> */}
                 <div className="goes-with">
@@ -44,7 +44,7 @@ export default WineCard;
 const CardWrapper = styled.div`
 ${ tw`shadow flex flex-col justify-start `}
 height: 430px;
-width: 220px;
+width: 235px;
 padding: 20px;
 background: #fff;
 border-radius: 5px;
