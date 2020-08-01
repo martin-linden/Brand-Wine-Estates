@@ -5,9 +5,14 @@ import Layout from '../components/layout'
 import WineList from '../components/wineList'
 
 
+
+
 import { Helmet } from 'react-helmet'
 
-const IndexPage = () => (
+
+
+const IndexPage = (props) => (
+
 	<Layout>
 		<WineList />
 		<Helmet>

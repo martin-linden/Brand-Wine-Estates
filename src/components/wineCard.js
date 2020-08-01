@@ -3,6 +3,7 @@ import styled from "styled-components"
 import tw from 'twin.macro'
 import Wine from '../images/wines/7352801.jpg'
 import Cow from '../images/Taste/cow.png'
+import '../components/wines'
 
 
 
@@ -11,6 +12,7 @@ class Card extends React.Component {
 
 
     render() {
+        console.log(this.props);
 
         return (
             <CardWrapper>
