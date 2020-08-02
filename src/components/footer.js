@@ -1,21 +1,29 @@
 import React from "react"
 import styled from "styled-components"
 import { Container } from "./layoutComponents"
+import tw from 'twin.macro'
+import Logo from '../images/bwe-logo.png'
 
-const Footer = ({ className }) => (
-  <footer className={className}>
-    <Container>
-      © {new Date().getFullYear()}, Built with
-      {` `}
-      <a href="https://www.gatsbyjs.org">Gatsby</a>
-    </Container>
-  </footer>
+const Footer = () => (
+  <StyledFooter>
+    <p>Brand Wine Estates 2020</p>
+    <div>
+      <p>frida@brandwineestates.com</p>
+      <p>+46 700 43 3010</p>
+    </div>
+
+  </StyledFooter>
 )
 
-const StyledFooter = styled(Footer)`
-  color: #fffaff;
-  background: var(--primary-color);
-  padding: 1rem 0;
+export default Footer;
+
+const StyledFooter = styled.div`
+  ${ tw` flex items-center justify-around h-24  `}
+  font-family: Assistant;
+p{
+  ${ tw`mt-0 mb-0`}
+}
+
+
 `
 
-export default StyledFooter
