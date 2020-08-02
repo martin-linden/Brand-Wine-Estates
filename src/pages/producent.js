@@ -1,9 +1,12 @@
 import React from "react"
+import ProducerList from "../components/producerList"
 import Layout from "../components/layout"
+import { producerData } from '../components/producers.js'
+
 
 const Producers = () => (
     <Layout>
-        <h1>Producenter</h1>
+        <ProducerList producerData={producerData} />
     </Layout>
 )
 
