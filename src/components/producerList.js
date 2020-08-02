@@ -1,7 +1,7 @@
 import React from "react"
 import styled from "styled-components"
 import tw from 'twin.macro'
-import ProducerCard from '../components/ProducerCard'
+import ProducerCard from '../components/producerCard'
 
 
 const ProducerList = (props) => {
