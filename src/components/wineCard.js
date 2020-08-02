@@ -24,7 +24,7 @@ const WineCard = (props) => {
             <div className="info-section">
                 <h6>{props.grape}</h6>
                 <h4>{props.name}</h4>
-                <h5>{props.country}</h5>
+                <h5>{props.producer} - {props.country}</h5>
                 {/* <h5>{props.number}</h5> */}
                 <div className="goes-with">
                     <img src={props.taste[0]} id="icon-img" />
@@ -32,7 +32,9 @@ const WineCard = (props) => {
                     <img src={props.taste[2]} id="icon-img" />
                     <img src={props.taste[3]} id="icon-img" />
                 </div>
-                <h5>Årgång: {props.year} {/* | {props.price} kr */}</h5>
+                <div className="year-type">
+                    <h5>{`${props.year}`} </h5>  <img src={props.type} id="type-img" />
+                </div>
             </div>
         </CardWrapper >
     )
@@ -59,20 +61,28 @@ font-family: Assistant;
     ${ tw`mt-5 `}
 }
 
+.year-type{
+    ${ tw`flex items-center`}
+}
+
 #wine-img{
     ${ tw` m-0 `}
     width: 70px;
-    max-height: 200px;
-    min-height: 200px;
+    max-height: 210px;
+    min-height: 210px;
 }
 #icon-img{
     ${ tw` mr-2 mt-0 mb-1`}
     width: 20px;
-    max-height: 25px;
-    
-    
-    
+    max-height: 20px;
 }
+
+#type-img{
+    ${ tw` mb-1 mt-0 ml-1`}
+    width: 25px;
+    max-height: 23px;
+}
+
 
 h4{
     font-family: Assistant;
