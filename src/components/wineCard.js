@@ -12,8 +12,7 @@ import Cow from '../images/Taste/cow.png'
 const WineCard = (props) => {
 
 
-
-    console.log(props);
+    /* console.log(props); */
     return (
 
 

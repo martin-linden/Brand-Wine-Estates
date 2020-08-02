@@ -23,7 +23,6 @@ class Header extends React.Component {
   }
 
 
-
   render() {
 
     const activeLink = window.location.pathname; //show pathname of page
@@ -119,7 +118,7 @@ const StyledHeader = styled.div`
   }
  
   .active{
-    border-bottom: 1px solid #b6272957; 
+    border-bottom: 1px solid #cecece; 
     
   }
 
@@ -167,7 +166,7 @@ const StyledHeader = styled.div`
   }  
   
     li{
-      ${ tw`m-0 mt-1 pl-5 hover:text-primary`}
+      ${ tw`m-0 mt-1 pl-5 hover:text-gray-500`}
       
     }
 
@@ -201,7 +200,7 @@ li {
 }
 
 .active{
-    border-bottom: 1px solid #b6272957; 
+    border-bottom: 1px solid #cecece; 
     
   }
 
