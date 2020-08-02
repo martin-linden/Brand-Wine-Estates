@@ -9,7 +9,7 @@ import Cow from '../images/Taste/cow.png'
 
 
 
-const WineCard = (props) => {
+const ProducerCard = (props) => {
 
 
     /* console.log(props); */
@@ -28,7 +28,7 @@ const WineCard = (props) => {
     )
 };
 
-export default WineCard;
+export default ProducerCard;
 
 
 const CardWrapper = styled.div`
