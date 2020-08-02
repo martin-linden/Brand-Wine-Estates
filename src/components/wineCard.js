@@ -44,7 +44,7 @@ export default WineCard;
 
 
 const CardWrapper = styled.div`
-${ tw`shadow flex flex-col justify-start `}
+${ tw`shadow flex flex-col justify-start hover:shadow-lg cursor-pointer`}
 height: 430px;
 width: 235px;
 padding: 20px;

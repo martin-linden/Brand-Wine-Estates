@@ -35,7 +35,7 @@ background: #FAF8F8;
 `;
 
 const WineListWrapper = styled.div`
-${ tw` mt-10 mb-10 grid md:grid-cols-4 sm:grid-cols-3 gap-10`}
+${ tw` mt-24 mb-24 grid md:grid-cols-4 sm:grid-cols-3 gap-16`}
 
 
 
