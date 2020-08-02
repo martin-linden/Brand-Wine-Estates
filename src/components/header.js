@@ -25,7 +25,7 @@ class Header extends React.Component {
 
   render() {
 
-    const activeLink = window.location.pathname; //show pathname of page
+    /* const activeLink = window.location.pathname; //show pathname of page */
 
     /* console.log(this.state); */
     const { isExpanded } = this.state;
@@ -54,7 +54,7 @@ class Header extends React.Component {
               </li>
             </ul>
           </div>
-          <div
+          {/*  <div
             className={isExpanded ? 'hidden-menu' : 'active-page'}>
 
             {activeLink === "/" ? <Link to="/" activeClassName="active">sortiment</Link> : null}
@@ -62,7 +62,7 @@ class Header extends React.Component {
             {activeLink === "/restaurang" ? <Link to="/restaurang" activeClassName="active">restaurang</Link> : null}
             {activeLink === "/recensioner" ? <Link to="/recensioner" activeClassName="active">recensioner</Link> : null}
             {activeLink === "/kontakt" ? <Link to="/kontakt" activeClassName="active">kontakt</Link> : null}
-          </div>
+          </div> */}
           <h5>SE/NO</h5>
           <RiMenu2Line
             className="hamburger-menu"
