@@ -15,6 +15,6 @@ Brand Wine Estates work with producers from the classic wine countries and regio
 * [Lottie](https://www.npmjs.com/package/react-lottie) - Lottie Animation View for React 
 * [Tailwind](https://tailwindcss.com/) - Tailwind CSS is a highly customizable, low-level CSS framework 
 
-## Authors
+## Author
 
 * **Martin Lindén** - *Designer & Developer* - [martin-linden](https://github.com/martin-linden)
