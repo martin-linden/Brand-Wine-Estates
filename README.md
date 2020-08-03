@@ -13,7 +13,11 @@ Brand Wine Estates work with producers from the classic wine countries and regio
 * [Styled Components](https://styled-components.com/) - Visual primitives for the component age
 * [Prismic](https://prismic.io/) - Headless CMS 
 * [Lottie](https://www.npmjs.com/package/react-lottie) - Lottie Animation View for React 
+* [Tailwind](https://tailwindcss.com/) - Tailwind CSS is a highly customizable, low-level CSS framework 
+
 
 ## Author
 
 * **Martin Lindén** - *Designer & Developer* - [martin-linden](https://github.com/martin-linden)
+
+![Assortment](src/docs/img1.png "assortment")  
