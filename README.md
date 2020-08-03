@@ -7,7 +7,7 @@ This project is available online at [brandwineeestates.com](https://www.brandwin
 ## About the company
 Brand Wine Estates work with producers from the classic wine countries and regions of Europe. Their producers are very dedicated, and combine knowledge and passion within the production of wine, to the norwegian and swedish market. I got the opportunity to build their new website that is currently underway.
 
-## Built With
+## Built with
 
 * [GatsbyJS](https://www.gatsbyjs.org/) - React Framework
 * [Styled Components](https://styled-components.com/) - Visual primitives for the component age
@@ -15,9 +15,10 @@ Brand Wine Estates work with producers from the classic wine countries and regio
 * [Lottie](https://www.npmjs.com/package/react-lottie) - Lottie Animation View for React 
 * [Tailwind](https://tailwindcss.com/) - Tailwind CSS is a highly customizable, low-level CSS framework 
 
-
 ## Author
 
 * **Martin Lindén** - *Designer & Developer* - [martin-linden](https://github.com/martin-linden)
+
+## First design of wine lists page
 
 ![Assortment](src/docs/img1.png "assortment")  
