@@ -3,16 +3,21 @@ import styled from "styled-components"
 import tw from 'twin.macro'
 
 
-const singleWinePage = ({ pageContext }) => (
-   
-    <CardWrapper>
+const singleWinePAge = (props) => {
+    const wine = props.pageContext.content
+
+    console.log(wine);
+    return (
+
+
+        <CardWrapper>
             <div className="wine-bottle">
-                <img src={pageContext.img} id="wine-img" /> 
+                {/* <img src={wine.img} id="wine-img" /> */}
             </div>
             <div className="info-section">
-                <h6>{pageContext.grape}</h6>
-                <h4>{pageContext.name}</h4>
-                <h5>{pageContext.producer} - {pageContext.country}</h5>
+                <h6>{wine.grape}</h6>
+                <h4>{wine.name}</h4>
+                <h5>{wine.producer} - {wine.country}</h5>
                 {/* <h5>{wine.number}</h5> */}
                 <div className="goes-with">
                     {/* <img src={wine.taste[0]} id="icon-img" />
@@ -21,14 +26,14 @@ const singleWinePage = ({ pageContext }) => (
                     <img src={wine.taste[3]} id="icon-img" /> */}
                 </div>
                 <div className="year-type">
-                    <h5>{`${pageContext.year}`} </h5>  {/* <img src={wine.type} id="type-img" /> */}
+                    <h5>{`${wine.year}`} </h5>  {/* <img src={wine.type} id="type-img" /> */}
                 </div>
             </div>
-        </CardWrapper>
+        </CardWrapper >
     )
+};
 
-
-export default singleWinePage;
+export default singleWinePAge;
 
 
 const CardWrapper = styled.div`

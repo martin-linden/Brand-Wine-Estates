@@ -12,10 +12,15 @@ exports.createPages = async ({ actions: { createPage } }) => {
     console.log(postData)
     return postData.forEach(wine =>
         createPage({
-            path: `/wines/${wine.id}`, // /wines/1
+            path: `/wines/${wine.slug}`, // /wines/1
             component: require.resolve('./src/templates/singleWinePage.js'),
             context: {
-                content: wine,
+                img: wine.img,
+                grape: wine.grape,
+                name: wine.name,
+                producer: wine.producer,
+                country: wine.country,
+                year: wine.year,
             },
         })
     )

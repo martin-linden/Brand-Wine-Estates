@@ -1,0 +1,51 @@
+[
+    {
+        "id": 1,
+        "slug": "cianti-colli-senesi",
+        "image": "/images/fist.jpeg",
+        "grape": "Sangiovese",
+        "name": "Chianti Colli Senesi",
+        "producer": "Fontaleoni",
+        "country": "Italien",
+        "number": "309434",
+        "year": "2018",
+        "type": "../../type/red.svg",
+        "price": "599"
+    },
+    {
+        "id": 2,
+        "img": "./images/wines/2.jpg",
+        "grape": "Barbera",
+        "producer": "La Gironda",
+        "name": "Barbera d´Asti La Gena",
+        "country": "Italien",
+        "number": "569433",
+        "year": "2015",
+        "type": "../../type/red.svg",
+        "price": "299"
+    },
+    {
+        "id": 3,
+        "img": "./images/wines/3.jpg",
+        "grape": "Vernacchia",
+        "name": "Vernaccia Di san Gim",
+        "producer": "Fontaleoni",
+        "country": "Italien",
+        "number": "309434",
+        "year": "2018",
+        "type": "../../type/white.svg",
+        "price": "299"
+    },
+    {
+        "id": 4,
+        "img": "./images/wines/4.jpg",
+        "grape": "Grasparossa",
+        "producer": "Zanasi",
+        "name": "Intrigante Frizzante",
+        "country": "Italien",
+        "number": "569433",
+        "year": "2016",
+        "type": "../../type/rose.svg",
+        "price": "299"
+    }
+]
