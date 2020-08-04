@@ -6,22 +6,38 @@
 
 // You can delete this file if you're not using it
 
-const postData = require('./wines.js')
+// const postData = require('./wines.js')
 
-exports.createPages = async ({ actions: { createPage } }) => {
-    console.log(postData)
-    return postData.forEach(wine =>
+exports.createPages = async ({ actions: { createPage }, graphql }) => {
+
+
+    const results = await graphql(`
+   {
+    allWinesJson {
+        edges {
+          node {
+            slug
+          }
+        }
+      }
+   }
+   `);
+
+    if (results.error) {
+        console.error('something');
+
+        return;
+    }
+
+    results.data.allWinesJson.edges.forEach(edge => {
+        const wines = edge.node;
+
         createPage({
-            path: `/wines/${wine.slug}`, // /wines/1
+            path: `/wines/${wines.slug}/`,
             component: require.resolve('./src/templates/singleWinePage.js'),
             context: {
-                img: wine.img,
-                grape: wine.grape,
-                name: wine.name,
-                producer: wine.producer,
-                country: wine.country,
-                year: wine.year,
+                slug: wines.slug,
             },
         })
-    )
+    })
 }

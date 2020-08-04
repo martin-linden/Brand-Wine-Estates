@@ -7,7 +7,6 @@ import { RiMenu2Line, RiTruckLine } from 'react-icons/ri';
 
 
 
-
 class Header extends React.Component {
 
   state = {

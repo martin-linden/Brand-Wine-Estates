@@ -1,31 +1,47 @@
 import React from "react"
 import styled from "styled-components"
 import tw from 'twin.macro'
+import { graphql } from 'gatsby'
+import image from 'gatsby-image'
+
+export const query = graphql`
+query ($slug: String!) {
+	winesJson(slug: {eq: $slug}){
+    grape
+    name
+  }
+}
+`;
 
 
-const singleWinePage = ({ pageContext }) => (
-   
-    <CardWrapper>
+const singleWinePage = ({ data }) => {
+
+    const wine = data.winesJson;
+
+    return (
+
+        <CardWrapper>
             <div className="wine-bottle">
-                <img src={pageContext.img} id="wine-img" /> 
+                {/* <img src={props.img} id="wine-img" /> */}
             </div>
             <div className="info-section">
-                <h6>{pageContext.grape}</h6>
-                <h4>{pageContext.name}</h4>
-                <h5>{pageContext.producer} - {pageContext.country}</h5>
-                {/* <h5>{wine.number}</h5> */}
+                <h6>{wine.grape}</h6>
+                <h4>{wine.name}</h4>
+                {/* <h5>{props.producer} - {props.country}</h5> */}
+                {/* <h5>{props.number}</h5> */}
                 <div className="goes-with">
-                    {/* <img src={wine.taste[0]} id="icon-img" />
-                    <img src={wine.taste[1]} id="icon-img" />
-                    <img src={wine.taste[2]} id="icon-img" />
-                    <img src={wine.taste[3]} id="icon-img" /> */}
+                    {/*  <img src={props.taste[0]} id="icon-img" />
+                    <img src={props.taste[1]} id="icon-img" />
+                    <img src={props.taste[2]} id="icon-img" />
+                    <img src={props.taste[3]} id="icon-img" /> */}
                 </div>
                 <div className="year-type">
-                    <h5>{`${pageContext.year}`} </h5>  {/* <img src={wine.type} id="type-img" /> */}
+                    {/* <h5>{`${props.year}`} </h5>  <img src={props.type} id="type-img" /> */}
                 </div>
             </div>
-        </CardWrapper>
+        </CardWrapper >
     )
+};
 
 
 export default singleWinePage;
