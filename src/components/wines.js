@@ -5,6 +5,22 @@ const winesImages = [
     require('../images/wines/4.jpg'),
 ]
 
+const tasteImages = [
+    require('../images/taste/seafood.svg'), //0
+    require('../images/taste/beef2.svg'), // 1
+    require('../images/taste/elk.svg'), //2
+    require('../images/taste/fish2.svg'), // 3 
+    require('../images/taste/drink2.svg'), // 4
+    require('../images/taste/bird.svg'), // 5
+    require('../images/taste/vegetable.svg'), // 6
+]
+
+const typeImages = [
+    require('../images/type/red.svg'), //0
+    require('../images/type/white.svg'), //0
+    require('../images/type/rose.svg'), //0
+]
+
 export const postData = [
     {
         id: 1,
@@ -14,9 +30,9 @@ export const postData = [
         producer: "Fontaleoni",
         country: "Italien",
         number: "309434",
-        taste: ["../../taste/beef2.svg", "../../taste/bird.svg", "../../taste/lamb2.svg"],
+        taste: [tasteImages[0], tasteImages[1]],
         year: "2018",
-        type: "../../type/red.svg",
+        type: [typeImages[0]],
         price: "599"
     },
     {
@@ -27,9 +43,9 @@ export const postData = [
         name: "Barbera d´Asti La Gena",
         country: "Italien",
         number: "569433",
-        taste: ["../../taste/elk.svg", "../../taste/fish2.svg", "../../taste/drink2.svg", "../../taste/bird.svg"],
+        taste: [tasteImages[2], tasteImages[3], tasteImages[4], tasteImages[5]],
         year: "2015",
-        type: "../../type/red.svg",
+        type: [typeImages[0]],
         price: "299"
     },
     {
@@ -40,9 +56,9 @@ export const postData = [
         producer: "Fontaleoni",
         country: "Italien",
         number: "309434",
-        taste: ["../../taste/fish2.svg", "../../taste/seafood.svg", "../../taste/bird.svg", "../../taste/vegetable.svg"],
+        taste: [tasteImages[3], tasteImages[0], tasteImages[5], tasteImages[6]],
         year: "2018",
-        type: "../../type/white.svg",
+        type: [typeImages[1]],
         price: "599"
     },
     {
@@ -53,113 +69,10 @@ export const postData = [
         name: "Intrigante Frizzante",
         country: "Italien",
         number: "569433",
-        taste: ["../../taste/drink2.svg"],
+        taste: [tasteImages[4]],
         year: "2016",
-        type: "../../type/rose.svg",
+        type: [typeImages[2]],
         price: "299"
     },
-    {
-        id: 1,
-        img: "../../wines/1.jpg",
-        grape: "Sangiovese",
-        name: "Chianti Colli Senesi ",
-        producer: "Fontaleoni",
-        country: "Italien",
-        number: "309434",
-        taste: ["../../taste/beef2.svg", "../../taste/bird.svg", "../../taste/lamb2.svg"],
-        year: "2018",
-        type: "../../type/red.svg",
-        price: "599"
-    },
-    {
-        id: 2,
-        img: "../../wines/2.jpg",
-        grape: "Barbera",
-        producer: "La Gironda",
-        name: "Barbera d´Asti La Gena",
-        country: "Italien",
-        number: "569433",
-        taste: ["../../taste/elk.svg", "../../taste/fish2.svg", "../../taste/drink2.svg", "../../taste/bird.svg"],
-        year: "2015",
-        type: "../../type/red.svg",
-        price: "299"
-    },
-    {
-        id: 3,
-        img: "../../wines/3.jpg",
-        grape: "Vernacchia",
-        name: "Vernaccia Di san Gim",
-        producer: "Fontaleoni",
-        country: "Italien",
-        number: "309434",
-        taste: ["../../taste/fish2.svg", "../../taste/seafood.svg", "../../taste/bird.svg", "../../taste/vegetable.svg"],
-        year: "2018",
-        type: "../../type/white.svg",
-        price: "599"
-    },
-    {
-        id: 4,
-        img: "../../wines/4.jpg",
-        grape: "Grasparossa",
-        producer: "Zanasi",
-        name: "Intrigante Frizzante",
-        country: "Italien",
-        number: "569433",
-        taste: ["../../taste/drink2.svg"],
-        year: "2016",
-        type: "../../type/rose.svg",
-        price: "299"
-    },
-    {
-        id: 1,
-        img: "../../wines/1.jpg",
-        grape: "Sangiovese",
-        name: "Chianti Colli Senesi ",
-        producer: "Fontaleoni",
-        country: "Italien",
-        number: "309434",
-        taste: ["../../taste/beef2.svg", "../../taste/bird.svg", "../../taste/lamb2.svg"],
-        year: "2018",
-        type: "../../type/red.svg",
-        price: "599"
-    },
-    {
-        id: 2,
-        img: "../../wines/2.jpg",
-        grape: "Barbera",
-        producer: "La Gironda",
-        name: "Barbera d´Asti La Gena",
-        country: "Italien",
-        number: "569433",
-        taste: ["../../taste/elk.svg", "../../taste/fish2.svg", "../../taste/drink2.svg", "../../taste/bird.svg"],
-        year: "2015",
-        type: "../../type/red.svg",
-        price: "299"
-    },
-    {
-        id: 3,
-        img: "../../wines/3.jpg",
-        grape: "Vernacchia",
-        name: "Vernaccia Di san Gim",
-        producer: "Fontaleoni",
-        country: "Italien",
-        number: "309434",
-        taste: ["../../taste/fish2.svg", "../../taste/seafood.svg", "../../taste/bird.svg", "../../taste/vegetable.svg"],
-        year: "2018",
-        type: "../../type/white.svg",
-        price: "599"
-    },
-    {
-        id: 4,
-        img: "../../wines/4.jpg",
-        grape: "Grasparossa",
-        producer: "Zanasi",
-        name: "Intrigante Frizzante",
-        country: "Italien",
-        number: "569433",
-        taste: ["../../taste/drink2.svg"],
-        year: "2016",
-        type: "../../type/rose.svg",
-        price: "299"
-    },
+
 ];
