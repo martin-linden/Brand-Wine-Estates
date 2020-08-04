@@ -2,6 +2,7 @@ import React from "react"
 import ProducerList from "../components/producerList"
 import Layout from "../components/layout"
 import { producerData } from '../components/producers.js'
+import { GlobalStyle } from '../components/globalStyle'
 
 
 const Producers = () => (

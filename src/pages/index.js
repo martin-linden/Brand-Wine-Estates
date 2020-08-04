@@ -26,7 +26,7 @@ const IndexPage = (props) => {
 				<title>Brand Wine Estates</title>
 				<meta
 					name="description"
-					content="Wine Import - Wine Producers, Simpsons, Flint Fields, Wine, Vin"
+					content="Brand Wine Estates work with producers from the classic wine countries and regions of Europe"
 				/>
 				<meta property="og:title" content="Martin Linden - Front-End Developer" />
 			</Helmet>

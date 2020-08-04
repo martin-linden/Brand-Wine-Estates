@@ -2,6 +2,7 @@ import React from "react"
 import styled from "styled-components"
 import tw from 'twin.macro'
 
+
 const ProducerCard = (props) => {
 
 
@@ -30,18 +31,32 @@ height: auto;
 width: 400px;
 background: #fff;
 border-radius: 5px;
-font-family: Assistant;
+
 /* overflow: hidden;  //round img corner */
 
+h4{
+    font-family: Assistant;
+}
+
+h5{
+    font-family: Assistant;
+}
+
+h6{
+    font-family: Assistant;
+}
+
+
+
 .info-section{
-    padding: 20px;
+    ${ tw` pl-3 pr-3 pt-3 `}
+    font-family: Assistant;
 }
 
 #producer-img{
     ${ tw` m-0 `}
     width: fit-content;
-   
-    
 }
+ 
 
 `

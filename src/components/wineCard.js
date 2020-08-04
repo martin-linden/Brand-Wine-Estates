@@ -43,7 +43,6 @@ width: 235px;
 padding: 20px;
 background: #fff;
 border-radius: 5px;
-font-family: Assistant;
 
 .wine-bottle{
     ${ tw`flex justify-center `}
