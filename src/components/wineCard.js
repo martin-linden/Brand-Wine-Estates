@@ -6,7 +6,7 @@ import tw from 'twin.macro'
 const WineCard = (props) => {
 
 
-    /* console.log(props); */
+    console.log(props);
     return (
 
 

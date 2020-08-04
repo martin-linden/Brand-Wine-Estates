@@ -12,7 +12,7 @@ const singleWinePAge = (props) => {
 
         <CardWrapper>
             <div className="wine-bottle">
-                <img src={wine.img} id="wine-img" />
+                {/* <img src={wine.img} id="wine-img" /> */}
             </div>
             <div className="info-section">
                 <h6>{wine.grape}</h6>
@@ -20,13 +20,13 @@ const singleWinePAge = (props) => {
                 <h5>{wine.producer} - {wine.country}</h5>
                 {/* <h5>{wine.number}</h5> */}
                 <div className="goes-with">
-                    <img src={wine.taste[0]} id="icon-img" />
+                    {/* <img src={wine.taste[0]} id="icon-img" />
                     <img src={wine.taste[1]} id="icon-img" />
                     <img src={wine.taste[2]} id="icon-img" />
-                    <img src={wine.taste[3]} id="icon-img" />
+                    <img src={wine.taste[3]} id="icon-img" /> */}
                 </div>
                 <div className="year-type">
-                    <h5>{`${wine.year}`} </h5>  <img src={wine.type} id="type-img" />
+                    <h5>{`${wine.year}`} </h5>  {/* <img src={wine.type} id="type-img" /> */}
                 </div>
             </div>
         </CardWrapper >
