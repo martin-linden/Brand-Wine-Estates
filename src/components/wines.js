@@ -1,9 +1,14 @@
-
+const winesImages = [
+    require('../images/wines/1.jpg'),
+    require('../images/wines/2.jpg'),
+    require('../images/wines/3.jpg'),
+    require('../images/wines/4.jpg'),
+]
 
 export const postData = [
     {
         id: 1,
-        img: "../../wines/1.jpg",
+        img: winesImages[0],
         grape: "Sangiovese",
         name: "Chianti Colli Senesi ",
         producer: "Fontaleoni",
@@ -16,7 +21,7 @@ export const postData = [
     },
     {
         id: 2,
-        img: "../../wines/2.jpg",
+        img: winesImages[1],
         grape: "Barbera",
         producer: "La Gironda",
         name: "Barbera d´Asti La Gena",
@@ -29,7 +34,7 @@ export const postData = [
     },
     {
         id: 3,
-        img: "../../wines/3.jpg",
+        img: winesImages[2],
         grape: "Vernacchia",
         name: "Vernaccia Di san Gim",
         producer: "Fontaleoni",
@@ -42,7 +47,7 @@ export const postData = [
     },
     {
         id: 4,
-        img: "../../wines/4.jpg",
+        img: winesImages[3],
         grape: "Grasparossa",
         producer: "Zanasi",
         name: "Intrigante Frizzante",
