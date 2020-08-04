@@ -8,7 +8,7 @@ const postData = [
         id: 1,
         img: 'winesImages[0]',
         grape: "Sangiovese",
-        name: "Chianti Colli Senesi ",
+        name: "Chianti Colli Senespppp",
         producer: "Fontaleoni",
         country: "Italien",
         number: "309434",

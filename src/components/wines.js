@@ -7,10 +7,10 @@ const winesImages = [
 
 const tasteImages = [
     require('../images/taste/seafood.svg'), //0
-    require('../images/taste/beef2.svg'), // 1
+    require('../images/taste/beef.svg'), // 1
     require('../images/taste/elk.svg'), //2
-    require('../images/taste/fish2.svg'), // 3 
-    require('../images/taste/drink2.svg'), // 4
+    require('../images/taste/fish.svg'), // 3 
+    require('../images/taste/drink.svg'), // 4
     require('../images/taste/bird.svg'), // 5
     require('../images/taste/vegetable.svg'), // 6
 ]
@@ -26,7 +26,7 @@ export const postData = [
         id: 1,
         img: winesImages[0],
         grape: "Sangiovese",
-        name: "Chianti Colli Senesi ",
+        name: "Chianti Colli Senesiiii",
         producer: "Fontaleoni",
         country: "Italien",
         number: "309434",
