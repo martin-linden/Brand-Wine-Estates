@@ -14,6 +14,7 @@
     },
     {
         "id": 2,
+        "slug": "test1",
         "image": "../images//wines/2.jpg",
         "grape": "Barbera",
         "producer": "La Gironda",
@@ -26,6 +27,7 @@
     },
     {
         "id": 3,
+        "slug": "test2",
         "image": "../images//wines/3.jpg",
         "grape": "Vernacchia",
         "name": "Vernaccia Di san Gim",
@@ -38,6 +40,7 @@
     },
     {
         "id": 4,
+        "slug": "test3",
         "image": "../images//wines/4.jpg",
         "grape": "Grasparossa",
         "producer": "Zanasi",

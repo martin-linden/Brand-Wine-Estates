@@ -2,13 +2,24 @@ import React from "react"
 import styled from "styled-components"
 import tw from 'twin.macro'
 import { graphql } from 'gatsby'
-import image from 'gatsby-image'
+import Image from 'gatsby-image'
 
 export const query = graphql`
 query ($slug: String!) {
 	winesJson(slug: {eq: $slug}){
     grape
     name
+    slug
+    country
+    producer
+    price
+    image {
+      childImageSharp {
+        fluid {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
   }
 }
 `;
@@ -22,12 +33,15 @@ const singleWinePage = ({ data }) => {
 
         <CardWrapper>
             <div className="wine-bottle">
-                {/* <img src={props.img} id="wine-img" /> */}
+                <Image
+                    fluid={wine.image.childImageSharp.fluid}
+                    alt={wine.title}
+                    id="wine-img" />
             </div>
             <div className="info-section">
                 <h6>{wine.grape}</h6>
                 <h4>{wine.name}</h4>
-                {/* <h5>{props.producer} - {props.country}</h5> */}
+                <h5>{wine.producer} - {wine.country}</h5>
                 {/* <h5>{props.number}</h5> */}
                 <div className="goes-with">
                     {/*  <img src={props.taste[0]} id="icon-img" />
@@ -49,8 +63,8 @@ export default singleWinePage;
 
 const CardWrapper = styled.div`
 ${ tw`shadow flex flex-col justify-start hover:shadow-lg cursor-pointer`}
-height: 430px;
-width: 235px;
+height: autopx;
+width: auto;
 padding: 20px;
 background: #fff;
 border-radius: 5px;
