@@ -9,7 +9,6 @@
         "country": "Italien",
         "number": "309434",
         "year": "2018",
-        "type": "../../type/red.svg",
         "price": "599"
     },
     {
@@ -22,7 +21,6 @@
         "country": "Italien",
         "number": "569433",
         "year": "2015",
-        "type": "../../type/red.svg",
         "price": "299"
     },
     {
@@ -35,7 +33,6 @@
         "country": "Italien",
         "number": "309434",
         "year": "2018",
-        "type": "../../type/white.svg",
         "price": "299"
     },
     {
@@ -48,7 +45,6 @@
         "country": "Italien",
         "number": "569433",
         "year": "2016",
-        "type": "../../type/rose.svg",
         "price": "299"
     }
 ]
