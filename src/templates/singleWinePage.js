@@ -3,26 +3,43 @@ import styled from "styled-components"
 import tw from 'twin.macro'
 import { graphql } from 'gatsby'
 import Image from 'gatsby-image'
+import Layout from '../components/layout'
 
 export const query = graphql`
 query ($slug: String!) {
-	winesJson(slug: {eq: $slug}){
-    grape
-    name
-    slug
-    country
-    producer
-    year
-    price
-    image {
-      childImageSharp {
-        fluid {
-          ...GatsbyImageSharpFluid
+    winesJson(slug: {eq: $slug}, type: {publicURL: {}}) {
+      grape
+      name
+      slug
+      country
+      producer
+      year
+      price
+      image {
+        childImageSharp {
+          fluid {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
+      type {
+        publicURL
+      }
+      taste {
+        beef {
+          publicURL
+        }
+        seafood {
+          publicURL
+        }
+        drink {
+            publicURL
         }
       }
     }
   }
-}
+  
+  
 `;
 
 
@@ -30,17 +47,32 @@ const singleWinePage = ({ data }) => {
 
     const wine = data.winesJson;
 
+    console.log(wine.taste);
+
     return (
+        <Layout>
+            <CardWrapper>
+                <div className="wine-wrapper">
+                    <Image
+                        fluid={wine.image.childImageSharp.fluid}
+                        alt={wine.title}
+                    />
+                </div>
+                <div>
+                    <h1>{wine.name}</h1>
+                    <img
+                        src={wine.type.publicURL}
+                        id="icon-img" />
+                    <img
+                        src={wine.taste[0].beef.publicURL}
+                        id="icon-img" />
+                    <img
+                        src={wine.taste[0].seafood.publicURL}
+                        id="icon-img" />
+                </div>
 
-        <CardWrapper>
-            <div className="hej">
-                <Image
-                    fluid={wine.image.childImageSharp.fluid}
-                    alt={wine.title}
-                />
-            </div>
-
-        </CardWrapper >
+            </CardWrapper >
+        </Layout>
     )
 };
 
@@ -49,19 +81,24 @@ export default singleWinePage;
 
 
 const CardWrapper = styled.div`
-${ tw`shadow flex flex-col justify-start items-center hover:shadow-lg cursor-pointer`}
-height: 400px;
-width: 200px;
+${ tw` flex justify-around items-center`}
+height: auto;
+width: auto;
 padding: 20px;
 background: #fff;
 border-radius: 5px;
 font-family: Assistant;
 
-.hej{
-    width: 70px;
-    
-   
-   
+.wine-wrapper{
+    width: 200px;
 }
+
+#icon-img{
+    ${ tw` mr-2 mt-0 mb-1`}
+    width: 20px;
+    max-height: 20px;
+}
+
+
 
 `

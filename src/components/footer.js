@@ -20,6 +20,9 @@ export default Footer;
 const StyledFooter = styled.div`
   ${ tw` flex items-center justify-around h-24  `}
   font-family: Assistant;
+  border-top-style: solid;
+  border-top-width: 1px;
+  border-top-color: #efefef;
 p{
   ${ tw`mt-0 mb-0`}
 }

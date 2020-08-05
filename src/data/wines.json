@@ -9,6 +9,14 @@
         "country": "Italien",
         "number": "309434",
         "year": "2018",
+        "type": "../images/type/red.svg",
+        "taste": [
+            {
+                "seafood": "../images/taste/seafood.svg",
+                "beef": "../images/taste/chilli.svg",
+                "drink": "../images/taste/drink.svg"
+            }
+        ],
         "price": "599"
     },
     {
@@ -21,6 +29,13 @@
         "country": "Italien",
         "number": "569433",
         "year": "2015",
+        "type": "../images/type/red.svg",
+        "taste": [
+            {
+                "seafood": "../images/taste/seafood.svg",
+                "beef": "../images/taste/beef.svg"
+            }
+        ],
         "price": "299"
     },
     {
@@ -32,7 +47,14 @@
         "producer": "Fontaleoni",
         "country": "Italien",
         "number": "309434",
+        "type": "../images/type/white.svg",
         "year": "2018",
+        "taste": [
+            {
+                "seafood": "../images/taste/seafood.svg",
+                "beef": "../images/taste/beef.svg"
+            }
+        ],
         "price": "299"
     },
     {
@@ -45,6 +67,13 @@
         "country": "Italien",
         "number": "569433",
         "year": "2016",
+        "type": "../images/type/rose.svg",
+        "taste": [
+            {
+                "seafood": "../images/taste/seafood.svg",
+                "beef": "../images/taste/beef.svg"
+            }
+        ],
         "price": "299"
     }
 ]
