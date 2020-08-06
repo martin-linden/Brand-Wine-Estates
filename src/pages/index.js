@@ -3,25 +3,45 @@ import { GlobalStyle } from '../components/globalStyle'
 import SEO from '../components/seo';
 import Layout from '../components/layout'
 import WineList from '../components/wineList'
-import { postData } from '../components/wines.js'
-
-
-
-
-
+import { graphql } from 'gatsby'
 import { Helmet } from 'react-helmet'
 
+export const test = graphql`
+query  {
+	allWinesJson {
+	  nodes {
+		grape
+		id
+		country
+		name
+		number
+		price
+		producer
+		slug
+		year
+	  }
+	}
+  }
+  
+	
+`;
 
 
-const IndexPage = (props) => {
+
+const IndexPage = (data) => {
+
+	const wineCardData = data.data.allWinesJson.nodes
 
 	/* console.log(props);
 	console.log(postData); */
+	console.log(wineCardData);
 
 
 	return (
 		<Layout>
-			<WineList postData={postData} />
+			<WineList
+				wineCardData={wineCardData} />
+			{/* <h1>{test.grape}</h1> */}
 			<Helmet>
 				<title>Brand Wine Estates</title>
 				<meta
@@ -32,7 +52,7 @@ const IndexPage = (props) => {
 			</Helmet>
 			<GlobalStyle />
 
-			<SEO title="Home" keywords={[`Brand Wine Estates`, `Wine import`, `Simpsons Wine`]} />
+			<SEO title="Home" keywords={[`Brand Wine Estates`, `Wine import `, `Simpsons Wine`]} />
 
 		</Layout>
 	)

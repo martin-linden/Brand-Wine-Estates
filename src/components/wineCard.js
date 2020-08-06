@@ -7,28 +7,20 @@ import { navigate } from "gatsby";
 const WineCard = (props) => {
 
 
-    console.log(props);
+
     return (
 
         /* onClick={() => this.handleToggle()} */
         <CardWrapper onClick={() => navigate(`/wines/${props.slug}`)}>
             <div className="wine-bottle">
-                <img src={props.img} id="wine-img" />
+                {/* <img src={props.img} id="wine-img" /> */}
             </div>
             <div className="info-section">
                 <h6>{props.grape}</h6>
                 <h4>{props.name}</h4>
                 <h5>{props.producer} - {props.country}</h5>
-                {/* <h5>{props.number}</h5> */}
-                <div className="goes-with">
-                    <img src={props.taste[0]} id="icon-img" />
-                    <img src={props.taste[1]} id="icon-img" />
-                    <img src={props.taste[2]} id="icon-img" />
-                    <img src={props.taste[3]} id="icon-img" />
-                </div>
-                <div className="year-type">
-                    <h5>{`${props.year}`} </h5>  <img src={props.type} id="type-img" />
-                </div>
+                <h5>{`${props.year}`} </h5>
+
             </div>
         </CardWrapper >
     )
