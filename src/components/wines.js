@@ -38,7 +38,7 @@ export const postData = [
     },
     {
         id: 2,
-        slug: "cianti-colli-senesi",
+        slug: "barbera-d-asti-la-gena",
         img: winesImages[1],
         grape: "Barbera",
         producer: "La Gironda",
