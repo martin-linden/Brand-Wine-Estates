@@ -24,9 +24,10 @@ const typeImages = [
 export const postData = [
     {
         id: 1,
+        slug: "cianti-colli-senesi",
         img: winesImages[0],
         grape: "Sangiovese",
-        name: "Chianti Colli Senesiiii",
+        name: "Chianti Colli Senesi",
         producer: "Fontaleoni",
         country: "Italien",
         number: "309434",
@@ -37,6 +38,7 @@ export const postData = [
     },
     {
         id: 2,
+        slug: "cianti-colli-senesi",
         img: winesImages[1],
         grape: "Barbera",
         producer: "La Gironda",
@@ -50,6 +52,7 @@ export const postData = [
     },
     {
         id: 3,
+        slug: "cianti-colli-senesi",
         img: winesImages[2],
         grape: "Vernacchia",
         name: "Vernaccia Di san Gim",
@@ -63,6 +66,7 @@ export const postData = [
     },
     {
         id: 4,
+        slug: "cianti-colli-senesi",
         img: winesImages[3],
         grape: "Grasparossa",
         producer: "Zanasi",
