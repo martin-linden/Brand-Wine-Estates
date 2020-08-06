@@ -12,9 +12,16 @@
         "type": "../images/type/red.svg",
         "taste": [
             {
-                "seafood": "../images/taste/seafood.svg",
-                "beef": "../images/taste/chilli.svg",
-                "drink": "../images/taste/drink.svg"
+                "url": "../images/taste/seafood.svg"
+            },
+            {
+                "url": "../images/taste/chilli.svg"
+            },
+            {
+                "url": "../images/taste/drink.svg"
+            },
+            {
+                "url": "../images/taste/pork.svg"
             }
         ],
         "price": "599"
@@ -32,8 +39,13 @@
         "type": "../images/type/red.svg",
         "taste": [
             {
-                "seafood": "../images/taste/seafood.svg",
-                "beef": "../images/taste/beef.svg"
+                "url": "../images/taste/seafood.svg"
+            },
+            {
+                "url": "../images/taste/chilli.svg"
+            },
+            {
+                "url": "../images/taste/drink.svg"
             }
         ],
         "price": "299"
@@ -51,8 +63,13 @@
         "year": "2018",
         "taste": [
             {
-                "seafood": "../images/taste/seafood.svg",
-                "beef": "../images/taste/beef.svg"
+                "url": "../images/taste/lamb.svg"
+            },
+            {
+                "url": "../images/taste/pork.svg"
+            },
+            {
+                "url": "../images/taste/bird.svg"
             }
         ],
         "price": "299"
@@ -70,8 +87,13 @@
         "type": "../images/type/rose.svg",
         "taste": [
             {
-                "seafood": "../images/taste/seafood.svg",
-                "beef": "../images/taste/beef.svg"
+                "url": "../images/taste/seafood.svg"
+            },
+            {
+                "url": "../images/taste/chilli.svg"
+            },
+            {
+                "url": "../images/taste/drink.svg"
             }
         ],
         "price": "299"

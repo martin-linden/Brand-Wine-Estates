@@ -26,14 +26,8 @@ query ($slug: String!) {
         publicURL
       }
       taste {
-        beef {
+        url {
           publicURL
-        }
-        seafood {
-          publicURL
-        }
-        drink {
-            publicURL
         }
       }
     }
@@ -43,37 +37,40 @@ query ($slug: String!) {
 `;
 
 
+
 const singleWinePage = ({ data }) => {
 
-    const wine = data.winesJson;
+  const wine = data.winesJson;
 
-    console.log(wine.taste);
+  return (
+    <Layout>
+      <CardWrapper>
+        <div className="wine-wrapper">
+          <Image
+            fluid={wine.image.childImageSharp.fluid}
+            alt={wine.title}
+          />
+        </div>
+        <div className="content-wrapper">
+          <div>
+            <h1>{wine.name}</h1>
+            <img
+              src={wine.type.publicURL}
+              id="icon-img" />
+          </div>
+          <div>
+            {wine.taste.map((icon) =>
+              <img
+                src={icon.url.publicURL}
+                id="icon-img"
+              />
+            )}
+          </div>
+        </div>
 
-    return (
-        <Layout>
-            <CardWrapper>
-                <div className="wine-wrapper">
-                    <Image
-                        fluid={wine.image.childImageSharp.fluid}
-                        alt={wine.title}
-                    />
-                </div>
-                <div>
-                    <h1>{wine.name}</h1>
-                    <img
-                        src={wine.type.publicURL}
-                        id="icon-img" />
-                    <img
-                        src={wine.taste[0].beef.publicURL}
-                        id="icon-img" />
-                    <img
-                        src={wine.taste[0].seafood.publicURL}
-                        id="icon-img" />
-                </div>
-
-            </CardWrapper >
-        </Layout>
-    )
+      </CardWrapper >
+    </Layout>
+  )
 };
 
 
@@ -81,7 +78,7 @@ export default singleWinePage;
 
 
 const CardWrapper = styled.div`
-${ tw` flex justify-around items-center`}
+${ tw` flex justify-around  items-center`}
 height: auto;
 width: auto;
 padding: 20px;
