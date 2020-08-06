@@ -6,6 +6,7 @@ import WineList from '../components/wineList'
 import { graphql } from 'gatsby'
 import { Helmet } from 'react-helmet'
 
+
 export const test = graphql`
 query  {
 	allWinesJson {
@@ -19,11 +20,19 @@ query  {
 		producer
 		slug
 		year
+		image {
+		  childImageSharp {
+			fluid {
+				...GatsbyImageSharpFluid
+			}
+		  }
+		}
+		type {
+		  publicURL
+		}
 	  }
 	}
   }
-  
-	
 `;
 
 
@@ -41,7 +50,6 @@ const IndexPage = (data) => {
 		<Layout>
 			<WineList
 				wineCardData={wineCardData} />
-			{/* <h1>{test.grape}</h1> */}
 			<Helmet>
 				<title>Brand Wine Estates</title>
 				<meta

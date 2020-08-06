@@ -1,11 +1,71 @@
 [
     {
         "id": 1,
-        "slug": "cianti-colli-senesi",
-        "image": "../images//wines/1.jpg",
+        "producer": "Simpsons Wine Estate",
+        "slug": "chalklands-classic-cuvée",
+        "name": "Chalklands Classic Cuvée",
+        "year": "2017",
+        "country": "Storbritannien",
+        "region": "",
+        "grape": "Pinot Noir",
+        "alcohol": "",
+        "volume": "",
+        "temp": "",
+        "number": "",
+        "link": "",
+        "acid": "",
+        "sweetness": "",
+        "image": "../images/wines/1.jpg",
+        "type": "../images/type/rose.svg",
+        "taste": [
+            {
+                "url": "../images/taste/seafood.svg"
+            },
+            {
+                "url": "../images/taste/chilli.svg"
+            },
+            {
+                "url": "../images/taste/drink.svg"
+            }
+        ]
+    },
+    {
+        "id": 2,
+        "producer": "Simpsons Wine Estate",
+        "slug": "flintfields-blanc-de-noirs",
+        "name": "Flintfields Blanc de Noirs",
+        "year": "2016",
+        "country": "Storbritannien",
+        "region": "",
+        "grape": "Pinot Noir",
+        "alcohol": "",
+        "volume": "",
+        "temp": "",
+        "number": "",
+        "link": "",
+        "acid": "",
+        "sweetness": "",
+        "image": "../images/wines/2.jpg",
+        "type": "../images/type/rose.svg",
+        "taste": [
+            {
+                "url": "../images/taste/seafood.svg"
+            },
+            {
+                "url": "../images/taste/chilli.svg"
+            },
+            {
+                "url": "../images/taste/drink.svg"
+            }
+        ]
+    },
+    {
+        "id": 3,
+        "slug": "chianti-colli-senesi",
+        "image": "../images/wines/23.jpg",
         "grape": "Sangiovese",
         "name": "Chianti Colli Senesi",
-        "producer": "Fontaleoni",
+        "producer": "Azienda Agricola Fontaleoni ",
         "country": "Italien",
         "number": "309434",
         "year": "2018",
@@ -27,12 +87,12 @@
         "price": "599"
     },
     {
-        "id": 2,
-        "slug": "barbera-d-asti-la-gena",
-        "image": "../images//wines/2.jpg",
+        "id": 4,
+        "slug": "barbera-d-asti-la-lippa",
+        "image": "../images/wines/19.jpg",
         "grape": "Barbera",
         "producer": "La Gironda",
-        "name": "Barbera d´Asti La Gena",
+        "name": "Barbera d´Asti La Lippa»",
         "country": "Italien",
         "number": "569433",
         "year": "2015",
@@ -51,12 +111,12 @@
         "price": "299"
     },
     {
-        "id": 3,
-        "slug": "test2",
-        "image": "../images//wines/3.jpg",
+        "id": 5,
+        "slug": "vernaccia-di-san-gim",
+        "image": "../images/wines/24.jpg",
         "grape": "Vernacchia",
         "name": "Vernaccia Di san Gim",
-        "producer": "Fontaleoni",
+        "producer": "Azienda Agricola Fontaleoni ",
         "country": "Italien",
         "number": "309434",
         "type": "../images/type/white.svg",
@@ -75,9 +135,9 @@
         "price": "299"
     },
     {
-        "id": 4,
-        "slug": "test3",
-        "image": "../images//wines/4.jpg",
+        "id": 6,
+        "slug": "intrigante-frizzante",
+        "image": "../images/wines/4.jpg",
         "grape": "Grasparossa",
         "producer": "Zanasi",
         "name": "Intrigante Frizzante",
