@@ -1,0 +1,101 @@
+[
+    {
+        "id": 1,
+        "slug": "cianti-colli-senesi",
+        "image": "../images//wines/1.jpg",
+        "grape": "Sangiovese",
+        "name": "Chianti Colli Senesi",
+        "producer": "Fontaleoni",
+        "country": "Italien",
+        "number": "309434",
+        "year": "2018",
+        "type": "../images/type/red.svg",
+        "taste": [
+            {
+                "url": "../images/taste/seafood.svg"
+            },
+            {
+                "url": "../images/taste/chilli.svg"
+            },
+            {
+                "url": "../images/taste/drink.svg"
+            },
+            {
+                "url": "../images/taste/pork.svg"
+            }
+        ],
+        "price": "599"
+    },
+    {
+        "id": 2,
+        "slug": "barbera-d-asti-la-gena",
+        "image": "../images//wines/2.jpg",
+        "grape": "Barbera",
+        "producer": "La Gironda",
+        "name": "Barbera d´Asti La Gena",
+        "country": "Italien",
+        "number": "569433",
+        "year": "2015",
+        "type": "../images/type/red.svg",
+        "taste": [
+            {
+                "url": "../images/taste/seafood.svg"
+            },
+            {
+                "url": "../images/taste/chilli.svg"
+            },
+            {
+                "url": "../images/taste/drink.svg"
+            }
+        ],
+        "price": "299"
+    },
+    {
+        "id": 3,
+        "slug": "test2",
+        "image": "../images//wines/3.jpg",
+        "grape": "Vernacchia",
+        "name": "Vernaccia Di san Gim",
+        "producer": "Fontaleoni",
+        "country": "Italien",
+        "number": "309434",
+        "type": "../images/type/white.svg",
+        "year": "2018",
+        "taste": [
+            {
+                "url": "../images/taste/lamb.svg"
+            },
+            {
+                "url": "../images/taste/pork.svg"
+            },
+            {
+                "url": "../images/taste/bird.svg"
+            }
+        ],
+        "price": "299"
+    },
+    {
+        "id": 4,
+        "slug": "test3",
+        "image": "../images//wines/4.jpg",
+        "grape": "Grasparossa",
+        "producer": "Zanasi",
+        "name": "Intrigante Frizzante",
+        "country": "Italien",
+        "number": "569433",
+        "year": "2016",
+        "type": "../images/type/rose.svg",
+        "taste": [
+            {
+                "url": "../images/taste/seafood.svg"
+            },
+            {
+                "url": "../images/taste/chilli.svg"
+            },
+            {
+                "url": "../images/taste/drink.svg"
+            }
+        ],
+        "price": "299"
+    }
+]

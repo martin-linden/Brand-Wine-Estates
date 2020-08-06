@@ -1,6 +1,7 @@
 import React from "react"
 import styled from "styled-components"
 import tw from 'twin.macro'
+import { navigate } from "gatsby";
 
 
 const WineCard = (props) => {
@@ -9,8 +10,8 @@ const WineCard = (props) => {
     console.log(props);
     return (
 
-
-        <CardWrapper>
+        /* onClick={() => this.handleToggle()} */
+        <CardWrapper onClick={() => navigate(`/wines/${props.slug}`)}>
             <div className="wine-bottle">
                 <img src={props.img} id="wine-img" />
             </div>

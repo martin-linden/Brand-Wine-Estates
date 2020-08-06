@@ -7,7 +7,6 @@ import { RiMenu2Line, RiTruckLine } from 'react-icons/ri';
 
 
 
-
 class Header extends React.Component {
 
   state = {
@@ -104,7 +103,9 @@ const StyledHeader = styled.div`
   ${ tw`  text-secondary flex justify-between items-center h-24 uppercase `}
   /* display: grid;
   grid-template-columns: 300px 1fr 100px;*/
-  box-shadow: 0 1px  #a8a5a3; 
+  border-bottom-style: solid;
+  border-bottom-width: 1px;
+  border-bottom-color: #efefef;
   font-family: Assistant;
 
   
