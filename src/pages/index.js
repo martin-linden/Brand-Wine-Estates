@@ -16,7 +16,6 @@ query  {
 		country
 		name
 		number
-		price
 		producer
 		slug
 		year

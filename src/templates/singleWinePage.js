@@ -14,7 +14,6 @@ query ($slug: String!) {
       country
       producer
       year
-      price
       image {
         childImageSharp {
           fluid {

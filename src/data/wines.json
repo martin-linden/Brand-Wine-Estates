@@ -6,15 +6,15 @@
         "name": "Chalklands Classic Cuvée",
         "year": "2017",
         "country": "Storbritannien",
-        "region": "",
-        "grape": "Pinot Noir",
-        "alcohol": "",
-        "volume": "",
-        "temp": "",
-        "number": "",
-        "link": "",
-        "acid": "",
-        "sweetness": "",
+        "region": "Kent",
+        "grape": "60% Pinot Noir, 40% Chardonnay",
+        "alcohol": "12,0",
+        "volume": "750",
+        "temp": "8-10",
+        "number": "75232",
+        "link": "https://www.systembolaget.se/dryck/mousserande-viner/simpsons-7523201",
+        "acid": "8,5",
+        "sweetness": "7,5",
         "image": "../images/wines/1.jpg",
         "type": "../images/type/rose.svg",
         "taste": [
@@ -22,12 +22,13 @@
                 "url": "../images/taste/seafood.svg"
             },
             {
-                "url": "../images/taste/chilli.svg"
+                "url": "../images/taste/fish.svg"
             },
             {
                 "url": "../images/taste/drink.svg"
             }
-        ]
+        ],
+        "text": "Hej hopp."
     },
     {
         "id": 2,
@@ -36,15 +37,15 @@
         "name": "Flintfields Blanc de Noirs",
         "year": "2016",
         "country": "Storbritannien",
-        "region": "",
-        "grape": "Pinot Noir",
-        "alcohol": "",
-        "volume": "",
-        "temp": "",
-        "number": "",
-        "link": "",
-        "acid": "",
-        "sweetness": "",
+        "region": "Kent",
+        "grape": "100% Pinot Noir",
+        "alcohol": "12,0",
+        "volume": "750",
+        "temp": "10-12",
+        "number": "78769",
+        "link": "https://www.systembolaget.se/dryck/mousserande-viner/simpsons-7876901",
+        "acid": "5,5",
+        "sweetness": "8",
         "image": "../images/wines/2.jpg",
         "type": "../images/type/rose.svg",
         "taste": [
@@ -52,7 +53,7 @@
                 "url": "../images/taste/seafood.svg"
             },
             {
-                "url": "../images/taste/chilli.svg"
+                "url": "../images/taste/fish.svg"
             },
             {
                 "url": "../images/taste/drink.svg"
@@ -61,101 +62,131 @@
     },
     {
         "id": 3,
-        "slug": "chianti-colli-senesi",
-        "image": "../images/wines/23.jpg",
-        "grape": "Sangiovese",
-        "name": "Chianti Colli Senesi",
-        "producer": "Azienda Agricola Fontaleoni ",
-        "country": "Italien",
-        "number": "309434",
-        "year": "2018",
-        "type": "../images/type/red.svg",
+        "producer": "Simpsons Wine Estate",
+        "slug": "simpsons-wine-estate",
+        "name": "Gravel Castle Chardonnay",
+        "year": "2019",
+        "country": "Storbritannien",
+        "region": "Kent",
+        "grape": "100% Chardonnay ",
+        "alcohol": "12,0",
+        "volume": "750",
+        "temp": "8-10",
+        "number": "76704",
+        "link": "https://www.systembolaget.se/dryck/vita-viner/simpsons-7670401",
+        "acid": "6",
+        "sweetness": "< 3",
+        "image": "../images/wines/3.jpg",
+        "type": "../images/type/white.svg",
         "taste": [
             {
                 "url": "../images/taste/seafood.svg"
             },
             {
-                "url": "../images/taste/chilli.svg"
+                "url": "../images/taste/fish.svg"
             },
             {
                 "url": "../images/taste/drink.svg"
-            },
-            {
-                "url": "../images/taste/pork.svg"
             }
-        ],
-        "price": "599"
+        ]
     },
     {
         "id": 4,
-        "slug": "barbera-d-asti-la-lippa",
-        "image": "../images/wines/19.jpg",
-        "grape": "Barbera",
-        "producer": "La Gironda",
-        "name": "Barbera d´Asti La Lippa»",
-        "country": "Italien",
-        "number": "569433",
-        "year": "2015",
-        "type": "../images/type/red.svg",
+        "producer": "Simpsons Wine Estate",
+        "slug": "the-roman-road-chardonnay",
+        "name": "The Roman Road Chardonnay ",
+        "year": "2018",
+        "country": "Storbritannien",
+        "region": "Kent",
+        "grape": "100% Chardonnay",
+        "alcohol": "13,0",
+        "volume": "750",
+        "temp": "10-12",
+        "number": "78902",
+        "link": "https://www.systembolaget.se/dryck/vita-viner/simpsons-7890201",
+        "acid": "7,5",
+        "sweetness": "< 3",
+        "image": "../images/wines/4.jpg",
+        "type": "../images/type/white.svg",
         "taste": [
             {
                 "url": "../images/taste/seafood.svg"
             },
             {
-                "url": "../images/taste/chilli.svg"
-            },
-            {
-                "url": "../images/taste/drink.svg"
-            }
-        ],
-        "price": "299"
-    },
-    {
-        "id": 5,
-        "slug": "vernaccia-di-san-gim",
-        "image": "../images/wines/24.jpg",
-        "grape": "Vernacchia",
-        "name": "Vernaccia Di san Gim",
-        "producer": "Azienda Agricola Fontaleoni ",
-        "country": "Italien",
-        "number": "309434",
-        "type": "../images/type/white.svg",
-        "year": "2018",
-        "taste": [
-            {
-                "url": "../images/taste/lamb.svg"
-            },
-            {
-                "url": "../images/taste/pork.svg"
+                "url": "../images/taste/fish.svg"
             },
             {
                 "url": "../images/taste/bird.svg"
+            },
+            {
+                "url": "../images/taste/vegetable.svg"
             }
-        ],
-        "price": "299"
+        ]
+    },
+    {
+        "id": 5,
+        "producer": "Simpsons Wine Estate",
+        "slug": "Rabbit-hole-pinot-noir",
+        "name": "Rabbit Hole Pinot Noir",
+        "year": "2019",
+        "country": "Storbritannien",
+        "region": "Kent",
+        "grape": "100% Pinot Noir",
+        "alcohol": "12,5",
+        "volume": "750",
+        "temp": "12-15",
+        "number": "76329",
+        "link": "https://www.systembolaget.se/dryck/roda-viner/simpsons-7632901",
+        "acid": "6,3",
+        "sweetness": "< 3",
+        "image": "../images/wines/5.png",
+        "type": "../images/type/red.svg",
+        "taste": [
+            {
+                "url": "../images/taste/beef.svg"
+            },
+            {
+                "url": "../images/taste/bird.svg"
+            },
+            {
+                "url": "../images/taste/elk.svg"
+            },
+            {
+                "url": "../images/taste/vegetable.svg"
+            }
+        ]
     },
     {
         "id": 6,
-        "slug": "intrigante-frizzante",
-        "image": "../images/wines/4.jpg",
-        "grape": "Grasparossa",
-        "producer": "Zanasi",
-        "name": "Intrigante Frizzante",
-        "country": "Italien",
-        "number": "569433",
-        "year": "2016",
+        "producer": "Simpsons Wine Estate",
+        "slug": "railway-hill-Rosé",
+        "name": "Railway Hill Rosé",
+        "year": "2018",
+        "country": "Storbritannien",
+        "region": "Kent",
+        "grape": "100% Pinot Noir",
+        "alcohol": "12,5",
+        "volume": "750",
+        "temp": "8-10",
+        "number": "78937",
+        "link": "https://www.systembolaget.se/dryck/roseviner/simpsons-7893701",
+        "acid": "5",
+        "sweetness": "< 3",
+        "image": "../images/wines/6.jpg",
         "type": "../images/type/rose.svg",
         "taste": [
+            {
+                "url": "../images/taste/drink.svg"
+            },
+            {
+                "url": "../images/taste/fish.svg"
+            },
             {
                 "url": "../images/taste/seafood.svg"
             },
             {
-                "url": "../images/taste/chilli.svg"
-            },
-            {
-                "url": "../images/taste/drink.svg"
+                "url": "../images/taste/vegetable.svg"
             }
-        ],
-        "price": "299"
+        ]
     }
 ]
