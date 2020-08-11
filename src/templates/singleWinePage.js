@@ -90,8 +90,9 @@ font-family: Assistant;
 }
 
 #icon-img{
-    ${ tw` mr-2 mt-0 mb-1`}
-    width: 20px;
+    ${ tw` m-2`}
+   max-width: 20px;
+   min-width: 20px;
     max-height: 20px;
 }
 

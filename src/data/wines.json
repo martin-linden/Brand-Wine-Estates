@@ -16,16 +16,19 @@
         "acid": "8,5",
         "sweetness": "7,5",
         "image": "../images/wines/1.jpg",
-        "type": "../images/type/rose.svg",
+        "type": "../images/type/gold-circle.svg",
         "taste": [
             {
-                "url": "../images/taste/seafood.svg"
+                "url": "../images/taste/company.svg"
             },
             {
                 "url": "../images/taste/fish.svg"
             },
             {
                 "url": "../images/taste/drink.svg"
+            },
+            {
+                "url": "../images/taste/seafood.svg"
             }
         ],
         "text": "Hej hopp."
@@ -47,16 +50,19 @@
         "acid": "5,5",
         "sweetness": "8",
         "image": "../images/wines/2.jpg",
-        "type": "../images/type/rose.svg",
+        "type": "../images/type/gold-circle.svg",
         "taste": [
             {
-                "url": "../images/taste/seafood.svg"
+                "url": "../images/taste/company.svg"
             },
             {
                 "url": "../images/taste/fish.svg"
             },
             {
                 "url": "../images/taste/drink.svg"
+            },
+            {
+                "url": "../images/taste/seafood.svg"
             }
         ]
     },
@@ -77,7 +83,7 @@
         "acid": "6",
         "sweetness": "< 3",
         "image": "../images/wines/3.jpg",
-        "type": "../images/type/white.svg",
+        "type": "../images/type/white-circle.svg",
         "taste": [
             {
                 "url": "../images/taste/seafood.svg"
@@ -107,7 +113,7 @@
         "acid": "7,5",
         "sweetness": "< 3",
         "image": "../images/wines/4.png",
-        "type": "../images/type/white.svg",
+        "type": "../images/type/white-circle.svg",
         "taste": [
             {
                 "url": "../images/taste/seafood.svg"
@@ -140,7 +146,7 @@
         "acid": "6,3",
         "sweetness": "< 3",
         "image": "../images/wines/5.png",
-        "type": "../images/type/red.svg",
+        "type": "../images/type/red-circle.svg",
         "taste": [
             {
                 "url": "../images/taste/beef.svg"
@@ -173,7 +179,7 @@
         "acid": "5",
         "sweetness": "< 3",
         "image": "../images/wines/6.jpg",
-        "type": "../images/type/rose.svg",
+        "type": "../images/type/rose-circle.svg",
         "taste": [
             {
                 "url": "../images/taste/drink.svg"

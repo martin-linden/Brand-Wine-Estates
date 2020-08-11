@@ -14,6 +14,7 @@ const WineCard = (props) => {
             <Image
                 fixed={props.image.childImageSharp.fixed}
                 style={{ maxWidth: 70, maxHeight: 200, minWidth: 70, minHeight: 200 }}
+            //imgStyle={{ objectFit: 'stretch' }}
 
             />
 
@@ -64,8 +65,8 @@ text-align: center;
 
 #icon-img{
     ${ tw` mt-1 mb-1`}
-    width: 20px;
-    max-height: 20px;
+    
+    max-height: 16px;
 }
 
 h4{
