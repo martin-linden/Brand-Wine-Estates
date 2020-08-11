@@ -21,8 +21,8 @@ query  {
 		year
 		image {
 		  childImageSharp {
-			fluid {
-				...GatsbyImageSharpFluid
+			fixed {
+				...GatsbyImageSharpFixed
 			}
 		  }
 		}

@@ -10,11 +10,13 @@ const WineCard = (props) => {
 
     return (
         <CardWrapper onClick={() => navigate(`/wines/${props.slug}`)}>
-            <div className="wine-wrapper">
-                <Image
-                    fluid={props.image.childImageSharp.fluid}
-                />
-            </div>
+
+            <Image
+                fixed={props.image.childImageSharp.fixed}
+                style={{ maxWidth: 70, maxHeight: 200, minWidth: 70, minHeight: 200 }}
+
+            />
+
             <div className="info-section">
                 <h5>{props.producer}</h5>
                 <h4>{props.name}</h4>
@@ -39,11 +41,13 @@ background: #fff;
 border-radius: 5px;
 display: flex;
 flex-direction: column;
-justify-content: flex-end;
+justify-content: center;
 align-items: center;
+text-align: center;
 
 .wine-wrapper{
-    width: 70px;
+  
+    
     
    
     
@@ -57,12 +61,7 @@ align-items: center;
     ${ tw`flex items-center`}
 }
 
-#wine-img{
-    ${ tw` m-0 `}
-    width: 70px;
-    max-height: 210px;
-    min-height: 210px;
-}
+
 #icon-img{
     ${ tw` mt-1 mb-1`}
     width: 20px;
