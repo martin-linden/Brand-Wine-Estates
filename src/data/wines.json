@@ -228,8 +228,8 @@
     {
         "id": 8,
         "producer": "Domaine Michel Briday",
-        "slug": "1er-cru-la-pucelle ",
-        "name": "1er Cru La Pucelle ",
+        "slug": "rully-1er-cru-la-pucelle",
+        "name": "Rully 1er Cru La Pucelle",
         "year": "2017",
         "country": "Frankrike",
         "region": "Bourgogne, Rully ",
@@ -252,6 +252,129 @@
             },
             {
                 "url": "../images/taste/seafood.svg"
+            }
+        ]
+    },
+    {
+        "id": 9,
+        "producer": "Domaine Michel Briday",
+        "slug": "rully-1er-cru-gresigny ",
+        "name": "Rully 1er Cru Gresigny ",
+        "year": "2018",
+        "country": "Frankrike",
+        "region": "Bourgogne, Rully ",
+        "grape": "100% Chardonnay",
+        "alcohol": "13,5",
+        "volume": "750",
+        "temp": "10-12",
+        "number": "74420",
+        "link": "https://www.systembolaget.se/dryck/vita-viner/michel-briday-7442001",
+        "acid": "6,5",
+        "sweetness": "< 3",
+        "image": "../images/wines/9.jpg",
+        "type": "../images/type/white-circle.svg",
+        "taste": [
+            {
+                "url": "../images/taste/bird.svg"
+            },
+            {
+                "url": "../images/taste/fish.svg"
+            },
+            {
+                "url": "../images/taste/seafood.svg"
+            }
+        ]
+    },
+    {
+        "id": 10,
+        "producer": "Domaine Michel Briday",
+        "slug": "clos-de-remenot",
+        "name": "Clos De Remenot",
+        "year": "2018",
+        "country": "Frankrike",
+        "region": "Bourgogne, Rully ",
+        "grape": "100% Chardonnay",
+        "alcohol": "13,0",
+        "volume": "750",
+        "temp": "10-12",
+        "number": "76353",
+        "link": "https://www.systembolaget.se/dryck/vita-viner/michel-briday-rully-7635301",
+        "acid": "6,5",
+        "sweetness": "< 3",
+        "image": "../images/wines/10.jpg",
+        "type": "../images/type/white-circle.svg",
+        "taste": [
+            {
+                "url": "../images/taste/bird.svg"
+            },
+            {
+                "url": "../images/taste/fish.svg"
+            },
+            {
+                "url": "../images/taste/seafood.svg"
+            }
+        ]
+    },
+    {
+        "id": 11,
+        "producer": "Domaine Michel Briday",
+        "slug": "rully-1er-cru-champs-cloux",
+        "name": "Rully 1er Cru Champs Cloux",
+        "year": "2017",
+        "country": "Frankrike",
+        "region": "Bourgogne, Rully ",
+        "grape": "100% Pinot Noir ",
+        "alcohol": "13,5",
+        "volume": "750",
+        "temp": "12-15",
+        "number": "78275",
+        "link": "https://www.systembolaget.se/dryck/roda-viner/michel-briday-7827501",
+        "acid": "6",
+        "sweetness": "< 3",
+        "image": "../images/wines/11.jpg",
+        "type": "../images/type/red-circle.svg",
+        "taste": [
+            {
+                "url": "../images/taste/bird.svg"
+            },
+            {
+                "url": "../images/taste/elk.svg"
+            },
+            {
+                "url": "../images/taste/lamb.svg"
+            },
+            {
+                "url": "../images/taste/vegetable.svg"
+            }
+        ]
+    },
+    {
+        "id": 12,
+        "producer": "Domaine Michel Briday",
+        "slug": "1er-cru-les-chanlins-magnum",
+        "name": "1er Cru Les Chanlins Magnum",
+        "year": "2017",
+        "country": "Frankrike",
+        "region": "Bourgogne, Pommard",
+        "grape": "100% Pinot Noir ",
+        "alcohol": "13,0",
+        "volume": "1500",
+        "temp": "12-15",
+        "number": "78275",
+        "link": "https://www.systembolaget.se/dryck/roda-viner/michel-briday-7827501",
+        "acid": "5,3",
+        "sweetness": "< 3",
+        "image": "../images/wines/default.jpg",
+        "type": "../images/type/red-circle.svg",
+        "taste": [
+            {
+                "url": "../images/taste/elk.svg"
+            },
+            {
+                "url": "../images/taste/beef.svg"
+            },
+            {
+                "url": "../images/taste/vegetable.svg"
             }
         ]
     }
