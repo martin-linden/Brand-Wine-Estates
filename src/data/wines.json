@@ -112,7 +112,7 @@
         "link": "https://www.systembolaget.se/dryck/vita-viner/simpsons-7890201",
         "acid": "7,5",
         "sweetness": "< 3",
-        "image": "../images/wines/4.png",
+        "image": "../images/wines/4.jpg",
         "type": "../images/type/white-circle.svg",
         "taste": [
             {
@@ -145,7 +145,7 @@
         "link": "https://www.systembolaget.se/dryck/roda-viner/simpsons-7632901",
         "acid": "6,3",
         "sweetness": "< 3",
-        "image": "../images/wines/5.png",
+        "image": "../images/wines/5.jpg",
         "type": "../images/type/red-circle.svg",
         "taste": [
             {
@@ -192,6 +192,66 @@
             },
             {
                 "url": "../images/taste/vegetable.svg"
+            }
+        ]
+    },
+    {
+        "id": 7,
+        "producer": "Domaine Michel Briday",
+        "slug": "bourgogne-blanc",
+        "name": "Bourgogne Blanc",
+        "year": "2016",
+        "country": "Frankrike",
+        "region": "Bourgogne",
+        "grape": "100% Chardonnay",
+        "alcohol": "13,0",
+        "volume": "750",
+        "temp": "10-12",
+        "number": "",
+        "link": "",
+        "acid": "5,3",
+        "sweetness": "< 3",
+        "image": "../images/wines/default.jpg",
+        "type": "../images/type/white-circle.svg",
+        "taste": [
+            {
+                "url": "../images/taste/bird.svg"
+            },
+            {
+                "url": "../images/taste/fish.svg"
+            },
+            {
+                "url": "../images/taste/seafood.svg"
+            }
+        ]
+    },
+    {
+        "id": 8,
+        "producer": "Domaine Michel Briday",
+        "slug": "1er-cru-la-pucelle ",
+        "name": "1er Cru La Pucelle ",
+        "year": "2017",
+        "country": "Frankrike",
+        "region": "Bourgogne, Rully ",
+        "grape": "100% Chardonnay",
+        "alcohol": "13,0",
+        "volume": "750",
+        "temp": "10-12",
+        "number": "79840",
+        "link": "https://www.systembolaget.se/dryck/vita-viner/michel-briday-7984001",
+        "acid": "6,5",
+        "sweetness": "< 3",
+        "image": "../images/wines/8.jpg",
+        "type": "../images/type/white-circle.svg",
+        "taste": [
+            {
+                "url": "../images/taste/bird.svg"
+            },
+            {
+                "url": "../images/taste/fish.svg"
+            },
+            {
+                "url": "../images/taste/seafood.svg"
             }
         ]
     }

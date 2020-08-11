@@ -13,8 +13,9 @@ const WineCard = (props) => {
 
             <Image
                 fixed={props.image.childImageSharp.fixed}
-                style={{ maxWidth: 70, maxHeight: 200, minWidth: 70, minHeight: 200 }}
-            //imgStyle={{ objectFit: 'stretch' }}
+                style={{ maxWidth: 70 }}
+                imgStyle={{ objectFit: 'cover' }}
+            // className="wine-wrapper"
 
             />
 
@@ -46,13 +47,10 @@ justify-content: center;
 align-items: center;
 text-align: center;
 
-.wine-wrapper{
-  
-    
-    
-   
-    
-}
+/* .wine-wrapper{
+    max-width: 100px;
+    min-width: 100px;
+} */
 
 .info-section{
     ${ tw`mt-5 `}
