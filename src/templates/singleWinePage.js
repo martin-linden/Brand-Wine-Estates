@@ -16,8 +16,8 @@ query ($slug: String!) {
       year
       image {
         childImageSharp {
-          fluid {
-            ...GatsbyImageSharpFluid
+          fixed {
+            ...GatsbyImageSharpFixed
           }
         }
       }
@@ -46,8 +46,10 @@ const singleWinePage = ({ data }) => {
       <CardWrapper>
         <div className="wine-wrapper">
           <Image
-            fluid={wine.image.childImageSharp.fluid}
+            fixed={wine.image.childImageSharp.fixed}
             alt={wine.title}
+            imgStyle={{ objectFit: 'contain' }}
+            className="wine-wrapper"
           />
         </div>
         <div className="content-wrapper">
@@ -86,7 +88,9 @@ border-radius: 5px;
 font-family: Assistant;
 
 .wine-wrapper{
-    width: 200px;
+    max-width: 200px;
+    max-height: 500px;
+    
 }
 
 #icon-img{
