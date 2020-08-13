@@ -89,25 +89,25 @@ const singleWinePage = ({ data }) => {
         </div>
       </CardWrapper >
       {/* <h4 id="center-text">Mer fakta:</h4> */}
-      <MoreFacts>
-        <div>
-          <div>
+      <MoreFactsWrapper>
+        <MoreFacts>
+          <div className="test">
             <p>Land: {wine.country}</p>
             <p>Region: {wine.region}</p>
             <p>Producent: {wine.producer}</p>
           </div>
-          <div>
+          <div className="test">
             <p>Druva: {wine.grape}</p>
             <p>Alkoholhalt: {wine.alcohol}</p>
             <p>Flaska: {wine.volume}</p>
           </div>
-          <div>
+          <div className="test">
             <p>Syra: {wine.acid}</p>
             <p>Sötma: {wine.sweetness}</p>
             <p>temperatur: {wine.temp}</p>
           </div>
-        </div>
-      </MoreFacts>
+        </MoreFacts>
+      </MoreFactsWrapper>
 
 
 
@@ -192,19 +192,31 @@ img{
 
 `
 
+const MoreFactsWrapper = styled.div`
+${ tw` flex justify-center`}
+margin-top: 30px;
+margin-bottom: 50px;
+
+
+`;
+
 const MoreFacts = styled.div`
-${ tw` flex justify-around`}
+${ tw` grid grid-cols-3 gap-12 `}
 margin-top: 100px;
 text-align: start;
+text-align: center; 
+@media (max-width: 1060px) {
+  ${ tw`grid-cols-1`}
+    }
 
-@media (min-width: 2200px) {
-    margin-left: 350px;
-    margin-right: 350px;
-    }
-    
-    @media (max-width: 1060px) {
-      ${ tw`flex-col  items-center`}
-    }
+.test{
+  ${ tw``}
+  /* background: #fb9c9c;
+  padding: 20px;
+  color: white;
+  border-radius: 2px; */
+}
+
 
 .underline{
   text-decoration: underline;
