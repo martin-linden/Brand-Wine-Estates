@@ -129,7 +129,8 @@
             {
                 "url": "../images/taste/vegetable.svg"
             }
-        ]
+        ],
+        "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
     },
     {
         "id": 5,
@@ -264,8 +265,8 @@
     {
         "id": 9,
         "producer": "Domaine Michel Briday",
-        "slug": "rully-1er-cru-gresigny ",
-        "name": "Rully 1er Cru Gresigny ",
+        "slug": "rully-1er-cru-gresigny",
+        "name": "Rully 1er Cru Gresigny",
         "year": "2018",
         "country": "Frankrike",
         "region": "Bourgogne, Rully ",
@@ -408,7 +409,7 @@
         "type": "../images/type/white-circle.svg",
         "taste": [
             {
-                "url": "../images/seafood/elk.svg"
+                "url": "../images/taste/elk.svg"
             },
             {
                 "url": "../images/taste/fish.svg"
@@ -439,7 +440,7 @@
         "type": "../images/type/white-circle.svg",
         "taste": [
             {
-                "url": "../images/seafood/elk.svg"
+                "url": "../images/taste/elk.svg"
             },
             {
                 "url": "../images/taste/fish.svg"
@@ -470,7 +471,7 @@
         "type": "../images/type/white-circle.svg",
         "taste": [
             {
-                "url": "../images/seafood/elk.svg"
+                "url": "../images/taste/elk.svg"
             },
             {
                 "url": "../images/taste/fish.svg"
@@ -501,7 +502,7 @@
         "type": "../images/type/white-circle.svg",
         "taste": [
             {
-                "url": "../images/seafood/elk.svg"
+                "url": "../images/taste/elk.svg"
             },
             {
                 "url": "../images/taste/fish.svg"
@@ -532,10 +533,10 @@
         "type": "../images/type/red-circle.svg",
         "taste": [
             {
-                "url": "../images/bird/elk.svg"
+                "url": "../images/taste/birdsvg"
             },
             {
-                "url": "../images/beef/fish.svg"
+                "url": "../images/taste/beef.svg"
             },
             {
                 "url": "../images/taste/vegetable.svg"
@@ -563,10 +564,10 @@
         "type": "../images/type/red-circle.svg",
         "taste": [
             {
-                "url": "../images/bird/elk.svg"
+                "url": "../images/taste/elk.svg"
             },
             {
-                "url": "../images/beef/fish.svg"
+                "url": "../images/taste/fish.svg"
             },
             {
                 "url": "../images/taste/vegetable.svg"
@@ -594,16 +595,13 @@
         "type": "../images/type/red-circle.svg",
         "taste": [
             {
-                "url": "../images/bird/elk.svg"
+                "url": "../images/taste/elk.svg"
             },
             {
-                "url": "../images/beef/fish.svg"
+                "url": "../images/taste/fish.svg"
             },
             {
                 "url": "../images/taste/vegetable.svg"
-            },
-            {
-                "url": "../images/taste/elk.svg"
             }
         ],
         "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
@@ -628,10 +626,10 @@
         "type": "../images/type/red-circle.svg",
         "taste": [
             {
-                "url": "../images/bird/elk.svg"
+                "url": "../images/taste/elk.svg"
             },
             {
-                "url": "../images/beef/fish.svg"
+                "url": "../images/taste/fish.svg"
             },
             {
                 "url": "../images/taste/vegetable.svg"
@@ -662,10 +660,10 @@
         "type": "../images/type/gold-circle.svg",
         "taste": [
             {
-                "url": "../images/bird/drink.svg"
+                "url": "../images/taste/drink.svg"
             },
             {
-                "url": "../images/beef/seafood.svg"
+                "url": "../images/taste/seafood.svg"
             },
             {
                 "url": "../images/taste/fish.svg"
@@ -696,13 +694,450 @@
         "type": "../images/type/gold-circle.svg",
         "taste": [
             {
-                "url": "../images/bird/drink.svg"
+                "url": "../images/taste/drink.svg"
             },
             {
-                "url": "../images/beef/seafood.svg"
+                "url": "../images/taste/seafood.svg"
             },
             {
                 "url": "../images/taste/fish.svg"
+            },
+            {
+                "url": "../images/taste/company.svg"
+            }
+        ],
+        "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+    },
+    {
+        "id": 23,
+        "producer": "Chateau Bel-Air Lagrave",
+        "slug": "chateau-bel-air-lagrave",
+        "name": "Chateau Bel-Air Lagrave",
+        "year": "1997",
+        "country": "Frankrike",
+        "region": "Bordeaux, Moulis-en-Médoc",
+        "grape": "Cabernet Sauvignon 60%, Petit Verdot 5%, Merlot 35%",
+        "alcohol": "12,5",
+        "volume": "750",
+        "temp": "15-16",
+        "number": "",
+        "link": "",
+        "acid": "5",
+        "sweetness": "< 3",
+        "image": "../images/wines/15.jpg",
+        "type": "../images/type/red-circle.svg",
+        "taste": [
+            {
+                "url": "../images/taste/bird.svg"
+            },
+            {
+                "url": "../images/taste/lamb.svg"
+            },
+            {
+                "url": "../images/taste/beef.svg"
+            },
+            {
+                "url": "../images/taste/elk.svg"
+            }
+        ],
+        "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+    },
+    {
+        "id": 24,
+        "producer": "Baronne Guichard",
+        "slug": "chateau-siaurac",
+        "name": "Chateau Siaurac",
+        "year": "2010",
+        "country": "Frankrike",
+        "region": "Bordeaux, Lalande de Pomerol",
+        "grape": "Merlot 80%, Cabernet Franc 20%",
+        "alcohol": "15,0",
+        "volume": "750",
+        "temp": "15-16",
+        "number": "",
+        "link": "",
+        "acid": "5",
+        "sweetness": "< 3",
+        "image": "../images/wines/16.jpg",
+        "type": "../images/type/red-circle.svg",
+        "taste": [
+            {
+                "url": "../images/taste/lamb.svg"
+            },
+            {
+                "url": "../images/taste/beef.svg"
+            },
+            {
+                "url": "../images/taste/elk.svg"
+            }
+        ],
+        "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+    },
+    {
+        "id": 25,
+        "producer": "Chateau Belle Coline",
+        "slug": "chateau-belle-coline",
+        "name": "Chateau Belle Coline",
+        "year": "2014",
+        "country": "Frankrike",
+        "region": "Bordeaux, Côtes de Bordeaux",
+        "grape": "Merlot 90%, Malbec 10%",
+        "alcohol": "13,5",
+        "volume": "750",
+        "temp": "15-16",
+        "number": "",
+        "link": "",
+        "acid": "5,5",
+        "sweetness": "< 3",
+        "image": "../images/wines/17.jpg",
+        "type": "../images/type/red-circle.svg",
+        "taste": [
+            {
+                "url": "../images/taste/lamb.svg"
+            },
+            {
+                "url": "../images/taste/beef.svg"
+            },
+            {
+                "url": "../images/taste/elk.svg"
+            }
+        ],
+        "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+    },
+    {
+        "id": 26,
+        "producer": "La Gironda",
+        "slug": "barbera-d-Asti-superiore-le-nicchie",
+        "name": "Barbera d´Asti Superiore Le Nicchie",
+        "year": "2012",
+        "country": "Italien",
+        "region": "Piemonte",
+        "grape": "100% Barbera",
+        "alcohol": "15,0",
+        "volume": "750",
+        "temp": "12-15",
+        "number": "",
+        "link": "",
+        "acid": "5,5",
+        "sweetness": "< 3",
+        "image": "../images/wines/18.jpg",
+        "type": "../images/type/red-circle.svg",
+        "taste": [
+            {
+                "url": "../images/taste/lamb.svg"
+            },
+            {
+                "url": "../images/taste/beef.svg"
+            },
+            {
+                "url": "../images/taste/elk.svg"
+            }
+        ],
+        "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+    },
+    {
+        "id": 27,
+        "producer": "La Gironda",
+        "slug": "barbera-d-asti-la-gena",
+        "name": "Barbera d´Asti La Gena",
+        "year": "2015",
+        "country": "Italien",
+        "region": "Piemonte",
+        "grape": "100% Barbera",
+        "alcohol": "14,5",
+        "volume": "750",
+        "temp": "12-15",
+        "number": "",
+        "link": "",
+        "acid": "",
+        "sweetness": "",
+        "image": "../images/wines/181.jpg",
+        "type": "../images/type/red-circle.svg",
+        "taste": [
+            {
+                "url": "../images/taste/lamb.svg"
+            },
+            {
+                "url": "../images/taste/beef.svg"
+            },
+            {
+                "url": "../images/taste/elk.svg"
+            }
+        ],
+        "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+    },
+    {
+        "id": 28,
+        "producer": "La Gironda",
+        "slug": "barbera-d-asti-la-lippa",
+        "name": "Barbera d´Asti La Lippa",
+        "year": "2018",
+        "country": "Italien",
+        "region": "Piemonte",
+        "grape": "100% Barbera",
+        "alcohol": "13,5",
+        "volume": "750",
+        "temp": "12-15",
+        "number": "",
+        "link": "",
+        "acid": "5,7",
+        "sweetness": "< 3",
+        "image": "../images/wines/19.jpg",
+        "type": "../images/type/red-circle.svg",
+        "taste": [
+            {
+                "url": "../images/taste/fish.svg"
+            },
+            {
+                "url": "../images/taste/bird.svg"
+            },
+            {
+                "url": "../images/taste/elk.svg"
+            },
+            {
+                "url": "../images/taste/company.svg"
+            }
+        ],
+        "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+    },
+    {
+        "id": 29,
+        "producer": "La Gironda",
+        "slug": "monferrato-rosso-soul",
+        "name": "Monferrato Rosso Soul",
+        "year": "2014",
+        "country": "Italien",
+        "region": "Piemonte",
+        "grape": "Barbera, Cabernet Sauvignon, Merlot",
+        "alcohol": "14,5",
+        "volume": "750",
+        "temp": "12-15",
+        "number": "",
+        "link": "",
+        "acid": "",
+        "sweetness": "",
+        "image": "../images/wines/20.png",
+        "type": "../images/type/red-circle.svg",
+        "taste": [
+            {
+                "url": "../images/taste/lamb.svg"
+            },
+            {
+                "url": "../images/taste/beef.svg"
+            },
+            {
+                "url": "../images/taste/elk.svg"
+            },
+            {
+                "url": "../images/taste/vegetable.svg"
+            }
+        ],
+        "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+    },
+    {
+        "id": 30,
+        "producer": "La Gironda",
+        "slug": "chiesavecchia",
+        "name": "Chiesavecchia",
+        "year": "2015",
+        "country": "Italien",
+        "region": "Piemonte",
+        "grape": "100% Nebbiolo",
+        "alcohol": "14,5",
+        "volume": "750",
+        "temp": "12-15",
+        "number": "",
+        "link": "",
+        "acid": "",
+        "sweetness": "",
+        "image": "../images/wines/21.png",
+        "type": "../images/type/red-circle.svg",
+        "taste": [
+            {
+                "url": "../images/taste/lamb.svg"
+            },
+            {
+                "url": "../images/taste/beef.svg"
+            },
+            {
+                "url": "../images/taste/elk.svg"
+            },
+            {
+                "url": "../images/taste/vegetable.svg"
+            }
+        ],
+        "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+    },
+    {
+        "id": 31,
+        "producer": "La Gironda",
+        "slug": "brachetto-d-acqui",
+        "name": "Brachetto d´Acqui",
+        "year": "2018",
+        "country": "Italien",
+        "region": "Piemonte",
+        "grape": "100% Brachetto",
+        "alcohol": "5,5",
+        "volume": "750",
+        "temp": "8-10",
+        "number": "",
+        "link": "",
+        "acid": "5,6",
+        "sweetness": "117,4",
+        "image": "../images/wines/22.jpg",
+        "type": "../images/type/red-circle.svg",
+        "taste": [
+            {
+                "url": "../images/taste/desert.svg"
+            }
+        ],
+        "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+    },
+    {
+        "id": 32,
+        "producer": "Azienda Agricola Fontaleoni",
+        "slug": "chianti-colli-senesi-docg",
+        "name": "Chianti Colli Senesi DOCG",
+        "year": "2018",
+        "country": "Italien",
+        "region": "Toscana",
+        "grape": "100% Sangiovese",
+        "alcohol": "13,0",
+        "volume": "750",
+        "temp": "12-15",
+        "number": "",
+        "link": "",
+        "acid": "5,8",
+        "sweetness": "< 3",
+        "image": "../images/wines/23.jpg",
+        "type": "../images/type/red-circle.svg",
+        "taste": [
+            {
+                "url": "../images/taste/beef.svg"
+            },
+            {
+                "url": "../images/taste/bird.svg"
+            },
+            {
+                "url": "../images/taste/lamb.svg"
+            }
+        ],
+        "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+    },
+    {
+        "id": 33,
+        "producer": "Azienda Agricola Fontaleoni",
+        "slug": "vernaccia-di-san-gimignano-docg",
+        "name": "Vernaccia di San Gimignano DOCG",
+        "year": "2018",
+        "country": "Italien",
+        "region": "Toscana",
+        "grape": "100% Vernacchia",
+        "alcohol": "12,5",
+        "volume": "750",
+        "temp": "8-10",
+        "number": "",
+        "link": "",
+        "acid": "5,5",
+        "sweetness": "< 3",
+        "image": "../images/wines/24.jpg",
+        "type": "../images/type/white-circle.svg",
+        "taste": [
+            {
+                "url": "../images/taste/fish.svg"
+            },
+            {
+                "url": "../images/taste/seafood.svg"
+            },
+            {
+                "url": "../images/taste/bird.svg"
+            },
+            {
+                "url": "../images/taste/vegetable.svg"
+            }
+        ],
+        "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+    },
+    {
+        "id": 34,
+        "producer": "Domaine Begude",
+        "slug": "bwe-brand-wine-estates-chardonnay",
+        "name": "BWE Brand Wine Estates Chardonnay",
+        "year": "2015",
+        "country": "Frankrike",
+        "region": "Languedoc Roussillon,Limoux",
+        "grape": "100% Chardonnay",
+        "alcohol": "13,5",
+        "volume": "750",
+        "temp": "10-12",
+        "number": "",
+        "link": "",
+        "acid": "5,5",
+        "sweetness": "< 3",
+        "image": "../images/wines/25.jpg",
+        "type": "../images/type/white-circle.svg",
+        "taste": [
+            {
+                "url": "../images/taste/fish.svg"
+            },
+            {
+                "url": "../images/taste/seafood.svg"
+            },
+            {
+                "url": "../images/taste/bird.svg"
+            }
+        ],
+        "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+    },
+    {
+        "id": 35,
+        "producer": "Nao Spirits and Beveraged PVT",
+        "slug": "hapusa-himalayan-dry-gin",
+        "name": "Hapusa Himalayan Dry Gin",
+        "year": "NV",
+        "country": "Indien",
+        "region": "Languedoc Roussillon,Limoux",
+        "grape": "100% Chardonnay",
+        "alcohol": "43,0",
+        "volume": "700",
+        "temp": "8-10",
+        "number": "80450",
+        "link": "https://www.systembolaget.se/dryck/sprit/hapusa-8045001",
+        "acid": "5,5",
+        "sweetness": "< 3",
+        "image": "../images/wines/26.jpg",
+        "type": "../images/type/white-circle.svg",
+        "taste": [
+            {
+                "url": "../images/taste/drink.svg"
+            },
+            {
+                "url": "../images/taste/company.svg"
+            }
+        ],
+        "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+    },
+    {
+        "id": 36,
+        "producer": "Nao Spirits and Beveraged PVT",
+        "slug": "greater-than-london-dry-gin",
+        "name": "Greater Than London Dry Gin",
+        "year": "NV",
+        "country": "Indien",
+        "region": "Languedoc Roussillon,Limoux",
+        "grape": "100% Chardonnay",
+        "alcohol": "40,0",
+        "volume": "700",
+        "temp": "8-10",
+        "number": "",
+        "link": "",
+        "acid": "5,5",
+        "sweetness": "< 3",
+        "image": "../images/wines/default.jpg",
+        "type": "../images/type/white-circle.svg",
+        "taste": [
+            {
+                "url": "../images/taste/drink.svg"
             },
             {
                 "url": "../images/taste/company.svg"
