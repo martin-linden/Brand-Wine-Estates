@@ -1,4 +1,4 @@
-const winesImages = [
+/* const winesImages = [
     require('../images/wines/1.jpg'),
     require('../images/wines/2.jpg'),
     require('../images/wines/3.jpg'),
@@ -9,7 +9,7 @@ const tasteImages = [
     require('../images/taste/seafood.svg'), //0
     require('../images/taste/beef.svg'), // 1
     require('../images/taste/elk.svg'), //2
-    require('../images/taste/fish.svg'), // 3 
+    require('../images/taste/fish.svg'), // 3
     require('../images/taste/drink.svg'), // 4
     require('../images/taste/bird.svg'), // 5
     require('../images/taste/vegetable.svg'), // 6
@@ -80,3 +80,4 @@ export const postData = [
     },
 
 ];
+ */

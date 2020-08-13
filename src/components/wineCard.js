@@ -2,33 +2,30 @@ import React from "react"
 import styled from "styled-components"
 import tw from 'twin.macro'
 import { navigate } from "gatsby";
-
+import Image from 'gatsby-image'
 
 const WineCard = (props) => {
 
 
-    console.log(props);
-    return (
 
-        /* onClick={() => this.handleToggle()} */
+    return (
         <CardWrapper onClick={() => navigate(`/wines/${props.slug}`)}>
-            <div className="wine-bottle">
-                <img src={props.img} id="wine-img" />
-            </div>
+
+            <Image
+                fixed={props.image.childImageSharp.fixed}
+                style={{ maxWidth: 70 }}
+                imgStyle={{ objectFit: 'cover' }}
+            // className="wine-wrapper"
+
+            />
+
             <div className="info-section">
-                <h6>{props.grape}</h6>
+                <h5>{props.producer}</h5>
                 <h4>{props.name}</h4>
-                <h5>{props.producer} - {props.country}</h5>
-                {/* <h5>{props.number}</h5> */}
-                <div className="goes-with">
-                    <img src={props.taste[0]} id="icon-img" />
-                    <img src={props.taste[1]} id="icon-img" />
-                    <img src={props.taste[2]} id="icon-img" />
-                    <img src={props.taste[3]} id="icon-img" />
-                </div>
-                <div className="year-type">
-                    <h5>{`${props.year}`} </h5>  <img src={props.type} id="type-img" />
-                </div>
+                <h5>{props.country} - {props.year}</h5>
+                <img src={props.type.publicURL}
+                    id="icon-img" />
+                <h6>Läs mer</h6>
             </div>
         </CardWrapper >
     )
@@ -38,17 +35,22 @@ export default WineCard;
 
 
 const CardWrapper = styled.div`
-${ tw`shadow flex flex-col justify-start hover:shadow-lg cursor-pointer`}
+${ tw`shadow hover:shadow-lg cursor-pointer`}
 height: 430px;
 width: 235px;
 padding: 20px;
 background: #fff;
 border-radius: 5px;
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+text-align: center;
 
-.wine-bottle{
-    ${ tw`flex justify-center `}
-    
-}
+/* .wine-wrapper{
+    max-width: 100px;
+    min-width: 100px;
+} */
 
 .info-section{
     ${ tw`mt-5 `}
@@ -58,28 +60,16 @@ border-radius: 5px;
     ${ tw`flex items-center`}
 }
 
-#wine-img{
-    ${ tw` m-0 `}
-    width: 70px;
-    max-height: 210px;
-    min-height: 210px;
-}
+
 #icon-img{
-    ${ tw` mr-2 mt-0 mb-1`}
-    width: 20px;
-    max-height: 20px;
+    ${ tw` mt-1 mb-1`}
+    
+    max-height: 16px;
 }
-
-#type-img{
-    ${ tw` mb-1 mt-0 ml-1`}
-    width: 25px;
-    max-height: 23px;
-}
-
 
 h4{
     font-family: Assistant;
-    ${ tw` mb-1 `}
+    ${ tw` mb-2 `}
 }
 
 h3{
@@ -88,11 +78,12 @@ h3{
 }
 h5{
     font-family: Assistant;
-    ${ tw` mb-1 `}
+    ${ tw` mb-2 `}
 }
 h6{
     font-family: Assistant;
-    ${ tw` mb-1 `}
+    ${ tw` mb-1 mt-0 `}
+    
 }
 .goes-with{
     ${ tw` mb-5 mt-5 flex items-center  `}

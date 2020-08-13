@@ -11,10 +11,10 @@ const WineList = (props) => {
     return (
         <Wrapper>
             <WineListWrapper>
-                {props.postData.map(wine =>
+                {props.wineCardData.map(wineCard =>
                     <WineCard
-                        {...wine}
-                        key={wine.id}
+                        {...wineCard}
+                        key={wineCard.id}
                     />
                 )}
 
