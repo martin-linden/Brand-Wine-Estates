@@ -516,7 +516,7 @@
     {
         "id": 17,
         "producer": "Jean-Charles Fagot",
-        "slug": "monthélie-rouge",
+        "slug": "monthelie-rouge",
         "name": "Monthélie Rouge",
         "year": "2017",
         "country": "Frankrike",
@@ -533,7 +533,7 @@
         "type": "../images/type/red-circle.svg",
         "taste": [
             {
-                "url": "../images/taste/birdsvg"
+                "url": "../images/taste/bird.svg"
             },
             {
                 "url": "../images/taste/beef.svg"
