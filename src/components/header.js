@@ -169,6 +169,7 @@ const StyledHeader = styled.div`
     li{
       ${ tw`m-0 mt-1 pl-5 hover:text-gray-500`}
       
+      
     }
 
   
@@ -180,8 +181,8 @@ ${ tw`uppercase flex flex-col justify-center items-center m-0 `}
 list-style: none;
 font-family: Assistant;
 text-align: start;
-background: #ededed;
-box-shadow: 0 1px  #a8a5a3;
+background: #ffe7e7;
+box-shadow: 0 1px  #e5e5e5;
 max-height: 300px;
 overflow: hidden;
 transition: ease-in-out 0.5s;
@@ -198,6 +199,7 @@ transition: max-height 0.5s cubic-bezier(.73,.42,.99,1);
 
 li {
   ${ tw`mt-5`}
+  color: #2c2c2c;
 }
 
 .active{
