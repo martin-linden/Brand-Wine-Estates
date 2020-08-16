@@ -35,7 +35,17 @@ background: #FAF8F8;
 `;
 
 const WineListWrapper = styled.div`
-${ tw` mt-24 mb-24 grid md:grid-cols-4 sm:grid-cols-3 gap-16`}
+${ tw` mt-24 mb-24 grid grid-cols-4 gap-16`}
+
+@media (max-width: 1380px) {
+    ${ tw` grid-cols-3`}
+    }
+@media (max-width: 1090px) {
+    ${ tw` grid-cols-2`}
+    }
+@media (max-width: 670px) {
+    ${ tw` grid-cols-1`}
+    }
 
 
 

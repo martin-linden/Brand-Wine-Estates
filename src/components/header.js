@@ -34,13 +34,13 @@ class Header extends React.Component {
       <React.Fragment>
         <StyledHeader>
           <div className="test">
-            <img id="logo" alt="Brand Wine Estates Logo" src={Logo} />
+            <Link to="/"><img id="logo" alt="Brand Wine Estates Logo" src={Logo} /></Link>
             <ul className="horizontal-menu">
               <li>
                 <Link to="/" activeClassName="active">sortiment</Link>
               </li>
               <li>
-                <Link to="/producent" activeClassName="active">producent</Link>
+                <Link to="/producent" activeClassName="active">producenter</Link>
               </li>
               <li>
                 <Link to="/restaurang" activeClassName="active">Restaurang</Link>

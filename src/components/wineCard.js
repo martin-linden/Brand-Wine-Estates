@@ -11,13 +11,16 @@ const WineCard = (props) => {
     return (
         <CardWrapper onClick={() => navigate(`/wines/${props.slug}`)}>
 
+
             <Image
                 fixed={props.image.childImageSharp.fixed}
 
                 imgStyle={{ objectFit: 'contain' }}
+                style={{ maxWidth: 200 }}
             // className="wine-wrapper"
 
             />
+
 
             <div className="info-section">
                 <h5>{props.producer}</h5>
@@ -51,6 +54,11 @@ text-align: center;
     max-width: 100px;
     min-width: 100px;
 } */
+
+.image-wrapper{
+    max-width: 70px;
+    max-height: 200px;
+}
 
 .info-section{
     ${ tw`mt-5 `}
