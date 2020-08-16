@@ -23,6 +23,7 @@ const StyledFooter = styled.div`
   border-top-style: solid;
   border-top-width: 1px;
   border-top-color: #efefef;
+ 
 p{
   ${ tw`mt-0 mb-0`}
 }

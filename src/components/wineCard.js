@@ -13,8 +13,8 @@ const WineCard = (props) => {
 
             <Image
                 fixed={props.image.childImageSharp.fixed}
-                style={{ maxWidth: 70 }}
-                imgStyle={{ objectFit: 'cover' }}
+
+                imgStyle={{ objectFit: 'contain' }}
             // className="wine-wrapper"
 
             />
