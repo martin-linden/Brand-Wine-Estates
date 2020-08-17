@@ -45,6 +45,12 @@ module.exports = {
 					match: '/:uid',
 					path: '/',
 					component: require.resolve('./src/templates/page.js')
+				},
+				{
+					type: 'Contact',
+					match: '/:uid',
+					path: '/',
+					component: require.resolve('./src/components/contact.js')
 				}
 				]
 			}

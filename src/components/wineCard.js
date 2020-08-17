@@ -7,7 +7,6 @@ import Image from 'gatsby-image'
 const WineCard = (props) => {
 
 
-
     return (
         <CardWrapper onClick={() => navigate(`/wines/${props.slug}`)}>
 
