@@ -1,3 +1,5 @@
+require(`dotenv`).config({ path: `.env.${process.env.NODE_ENV}` });
+
 module.exports = {
 	siteMetadata: {
 		title: `Brand Wine Estates`,
@@ -40,6 +42,7 @@ module.exports = {
 			resolve: 'gatsby-source-prismic-graphql',
 			options: {
 				repositoryName: 'brandwineestates',
+				accessToken: `${process.env.API_KEY}`,
 				pages: [{
 					type: 'Page',
 					match: '/:uid',
