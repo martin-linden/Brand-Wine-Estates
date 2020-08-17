@@ -49,7 +49,7 @@ class Header extends React.Component {
                 <Link to="/recensioner" activeClassName="active">Recensioner</Link>
               </li>
               <li>
-                <Link to="/kontakt" activeClassName="active"> Om oss / kontakt</Link>
+                <Link to="/contact" activeClassName="active"> Om oss / kontakt</Link>
               </li>
             </ul>
           </div>
