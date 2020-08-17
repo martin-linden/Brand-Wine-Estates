@@ -6,17 +6,20 @@ import { graphql } from 'gatsby'
 
 
 export const query = graphql`
-query MyQuery {
-    prismic {
-      allProducerss {
-        edges {
-          node {
-            ttile
+query ProducerQuery {
+  prismic {
+    allTests {
+      edges {
+        node {
+          _meta {
+            id
           }
+          test_title
         }
       }
     }
   }
+}
 
   `;
 
@@ -24,14 +27,16 @@ query MyQuery {
 
 const Producers = (props) => {
 
-    console.log(props);
+  console.log(props.data.prismic.allTests.edges);
 
-    /*  const ProducerData = data.data.allWinesJson.nodes */
-    return (
-        <Layout>
-            <ProducerList producerData={producerData} />
-        </Layout>
-    )
+  console.log(props.data.prismic.allTests.edges[0].node._meta.id);
+
+  /*  const ProducerData = data.data.allWinesJson.nodes */
+  return (
+    <Layout>
+      <ProducerList producerData={producerData} />
+    </Layout>
+  )
 };
 
 export default Producers

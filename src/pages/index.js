@@ -40,7 +40,7 @@ const IndexPage = (data) => {
 
 	const wineCardData = data.data.allWinesJson.nodes
 
-	console.log(data);
+	/* console.log(data); */
 	/* console.log(postData);  */
 	/* console.log(wineCardData); */
 

@@ -39,7 +39,14 @@ module.exports = {
 		{
 			resolve: 'gatsby-source-prismic-graphql',
 			options: {
-				repositoryName: 'brandwineestates'
+				repositoryName: 'brandwineestates',
+				pages: [{
+					type: 'Page',
+					match: '/:uid',
+					path: '/',
+					component: require.resolve('./src/templates/page.js')
+				}
+				]
 			}
 		}
 
