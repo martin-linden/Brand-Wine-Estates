@@ -7,7 +7,7 @@ import { graphql } from 'gatsby'
 import { Helmet } from 'react-helmet'
 
 
-export const test = graphql`
+export const query = graphql`
 query  {
 	allWinesJson {
 	  nodes {
@@ -40,9 +40,9 @@ const IndexPage = (data) => {
 
 	const wineCardData = data.data.allWinesJson.nodes
 
-	/* console.log(props);
-	console.log(postData); */
-	console.log(wineCardData);
+	console.log(data);
+	/* console.log(postData);  */
+	/* console.log(wineCardData); */
 
 
 	return (
