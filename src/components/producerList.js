@@ -6,7 +6,7 @@ import ProducerCard from '../components/producerCard'
 
 const ProducerList = ({ data }) => {
 
-    console.log(data[0].imageSharp);
+
 
     return (
         <Wrapper>
