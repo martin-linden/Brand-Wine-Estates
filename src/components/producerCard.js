@@ -1,22 +1,23 @@
 import React from "react"
 import styled from "styled-components"
 import tw from 'twin.macro'
+import { RichText } from 'prismic-reactjs'
 
 
-const ProducerCard = (props) => {
+const ProducerCard = ({ name, country }) => {
 
 
-    /* console.log(props); */
+    /* console.log(country); */
     return (
 
         <CardWrapper>
             <div className="">
-                <img src={props.img} id="producer-img" />
+
             </div>
             <div className="info-section">
-                <h6>{props.country}</h6>
-                <h4>{props.name}</h4>
-                <h5>Läs mer:{props.link}</h5>
+                <h4>{country}</h4>
+                <h6>{name}</h6>
+                <h5>Läs mer</h5>
             </div>
         </CardWrapper>
     )

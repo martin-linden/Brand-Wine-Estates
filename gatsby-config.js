@@ -42,7 +42,6 @@ module.exports = {
 			resolve: 'gatsby-source-prismic-graphql',
 			options: {
 				repositoryName: 'brandwineestates',
-				accessToken: `${process.env.API_KEY}`,
 				pages: [{
 					type: 'Page',
 					match: '/:uid',

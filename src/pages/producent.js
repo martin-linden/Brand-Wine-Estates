@@ -6,35 +6,44 @@ import { graphql } from 'gatsby'
 
 
 export const query = graphql`
-query ProducerQuery {
+query producerListQuery {
   prismic {
-    allTests {
+    allProducers {
       edges {
         node {
-          _meta {
-            id
+          body {
+            ... on PRISMIC_ProducerBodyProducers {
+              type
+              label
+              fields {
+                country
+                image
+                name
+              }
+            }
           }
-          test_title
         }
       }
     }
   }
 }
-
   `;
 
 
 
-const Producers = (props) => {
+const Producers = (props, i) => {
 
-  console.log(props.data.prismic.allTests.edges);
+  /*   console.log(props.data.prismic.allProducers.edges[0].node.body[0].fields); */
+  const content = props.data.prismic.allProducers.edges[0].node.body[0].fields;
+  /*  console.log(content); */
 
-  console.log(props.data.prismic.allTests.edges[0].node._meta.id);
-
-  /*  const ProducerData = data.data.allWinesJson.nodes */
   return (
     <Layout>
-      <ProducerList producerData={producerData} />
+      <ProducerList
+        data={content}
+        key={i}
+      />
+
     </Layout>
   )
 };

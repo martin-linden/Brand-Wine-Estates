@@ -4,19 +4,20 @@ import tw from 'twin.macro'
 import ProducerCard from '../components/producerCard'
 
 
-const ProducerList = (props) => {
-    /* console.log(props); */
-
+const ProducerList = ({ data }) => {
 
     return (
         <Wrapper>
             <ProducerListWrapper>
-                {props.producerData.map(producer =>
-                    <ProducerCard
-                        {...producer}
-                        key={producer.id}
-                    />
-                )}
+                {data.map((data, i) => {
+                    return (
+                        <ProducerCard
+                            key={i}
+                            name={data.name}
+                            country={data.country}
+                        />
+                    )
+                })}
 
             </ProducerListWrapper>
         </Wrapper>
