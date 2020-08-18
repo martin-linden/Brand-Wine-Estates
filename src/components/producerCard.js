@@ -1,10 +1,10 @@
 import React from "react"
 import styled from "styled-components"
 import tw from 'twin.macro'
-import { RichText } from 'prismic-reactjs'
+import Image from 'gatsby-image'
 
 
-const ProducerCard = ({ name, country }) => {
+const ProducerCard = ({ name, country, imageSharp }) => {
 
 
     /* console.log(country); */
@@ -12,7 +12,9 @@ const ProducerCard = ({ name, country }) => {
 
         <CardWrapper>
             <div className="">
-
+                <Image
+                    fluid={imageSharp}
+                />
             </div>
             <div className="info-section">
                 <h4>{country}</h4>
@@ -27,9 +29,9 @@ export default ProducerCard;
 
 
 const CardWrapper = styled.div`
-${ tw`shadow flex flex-col justify-start hover:shadow-lg cursor-pointer`}
+${ tw`shadow flex flex-col justify-start hover:shadow-lg cursor-pointer p-4`}
 height: auto;
-width: 400px;
+width: 350px;
 background: #fff;
 border-radius: 5px;
 
