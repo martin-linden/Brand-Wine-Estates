@@ -41,3 +41,47 @@ exports.createPages = async ({ actions: { createPage }, graphql }) => {
         })
     })
 }
+
+exports.createPages = async ({ actions: { createPage }, graphql }) => {
+
+
+    const prismicResults = await graphql(`
+    {
+        prismic {
+          allProducers {
+            edges {
+              node {
+                body {
+                  ... on PRISMIC_ProducerBodyProducers {
+                    type
+                    label
+                    fields {
+                      slug
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+   `);
+
+    if (prismicResults.error) {
+        console.error('something');
+
+        return;
+    }
+
+    prismicResults.data.prismic.allProducers.edges[0].node.body[0].fields.forEach(field => {
+        const producers = field.slug;
+
+        createPage({
+            path: `/producers/${producers}/`,
+            component: require.resolve('./src/templates/singleProducerPage.js'),
+            context: {
+                slug: producers,
+            },
+        })
+    })
+}
