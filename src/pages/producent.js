@@ -16,6 +16,7 @@ query producerListQuery {
               label
               fields {
                 country
+                slug
                 image
                 name
                 imageSharp {

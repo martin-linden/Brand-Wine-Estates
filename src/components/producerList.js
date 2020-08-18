@@ -18,6 +18,7 @@ const ProducerList = ({ data }) => {
                             name={data.name}
                             country={data.country}
                             imageSharp={data.imageSharp.childImageSharp.fluid}
+                            slug={data.slug}
                         />
                     )
                 })}

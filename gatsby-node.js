@@ -40,9 +40,6 @@ exports.createPages = async ({ actions: { createPage }, graphql }) => {
             },
         })
     })
-}
-
-exports.createPages = async ({ actions: { createPage }, graphql }) => {
 
 
     const prismicResults = await graphql(`

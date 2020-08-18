@@ -2,15 +2,16 @@ import React from "react"
 import styled from "styled-components"
 import tw from 'twin.macro'
 import Image from 'gatsby-image'
+import { navigate } from "gatsby";
 
 
-const ProducerCard = ({ name, country, imageSharp }) => {
+const ProducerCard = ({ name, country, imageSharp, slug }) => {
 
 
     /* console.log(country); */
     return (
 
-        <CardWrapper>
+        <CardWrapper onClick={() => navigate(`/producers/${slug}`)} >
             <div className="">
                 <Image
                     fluid={imageSharp}
