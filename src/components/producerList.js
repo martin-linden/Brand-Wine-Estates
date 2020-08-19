@@ -6,6 +6,8 @@ import ProducerCard from '../components/producerCard'
 
 const ProducerList = ({ data }) => {
 
+    /* console.log(data[0].link._meta.uid);
+ */
 
 
     return (
@@ -18,7 +20,7 @@ const ProducerList = ({ data }) => {
                             name={data.name}
                             country={data.country}
                             imageSharp={data.imageSharp.childImageSharp.fluid}
-                            slug={data.slug}
+                            link={data.link._meta.uid}
                         />
                     )
                 })}

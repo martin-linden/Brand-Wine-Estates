@@ -3,15 +3,16 @@ import styled from "styled-components"
 import tw from 'twin.macro'
 import Image from 'gatsby-image'
 import { navigate } from "gatsby";
+/* import { Link } from 'prismic-reactjs' */
 
 
-const ProducerCard = ({ name, country, imageSharp, slug }) => {
+const ProducerCard = ({ name, country, imageSharp, link }) => {
 
 
     /* console.log(country); */
     return (
 
-        <CardWrapper onClick={() => navigate(`/producers/${slug}`)} >
+        <CardWrapper onClick={() => navigate(`/${link}`)} >
             <div className="">
                 <Image
                     fluid={imageSharp}

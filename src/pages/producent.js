@@ -16,13 +16,19 @@ query producerListQuery {
               label
               fields {
                 country
-                slug
                 image
                 name
                 imageSharp {
                   childImageSharp {
                     fluid {
                       ...GatsbyImageSharpFluid
+                    }
+                  }
+                }
+                link {
+                  ... on PRISMIC_Page {
+                    _meta {
+                      uid
                     }
                   }
                 }
@@ -34,7 +40,6 @@ query producerListQuery {
     }
   }
 }
-
   `;
 
 

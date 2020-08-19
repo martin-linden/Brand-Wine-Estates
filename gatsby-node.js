@@ -11,7 +11,7 @@
 exports.createPages = async ({ actions: { createPage }, graphql }) => {
 
 
-    const results = await graphql(`
+  const results = await graphql(`
    {
     allWinesJson {
         edges {
@@ -23,62 +23,21 @@ exports.createPages = async ({ actions: { createPage }, graphql }) => {
    }
    `);
 
-    if (results.error) {
-        console.error('something');
+  if (results.error) {
+    console.error('something');
 
-        return;
-    }
+    return;
+  }
 
-    results.data.allWinesJson.edges.forEach(edge => {
-        const wines = edge.node;
+  results.data.allWinesJson.edges.forEach(edge => {
+    const wines = edge.node;
 
-        createPage({
-            path: `/wines/${wines.slug}/`,
-            component: require.resolve('./src/templates/singleWinePage.js'),
-            context: {
-                slug: wines.slug,
-            },
-        })
+    createPage({
+      path: `/wines/${wines.slug}/`,
+      component: require.resolve('./src/templates/singleWinePage.js'),
+      context: {
+        slug: wines.slug,
+      },
     })
-
-
-    const prismicResults = await graphql(`
-    {
-        prismic {
-          allProducers {
-            edges {
-              node {
-                body {
-                  ... on PRISMIC_ProducerBodyProducers {
-                    type
-                    label
-                    fields {
-                      slug
-                    }
-                  }
-                }
-              }
-            }
-          }
-        }
-      }
-   `);
-
-    if (prismicResults.error) {
-        console.error('something');
-
-        return;
-    }
-
-    prismicResults.data.prismic.allProducers.edges[0].node.body[0].fields.forEach(field => {
-        const producers = field.slug;
-
-        createPage({
-            path: `/producers/${producers}/`,
-            component: require.resolve('./src/templates/singleProducerPage.js'),
-            context: {
-                slug: producers,
-            },
-        })
-    })
+  })
 }
