@@ -1,32 +1,26 @@
 import React from "react"
 import styled from "styled-components"
 import tw from 'twin.macro'
-import { navigate } from "gatsby";
 import Image from 'gatsby-image'
 
-const WineCard = (props) => {
+const WineCard = ({ name, country, producer, year, imageSharp, typeImage }) => {
 
 
 
     return (
-        <CardWrapper onClick={() => navigate(`/wines/${props.slug}`)}>
+        <CardWrapper>
 
 
             <Image
-                fixed={props.image.childImageSharp.fixed}
-
+                fixed={imageSharp}
                 imgStyle={{ objectFit: 'contain' }}
                 style={{ maxWidth: 200 }}
-            // className="wine-wrapper"
-
             />
-
-
             <div className="info-section">
-                <h5>{props.producer}</h5>
-                <h4>{props.name}</h4>
-                <h5>{props.country} - {props.year}</h5>
-                <img src={props.type.publicURL}
+                <h5>{producer}</h5>
+                <h4>{name}</h4>
+                <h5>{country} - {year}</h5>
+                <img src={typeImage}
                     id="icon-img" />
                 <h6>Läs mer</h6>
             </div>

@@ -5,110 +5,37 @@ import { graphql } from 'gatsby'
 import Image from 'gatsby-image'
 import Layout from '../components/layout'
 
+
 export const query = graphql`
-query ($slug: String!) {
-    winesJson(slug: {eq: $slug}, type: {publicURL: {}}) {
-      grape
-      name
-      slug
-      country
-      producer
-      alcohol
-      text
-      acid
-      sweetness
-      temp
-      link
-      region
-      volume
-      number
-      year
-      image {
-        childImageSharp {
-          fixed {
-            ...GatsbyImageSharpFixed
+query SingleWineQuery($id: String) {
+  prismic {
+    allSingle_wine_pages(id: $id) {
+      edges {
+        node {
+          _meta {
+            id
           }
-        }
-      }
-      type {
-        publicURL
-      }
-      taste {
-        url {
-          publicURL
+          name
         }
       }
     }
   }
-  
-  
+}
 `;
 
 
 
-const singleWinePage = ({ data }) => {
+const singleWinePage = (props) => {
 
-  const wine = data.winesJson;
+  console.log(props.data.prismic.allSingle_wine_pages.edges[0].node);
+
+  const content = props.data.prismic.allSingle_wine_pages.edges[0].node;
 
   return (
     <Layout>
-      <CardWrapper>
-        <div className="wine-wrapper">
-          <Image
-            fixed={wine.image.childImageSharp.fixed}
-            alt={wine.title}
-            imgStyle={{ objectFit: 'contain' }}
-            className="wine-wrapper"
-          />
-        </div>
-        <div className="content-wrapper">
-          <div>
-            <h4>{wine.producer}</h4>
-            <h3>{wine.name}</h3>
-            <img
-              src={wine.type.publicURL}
-              id="icon-img" />
-          </div>
 
-          <div className="taste-text">
-            <h4>Smakbild:</h4>
-            <p>{wine.text}</p>
-          </div>
-          {wine.number ? <h5>ART:NR: {wine.number}</h5> : null}
-          {wine.link ? <a href={wine.link} target="_blank" id="systemet">Visa på systembolaget</a> : null}
-          <div className="goes-with">
-            <h4>Passar till:</h4>
-            {wine.taste.map((icon) =>
-              <img
-                src={icon.url.publicURL}
-                id="taste-img"
-              />
-            )}
-          </div>
 
-        </div>
-      </CardWrapper >
-
-      <MoreFactsWrapper>
-        <h4>Mer fakta:</h4>
-        <MoreFacts>
-          <div className="test">
-            <p>Land: {wine.country}</p>
-            <p>Region: {wine.region}</p>
-            <p>Producent: {wine.producer}</p>
-          </div>
-          <div className="test">
-            <p>Druva: {wine.grape}</p>
-            <p>Alkoholhalt: {wine.alcohol}</p>
-            <p>Flaska: {wine.volume}</p>
-          </div>
-          <div className="test">
-            <p>Syra: {wine.acid}</p>
-            <p>Sötma: {wine.sweetness}</p>
-            <p>Temperatur: {wine.temp}</p>
-          </div>
-        </MoreFacts>
-      </MoreFactsWrapper>
+      <h1>{content.name}</h1>
 
 
 

@@ -4,19 +4,26 @@ import tw from 'twin.macro'
 import ProducerCard from '../components/producerCard'
 
 
-const ProducerList = (props) => {
-    /* console.log(props); */
+const ProducerList = ({ data }) => {
+
+    /* console.log(data[0].link._meta.uid);
+ */
 
 
     return (
         <Wrapper>
             <ProducerListWrapper>
-                {props.producerData.map(producer =>
-                    <ProducerCard
-                        {...producer}
-                        key={producer.id}
-                    />
-                )}
+                {data.map((data, i) => {
+                    return (
+                        <ProducerCard
+                            key={i}
+                            name={data.name}
+                            country={data.country}
+                            imageSharp={data.imageSharp.childImageSharp.fluid}
+                            link={data.link._meta.uid}
+                        />
+                    )
+                })}
 
             </ProducerListWrapper>
         </Wrapper>
@@ -35,7 +42,7 @@ background: #FAF8F8;
 `;
 
 const ProducerListWrapper = styled.div`
-${ tw` mt-24 mb-24 grid md:grid-cols-3 sm:grid-cols-3 gap-5`}
+${ tw` mt-24 mb-24 grid grid-cols-3 gap-10`}
 
 
 

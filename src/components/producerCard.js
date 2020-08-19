@@ -1,22 +1,27 @@
 import React from "react"
 import styled from "styled-components"
 import tw from 'twin.macro'
+import Image from 'gatsby-image'
+import { navigate } from "gatsby";
+/* import { Link } from 'prismic-reactjs' */
 
 
-const ProducerCard = (props) => {
+const ProducerCard = ({ name, country, imageSharp, link }) => {
 
 
-    /* console.log(props); */
+    /* console.log(country); */
     return (
 
-        <CardWrapper>
+        <CardWrapper onClick={() => navigate(`/${link}`)} >
             <div className="">
-                <img src={props.img} id="producer-img" />
+                <Image
+                    fluid={imageSharp}
+                />
             </div>
             <div className="info-section">
-                <h6>{props.country}</h6>
-                <h4>{props.name}</h4>
-                <h5>Läs mer:{props.link}</h5>
+                <h4>{country}</h4>
+                <h6>{name}</h6>
+                <h5>Läs mer</h5>
             </div>
         </CardWrapper>
     )
@@ -26,9 +31,9 @@ export default ProducerCard;
 
 
 const CardWrapper = styled.div`
-${ tw`shadow flex flex-col justify-start hover:shadow-lg cursor-pointer`}
+${ tw`shadow flex flex-col justify-start hover:shadow-lg cursor-pointer p-4`}
 height: auto;
-width: 400px;
+width: 350px;
 background: #fff;
 border-radius: 5px;
 

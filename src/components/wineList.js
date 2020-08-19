@@ -4,20 +4,26 @@ import tw from 'twin.macro'
 import WineCard from '../components/wineCard'
 
 
-const WineList = (props) => {
-    /* console.log(props); */
+const WineList = ({ data }) => {
 
 
     return (
         <Wrapper>
             <WineListWrapper>
-                {props.wineCardData.map(wineCard =>
-                    <WineCard
-                        {...wineCard}
-                        key={wineCard.id}
-                    />
-                )}
+                {data.map((data, i) => {
+                    return (
+                        <WineCard
+                            key={i}
+                            name={data.name}
+                            country={data.country}
+                            producer={data.producer}
+                            year={data.year}
+                            imageSharp={data.wine_imageSharp.childImageSharp.fixed}
+                            typeImage={data.type_image.url}
 
+                        />
+                    )
+                })}
             </WineListWrapper>
         </Wrapper>
 
