@@ -8,47 +8,54 @@ import { Helmet } from 'react-helmet'
 
 
 export const query = graphql`
-query  {
-	allWinesJson {
-	  nodes {
-		grape
-		id
-		country
-		name
-		number
-		producer
-		slug
-		year
-		image {
-		  childImageSharp {
-			fixed {
-				...GatsbyImageSharpFixed
+query WineListQuery {
+	prismic {
+	  allWine_lists {
+		edges {
+		  node {
+			body {
+			  ... on PRISMIC_Wine_listBodyWine_list {
+				fields {
+				  country
+				  name
+				  producer
+				  type_image
+				  year
+				  wine_image
+				  wine_imageSharp {
+					childImageSharp {
+					  fixed {
+						...GatsbyImageSharpFixed
+					  }
+					}
+				  }
+				}
+			  }
 			}
 		  }
-		}
-		type {
-		  publicURL
 		}
 	  }
 	}
   }
+  
 `;
 
 
 
-const IndexPage = (data) => {
+const IndexPage = (props, i) => {
 
-	const wineCardData = data.data.allWinesJson.nodes
+	/* console.log(props.data.prismic.allWine_lists.edges[0].node.body[0].fields) */
 
-	/* console.log(data); */
-	/* console.log(postData);  */
-	/* console.log(wineCardData); */
+	const content = props.data.prismic.allWine_lists.edges[0].node.body[0].fields
 
+	console.log(content);
 
 	return (
 		<Layout>
 			<WineList
-				wineCardData={wineCardData} />
+				data={content}
+				key={i} />
+
 			<Helmet>
 				<title>Brand Wine Estates</title>
 				<meta
