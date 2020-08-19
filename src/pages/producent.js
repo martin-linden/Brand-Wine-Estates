@@ -26,7 +26,7 @@ query producerListQuery {
                   }
                 }
                 link {
-                  ... on PRISMIC_Page {
+                  ... on PRISMIC_Single_producer_page {
                     _meta {
                       uid
                     }

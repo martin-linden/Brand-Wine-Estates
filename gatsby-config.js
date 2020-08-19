@@ -53,6 +53,12 @@ module.exports = {
 					match: '/:uid',
 					path: '/',
 					component: require.resolve('./src/pages/contact.js')
+				},
+				{
+					type: 'Single_Producer_Page',
+					match: '/:uid',
+					path: '/',
+					component: require.resolve('./src/templates/singleProducerPage.js')
 				}
 				]
 			}
