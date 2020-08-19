@@ -59,6 +59,12 @@ module.exports = {
 					match: '/:uid',
 					path: '/',
 					component: require.resolve('./src/templates/singleProducerPage.js')
+				},
+				{
+					type: 'Single_Wine_Page',
+					match: '/:uid',
+					path: '/',
+					component: require.resolve('./src/templates/singleWinePage.js')
 				}
 				]
 			}
