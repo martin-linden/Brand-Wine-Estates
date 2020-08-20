@@ -4,6 +4,7 @@ import tw from 'twin.macro'
 import { graphql } from 'gatsby'
 import Image from 'gatsby-image'
 import Layout from '../components/layout'
+import { RichText } from 'prismic-reactjs'
 
 
 export const query = graphql`
@@ -16,29 +17,115 @@ query SingleWineQuery($id: String) {
             id
           }
           name
+          grape
+          extern_link {
+            ... on PRISMIC__ExternalLink {
+              _linkType
+              url
+            }
+          }
+          acidity
+          alcohol
+          country
+          number
+          producer
+          product_sheet {
+            ... on PRISMIC__FileLink {
+              _linkType
+              url
+            }
+          }
+          region
+          sweetness
+          temp
+          text
+          type
+          volume
+          year
+          wine_image
+          wine_imageSharp {
+            childImageSharp {
+              fixed {
+                ...GatsbyImageSharpFixed
+              }
+            }
+          }
+          type_image
         }
       }
     }
   }
 }
+
 `;
 
 
 
 const singleWinePage = (props) => {
 
-  console.log(props.data.prismic.allSingle_wine_pages.edges[0].node);
+  /*   console.log(props.data.prismic.allSingle_wine_pages.edges[0].node);
+    console.log(props.data.prismic.allSingle_wine_pages.edges[0].node.extern_link.url); */
 
   const content = props.data.prismic.allSingle_wine_pages.edges[0].node;
 
   return (
     <Layout>
+      <CardWrapper>
+        <div className="wine-wrapper">
+          <Image
+            fixed={content.wine_imageSharp.childImageSharp.fixed}
+            imgStyle={{ objectFit: 'contain' }}
+            className="wine-wrapper"
+          />
+        </div>
+        <div className="content-wrapper">
+          <div>
+            <h4>{content.producer}</h4>
+            <h3>{content.name}</h3>
+            <img
+              src={content.type_image.url}
+              id="icon-img" />
+          </div>
 
+          <div className="taste-text">
+            <h4>Smakbild:</h4>
+            <RichText render={content.text} />
+          </div>
+          {content.number ? <h5>ART:NR: {content.number}</h5> : null}
+          {content.extern_link.url ? <a href={content.extern_link.url} target="_blank" id="systemet">Visa på systembolaget</a> : null}
+          {/* <div className="goes-with">
+            <h4>Passar till:</h4>
+            {wine.taste.map((icon) =>
+              <img
+                src={icon.url.publicURL}
+                id="taste-img"
+              />
+            )}
+          </div>
+ */}
+        </div>
+      </CardWrapper >
 
-      <h1>{content.name}</h1>
-
-
-
+      <MoreFactsWrapper>
+        <h4>Mer fakta:</h4>
+        <MoreFacts>
+          <div className="test">
+            <p>Land: {content.country}</p>
+            <p>Region: {content.region}</p>
+            <p>Producent: {content.producer}</p>
+          </div>
+          <div className="test">
+            <p>Druva: {content.grape}</p>
+            <p>Alkoholhalt: {content.alcohol}</p>
+            <p>Flaska: {content.volume}</p>
+          </div>
+          <div className="test">
+            <p>Syra: {content.acidity}</p>
+            <p>Sötma: {content.sweetness}</p>
+            <p>Temperatur: {content.temp}</p>
+          </div>
+        </MoreFacts>
+      </MoreFactsWrapper>
     </Layout>
   )
 };
