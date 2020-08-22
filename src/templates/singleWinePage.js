@@ -51,22 +51,32 @@ query SingleWineQuery($id: String) {
             }
           }
           type_image
+          body {
+            ... on PRISMIC_Single_wine_pageBodyCategory {
+              type
+              fields {
+                category_icon
+                category_text
+              }
+            }
+          }
         }
       }
     }
   }
 }
-
 `;
 
 
 
 const singleWinePage = (props) => {
 
-  console.log(props.data.prismic.allSingle_wine_pages.edges[0].node);
-  console.log(props.data.prismic.allSingle_wine_pages.edges[0].node.product_sheet.url);
+  /* console.log(props.data.prismic.allSingle_wine_pages.edges[0].node.body[0].fields[0].category_text);
+  console.log(props.data.prismic.allSingle_wine_pages.edges[0].node.body[0].fields[0].category_icon.url); */
+  /* console.log(props.data.prismic.allSingle_wine_pages.edges[0]); */
 
   const content = props.data.prismic.allSingle_wine_pages.edges[0].node;
+  const iconSlice = props.data.prismic.allSingle_wine_pages.edges[0].node.body[0].fields;
 
   return (
     <Layout>
@@ -88,13 +98,25 @@ const singleWinePage = (props) => {
             <img
               src={content.type_image.url}
               id="icon-img" />
-
           </div>
 
 
           <div className="taste-text">
-            <h4>Smakbild:</h4>
             <RichText render={content.text} />
+          </div>
+          <div className="goes-with">
+
+            {iconSlice.map((icon, i) =>
+              <>
+                <img
+                  src={icon.category_icon.url}
+                  id="taste-img"
+                  key={i}
+                />
+                <p id="icon-text">{icon.category_text}</p>
+
+              </>
+            )}
           </div>
           <div>
             {content.number ? <h5>ART:NR: {content.number}</h5> : null}
@@ -103,16 +125,8 @@ const singleWinePage = (props) => {
           <div>
             {content.product_sheet.url ? <a href={content.product_sheet.url} target="_blank" id="link">Ladda ner produkblad</a> : null}
           </div>
-          {/* <div className="goes-with">
-            <h4>Passar till:</h4>
-            {wine.taste.map((icon) =>
-              <img
-                src={icon.url.publicURL}
-                id="taste-img"
-              />
-            )}
-          </div>
- */}
+
+
         </div>
       </CardWrapper >
 
@@ -204,25 +218,29 @@ font-family: Assistant;
 }
 
 #icon-img{
-    ${ tw` mt-2`}
+    ${ tw` `}
    max-width: 20px;
    min-width: 20px;
-    max-height: 20px;
+  max-height: 20px;
+    margin-bottom: 0px;
 }
 
 #taste-img{
-    ${ tw` mr-3`}
-   max-width: 25px;
-   min-width: 25px;
-    max-height: 20px;
+    ${ tw` mb-0 mr-3`}
+    max-height: 28px;
+    max-width: 30px;
 }
 
-.taste-text{
-  
+#icon-text{
+  margin:0 
 }
 
 .goes-with{
-  ${ tw` mt-2 `}
+  ${ tw` mt-2 mb-6 flex items-center flex-wrap`}
+}
+
+#icon-text{
+  margin-right: 20px;
 }
 
 h2{
