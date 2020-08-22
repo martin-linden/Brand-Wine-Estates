@@ -107,20 +107,20 @@ const singleWinePage = (props) => {
           <div className="goes-with">
 
             {iconSlice.map((icon, i) =>
-              <>
+              <div className="category-wrapper">
                 <img
                   src={icon.category_icon.url}
                   id="taste-img"
                   key={i}
                 />
-                <p id="icon-text">{icon.category_text}</p>
+                <p>{icon.category_text}</p>
 
-              </>
+              </div>
             )}
           </div>
-          <div>
-            {content.number ? <h5>ART:NR: {content.number}</h5> : null}
+          <div className="extern-link">
             {content ? <a href={content.extern_link.url} target="_blank" id="link">Visa på systembolaget</a> : null}
+            {content.number ? <h5 id="art-number">ART:NR: {content.number}</h5> : null}
           </div>
           <div>
             {content.product_sheet.url ? <a href={content.product_sheet.url} target="_blank" id="link">Ladda ner produkblad</a> : null}
@@ -206,6 +206,11 @@ font-family: Assistant;
   
 }
 
+.category-wrapper{
+  ${ tw` flex`}
+  margin-right: 45px;
+}
+
 .type{
   display: flex;
   align-items: center;
@@ -215,6 +220,10 @@ font-family: Assistant;
 #type-text{
   margin-bottom: 0;
   margin-right: 10px;
+}
+
+.extern-link{
+  ${ tw` flex items-center`}
 }
 
 #icon-img{
@@ -231,17 +240,20 @@ font-family: Assistant;
     max-width: 30px;
 }
 
-#icon-text{
-  margin:0 
-}
+
 
 .goes-with{
   ${ tw` mt-2 mb-6 flex items-center flex-wrap`}
 }
 
-#icon-text{
-  margin-right: 20px;
+#art-number{
+  margin-bottom:0px;
+  margin-top: 0px;
+  margin-left: 10px;
 }
+
+
+
 
 h2{
     font-family: Assistant;
@@ -260,7 +272,7 @@ h3{
 }
 h5{
     font-family: Assistant;
-    ${ tw` mb-2 `}
+    ${ tw` mb-5 `}
 }
 h6{
     font-family: Assistant;
