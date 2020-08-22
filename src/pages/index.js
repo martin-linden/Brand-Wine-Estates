@@ -29,6 +29,15 @@ query WineListQuery {
 					  }
 					}
 				  }
+				  link {
+					... on PRISMIC_Single_wine_page {
+					  wine_image
+					  type_image
+					  _meta {
+						uid
+					  }
+					}
+				  }
 				}
 			  }
 			}
@@ -37,7 +46,6 @@ query WineListQuery {
 	  }
 	}
   }
-  
 `;
 
 
@@ -48,7 +56,7 @@ const IndexPage = (props, i) => {
 
 	const content = props.data.prismic.allWine_lists.edges[0].node.body[0].fields
 
-	console.log(content);
+	/* console.log(content); */
 
 	return (
 		<Layout>

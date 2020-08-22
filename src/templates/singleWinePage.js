@@ -63,8 +63,8 @@ query SingleWineQuery($id: String) {
 
 const singleWinePage = (props) => {
 
-  /*   console.log(props.data.prismic.allSingle_wine_pages.edges[0].node);
-    console.log(props.data.prismic.allSingle_wine_pages.edges[0].node.extern_link.url); */
+  console.log(props.data.prismic.allSingle_wine_pages.edges[0].node);
+  console.log(props.data.prismic.allSingle_wine_pages.edges[0].node.product_sheet.url);
 
   const content = props.data.prismic.allSingle_wine_pages.edges[0].node;
 
@@ -79,20 +79,30 @@ const singleWinePage = (props) => {
           />
         </div>
         <div className="content-wrapper">
-          <div>
-            <h4>{content.producer}</h4>
-            <h3>{content.name}</h3>
+
+          <h4>{content.producer}</h4>
+
+          <h3>{content.name}</h3>
+          <div className="type">
+            <h4 id="type-text">{content.type}</h4>
             <img
               src={content.type_image.url}
               id="icon-img" />
+
           </div>
+
 
           <div className="taste-text">
             <h4>Smakbild:</h4>
             <RichText render={content.text} />
           </div>
-          {content.number ? <h5>ART:NR: {content.number}</h5> : null}
-          {content.extern_link.url ? <a href={content.extern_link.url} target="_blank" id="systemet">Visa på systembolaget</a> : null}
+          <div>
+            {content.number ? <h5>ART:NR: {content.number}</h5> : null}
+            {content ? <a href={content.extern_link.url} target="_blank" id="link">Visa på systembolaget</a> : null}
+          </div>
+          <div>
+            {content.product_sheet.url ? <a href={content.product_sheet.url} target="_blank" id="link">Ladda ner produkblad</a> : null}
+          </div>
           {/* <div className="goes-with">
             <h4>Passar till:</h4>
             {wine.taste.map((icon) =>
@@ -166,9 +176,12 @@ font-family: Assistant;
 }
 
 .content-wrapper{
+  ${ tw` flex flex-col`}
   margin-left: 150px;
+  max-width: 430px;
   @media (max-width: 1060px) {
       margin-left: 0px;
+     
     }
   
     @media (max-width: 740px) {
@@ -177,6 +190,17 @@ font-family: Assistant;
       margin-left: 0px;
     }
   
+}
+
+.type{
+  display: flex;
+  align-items: center;
+  margin-bottom: 26px;
+}
+
+#type-text{
+  margin-bottom: 0;
+  margin-right: 10px;
 }
 
 #icon-img{
@@ -194,7 +218,7 @@ font-family: Assistant;
 }
 
 .taste-text{
-  max-width: 430px;
+  
 }
 
 .goes-with{
@@ -209,6 +233,7 @@ h2{
 h4{
     font-family: Assistant;
     ${ tw` mb-2 `}
+   
 }
 
 h3{
@@ -230,8 +255,9 @@ a{
     text-decoration: none;
 }
 
-#systemet{
+#link{
   text-decoration: underline;
+  font-size: 90%;
 }
 
 img{

@@ -2,13 +2,14 @@ import React from "react"
 import styled from "styled-components"
 import tw from 'twin.macro'
 import Image from 'gatsby-image'
+import { navigate } from "gatsby";
 
-const WineCard = ({ name, country, producer, year, imageSharp, typeImage }) => {
+const WineCard = ({ name, country, producer, year, imageSharp, typeImage, link }) => {
 
 
 
     return (
-        <CardWrapper>
+        <CardWrapper onClick={() => navigate(`/${link}`)}>
 
 
             <Image

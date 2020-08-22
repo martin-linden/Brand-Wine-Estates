@@ -6,6 +6,7 @@ import WineCard from '../components/wineCard'
 
 const WineList = ({ data }) => {
 
+    /* console.log(data[1].link._meta); */
 
     return (
         <Wrapper>
@@ -20,6 +21,8 @@ const WineList = ({ data }) => {
                             year={data.year}
                             imageSharp={data.wine_imageSharp.childImageSharp.fixed}
                             typeImage={data.type_image.url}
+                            link={data.link._meta.uid}
+
 
                         />
                     )
