@@ -5,6 +5,7 @@ import { graphql } from 'gatsby'
 import Image from 'gatsby-image'
 import Layout from '../components/layout'
 import { RichText } from 'prismic-reactjs'
+import { GlobalStyle } from '../components/globalStyle'
 
 
 export const query = graphql`
@@ -80,6 +81,7 @@ const singleWinePage = (props) => {
 
   return (
     <Layout>
+      <GlobalStyle />
       <CardWrapper>
         <div className="wine-wrapper">
           <Image
@@ -163,7 +165,6 @@ ${ tw` flex justify-center items-start  mt-10 mb-10`}
 padding: 25px;
 background: #fff;
 border-radius: 5px;
-font-family: Assistant;
 @media (max-width: 740px) {
   ${ tw` flex-col items-center mb-0`}
     }
@@ -240,8 +241,6 @@ font-family: Assistant;
     max-width: 30px;
 }
 
-
-
 .goes-with{
   ${ tw` mt-2 mb-6 flex items-center flex-wrap`}
 }
@@ -250,34 +249,6 @@ font-family: Assistant;
   margin-bottom:0px;
   margin-top: 0px;
   margin-left: 10px;
-}
-
-
-
-
-h2{
-    font-family: Assistant;
-    ${ tw` mb-2 `}
-}
-
-h4{
-    font-family: Assistant;
-    ${ tw` mb-2 `}
-   
-}
-
-h3{
-    font-family: Assistant;
-    ${ tw` mb-1 `}
-}
-h5{
-    font-family: Assistant;
-    ${ tw` mb-5 `}
-}
-h6{
-    font-family: Assistant;
-    ${ tw` mb-1 mt-0 `}
-    
 }
 
 a{
@@ -298,22 +269,7 @@ img{
 
 const MoreFactsWrapper = styled.div`
 ${ tw` flex justify-center items-center flex-col `}
-/* margin-top: 30px;
-margin-bottom: 50px; */
 height: auto;
-/* background: #fffbfb;  */
-/* background: linear-gradient(to bottom , #fffbfb, white); */
-
-
-h4{
-    font-family: Assistant;
-    ${ tw` mb-1  p-2 `}
-    border-bottom-style: solid; 
-border-bottom-width: 1px; 
-border-bottom-color: #ececec; 
-}
-
-
 `
 
 const MoreFacts = styled.div`
@@ -349,36 +305,6 @@ margin-bottom: 30px;
 
 .underline{
   text-decoration: underline;
-}
-
-p{
-  font-family: Assistant;
-    ${ tw` mb-2 `}
-    font-size: 90%;
-}
-
-h2{
-    font-family: Assistant;
-    ${ tw` mb-2 `}
-}
-
-h4{
-    font-family: Assistant;
-    ${ tw` mb-2 `}
-}
-
-h3{
-    font-family: Assistant;
-    ${ tw` mb-1 `}
-}
-h5{
-    font-family: Assistant;
-    ${ tw` mb-2 `}
-}
-h6{
-    font-family: Assistant;
-    ${ tw` mb-1 mt-0 `}
-    
 }
 
 `

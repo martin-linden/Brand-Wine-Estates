@@ -3,6 +3,7 @@ import styled from "styled-components"
 import tw from 'twin.macro'
 import Image from 'gatsby-image'
 import { navigate } from "gatsby";
+import { GlobalStyle } from '../components/globalStyle'
 
 const WineCard = ({ name, country, producer, year, imageSharp, typeImage, link }) => {
 
@@ -11,7 +12,7 @@ const WineCard = ({ name, country, producer, year, imageSharp, typeImage, link }
     return (
         <CardWrapper onClick={() => navigate(`/${link}`)}>
 
-
+            <GlobalStyle />
             <Image
                 fixed={imageSharp}
                 imgStyle={{ objectFit: 'contain' }}
@@ -44,11 +45,8 @@ flex-direction: column;
 justify-content: center;
 align-items: center;
 text-align: center;
+/* color: black; */
 
-/* .wine-wrapper{
-    max-width: 100px;
-    min-width: 100px;
-} */
 
 .image-wrapper{
     max-width: 70px;
@@ -70,24 +68,6 @@ text-align: center;
     max-height: 16px;
 }
 
-h4{
-    font-family: Assistant;
-    ${ tw` mb-2 `}
-}
-
-h3{
-    font-family: Assistant;
-    ${ tw` mb-1 `}
-}
-h5{
-    font-family: Assistant;
-    ${ tw` mb-2 `}
-}
-h6{
-    font-family: Assistant;
-    ${ tw` mb-1 mt-0 `}
-    
-}
 .goes-with{
     ${ tw` mb-5 mt-5 flex items-center  `}
 }

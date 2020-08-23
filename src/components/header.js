@@ -106,7 +106,7 @@ const StyledHeader = styled.div`
   border-bottom-style: solid;
   border-bottom-width: 1px;
   border-bottom-color: #efefef;
-  font-family: Assistant;
+
 
   
  .test{
