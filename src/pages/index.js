@@ -19,7 +19,6 @@ query WineListQuery {
 				  country
 				  name
 				  producer
-				  type_image
 				  year
 				  wine_image
 				  wine_imageSharp {
@@ -29,10 +28,16 @@ query WineListQuery {
 					  }
 					}
 				  }
+				  type_image
+				  type_imageSharp {
+					childImageSharp {
+					  fixed {
+						...GatsbyImageSharpFixed
+					  }
+					}
+				  }
 				  link {
 					... on PRISMIC_Single_wine_page {
-					  wine_image
-					  type_image
 					  _meta {
 						uid
 					  }
@@ -46,6 +51,7 @@ query WineListQuery {
 	  }
 	}
   }
+  
 `;
 
 

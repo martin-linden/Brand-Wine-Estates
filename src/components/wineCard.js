@@ -5,7 +5,7 @@ import Image from 'gatsby-image'
 import { navigate } from "gatsby";
 import { GlobalStyle } from '../components/globalStyle'
 
-const WineCard = ({ name, country, producer, year, imageSharp, typeImage, link }) => {
+const WineCard = ({ name, country, producer, year, imageSharp, link, typeImage }) => {
 
 
 
@@ -16,14 +16,15 @@ const WineCard = ({ name, country, producer, year, imageSharp, typeImage, link }
             <Image
                 fixed={imageSharp}
                 imgStyle={{ objectFit: 'contain' }}
-                style={{ maxWidth: 200 }}
+                style={{ maxWidth: 60 }}
             />
             <div className="info-section">
                 <h5>{producer}</h5>
                 <h4>{name}</h4>
                 <h5>{country} - {year}</h5>
-                <img src={typeImage}
-                    id="icon-img" />
+                <Image fixed={typeImage}
+                    imgStyle={{ objectFit: 'contain' }}
+                    style={{ maxWidth: 16, maxHeight: 16 }} />
                 <h6>Läs mer</h6>
             </div>
         </CardWrapper >
@@ -65,7 +66,7 @@ text-align: center;
 #icon-img{
     ${ tw` mt-1 mb-1`}
     
-    max-height: 16px;
+    max-height: 19px;
 }
 
 .goes-with{
