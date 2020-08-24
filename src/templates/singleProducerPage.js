@@ -22,7 +22,7 @@ query SingleProducerQuery($id: String) {
 
 const SingleProducerPage = (props) => {
 
-  console.log(props.data.prismic.allSingle_producer_pages.edges[0].node);
+  /*  console.log(props.data.prismic.allSingle_producer_pages.edges[0].node); */
 
   const content = props.data.prismic.allSingle_producer_pages.edges[0].node;
 

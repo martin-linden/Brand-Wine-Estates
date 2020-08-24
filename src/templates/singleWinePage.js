@@ -52,12 +52,26 @@ query SingleWineQuery($id: String) {
             }
           }
           type_image
+          type_imageSharp {
+            childImageSharp {
+              fixed {
+                ...GatsbyImageSharpFixed
+              }
+            }
+          }
           body {
-            ... on PRISMIC_Single_wine_pageBodyCategory {
+            ... on PRISMIC_Single_wine_pageBodyCategory_list {
               type
               fields {
-                category_icon
                 category_text
+                category_image
+                category_imageSharp {
+                  childImageSharp {
+                    fixed {
+                      ...GatsbyImageSharpFixed
+                    }
+                  }
+                }
               }
             }
           }
@@ -72,8 +86,9 @@ query SingleWineQuery($id: String) {
 
 const singleWinePage = (props) => {
 
-  /* console.log(props.data.prismic.allSingle_wine_pages.edges[0].node.body[0].fields[0].category_text);
-  console.log(props.data.prismic.allSingle_wine_pages.edges[0].node.body[0].fields[0].category_icon.url); */
+  console.log(props.data.prismic.allSingle_wine_pages.edges[0].node.body[0].fields[0]);
+  console.log(props.data.prismic.allSingle_wine_pages.edges[0].node.body[0].fields[0].category_text);
+  console.log(props.data.prismic.allSingle_wine_pages.edges[0].node.body[0].fields[0].category_imageSharp.childImageSharp.fixed);
   /* console.log(props.data.prismic.allSingle_wine_pages.edges[0]); */
 
   const content = props.data.prismic.allSingle_wine_pages.edges[0].node;
@@ -83,7 +98,7 @@ const singleWinePage = (props) => {
     <Layout>
       <GlobalStyle />
       <CardWrapper>
-        <div className="wine-wrapper">
+        <div>
           <Image
             fixed={content.wine_imageSharp.childImageSharp.fixed}
             imgStyle={{ objectFit: 'contain' }}
@@ -97,9 +112,12 @@ const singleWinePage = (props) => {
           <h3>{content.name}</h3>
           <div className="type">
             <h4 id="type-text">{content.type}</h4>
-            <img
-              src={content.type_image.url}
-              id="icon-img" />
+            <Image
+              fixed={content.type_imageSharp.childImageSharp.fixed}
+              imgStyle={{ objectFit: 'contain' }}
+              id="icon-img"
+              style={{ maxHeight: 18, maxWidth: 18 }}
+            />
           </div>
 
 
@@ -110,9 +128,10 @@ const singleWinePage = (props) => {
 
             {iconSlice.map((icon, i) =>
               <div className="category-wrapper">
-                <img
-                  src={icon.category_icon.url}
-                  id="taste-img"
+                <Image
+                  fixed={icon.category_imageSharp.childImageSharp.fixed}
+                  imgStyle={{ objectFit: 'contain' }}
+                  style={{ maxHeight: 32, maxWidth: 32 }}
                   key={i}
                 />
                 <p>{icon.category_text}</p>
@@ -208,8 +227,14 @@ border-radius: 5px;
 }
 
 .category-wrapper{
-  ${ tw` flex`}
+  ${ tw` flex items-center`}
   margin-right: 45px;
+  padding: 10px;
+  p{
+    margin-left: 10px;
+    margin-bottom: 0px;
+  }
+
 }
 
 .type{
@@ -229,8 +254,8 @@ border-radius: 5px;
 
 #icon-img{
     ${ tw` `}
-   max-width: 20px;
-   min-width: 20px;
+   max-width: 10px;
+   min-width: 10px;
   max-height: 20px;
     margin-bottom: 0px;
 }
@@ -242,7 +267,7 @@ border-radius: 5px;
 }
 
 .goes-with{
-  ${ tw` mt-2 mb-6 flex items-center flex-wrap`}
+  ${ tw` mt-2 mb-6 flex flex-wrap`}
 }
 
 #art-number{
