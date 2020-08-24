@@ -19,7 +19,7 @@ const WineList = ({ data }) => {
                             country={data.country}
                             producer={data.producer}
                             year={data.year}
-                            imageSharp={data.wine_imageSharp.childImageSharp.fixed}
+                            imageSharp={data.wine_imageSharp.childImageSharp.fluid}
                             link={data.link._meta.uid}
                             typeImage={data.type_imageSharp.childImageSharp.fixed}
                         />

@@ -13,20 +13,27 @@ const WineCard = ({ name, country, producer, year, imageSharp, link, typeImage }
         <CardWrapper onClick={() => navigate(`/${link}`)}>
 
             <GlobalStyle />
-            <Image
-                fixed={imageSharp}
-                imgStyle={{ objectFit: 'contain' }}
-                style={{ maxWidth: 60 }}
-            />
+            <div className="wine-wrapper">
+                <Image
+                    fluid={imageSharp}
+                    imgStyle={{ objectFit: 'cover' }}
+                    style={{ minHeight: 195 }}
+                />
+            </div>
             <div className="info-section">
                 <h5>{producer}</h5>
                 <h4>{name}</h4>
                 <h5>{country} - {year}</h5>
+            </div>
+            <div>
                 <Image fixed={typeImage}
                     imgStyle={{ objectFit: 'contain' }}
                     style={{ maxWidth: 16, maxHeight: 16 }} />
+            </div>
+            <div>
                 <h6>Läs mer</h6>
             </div>
+
         </CardWrapper >
     )
 };
@@ -41,12 +48,21 @@ width: 235px;
 padding: 20px;
 background: #fff;
 border-radius: 5px;
+text-align: center;
 display: flex;
 flex-direction: column;
-justify-content: center;
+justify-content: space-between;
 align-items: center;
-text-align: center;
-/* color: black; */
+
+.wine-wrapper{
+    
+    width: 70px;
+    min-height: 205px;
+    max-height: 205px;
+    
+   
+}
+
 
 
 .image-wrapper{
@@ -56,22 +72,25 @@ text-align: center;
 
 .info-section{
     ${ tw`mt-5 `}
+    h5  {
+        margin-bottom: 15px;
+    }
+    h4 {
+        margin-bottom: 15px;
+    }
+    
 }
 
-.year-type{
-    ${ tw`flex items-center`}
+h6{
+    margin-bottom: 15px;
 }
-
 
 #icon-img{
     ${ tw` mt-1 mb-1`}
     
-    max-height: 19px;
+    max-height: 20px;
 }
 
-.goes-with{
-    ${ tw` mb-5 mt-5 flex items-center  `}
-}
 
 
 `

@@ -23,8 +23,8 @@ query WineListQuery {
 				  wine_image
 				  wine_imageSharp {
 					childImageSharp {
-					  fixed {
-						...GatsbyImageSharpFixed
+					  fluid {
+						...GatsbyImageSharpFluid
 					  }
 					}
 				  }
