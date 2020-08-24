@@ -16,8 +16,8 @@ const WineCard = ({ name, country, producer, year, imageSharp, link, typeImage }
             <div className="wine-wrapper">
                 <Image
                     fluid={imageSharp}
-                    imgStyle={{ objectFit: 'cover' }}
-                    style={{ minHeight: 195 }}
+                    imgStyle={{ objectFit: 'contain' }}
+                    style={{ minHeight: 200, maxHeight: 200 }}
                 />
             </div>
             <div className="info-section">
@@ -56,7 +56,7 @@ align-items: center;
 
 .wine-wrapper{
     
-    width: 70px;
+    width: 100px;
     min-height: 205px;
     max-height: 205px;
     
@@ -66,7 +66,7 @@ align-items: center;
 
 
 .image-wrapper{
-    max-width: 70px;
+    width: 100px;
     max-height: 200px;
 }
 
