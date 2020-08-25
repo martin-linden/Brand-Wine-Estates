@@ -58,7 +58,7 @@ query WineListQuery {
 
 const IndexPage = (props, i) => {
 
-	/* console.log(props.data.prismic.allWine_lists.edges[0].node.body[0].fields) */
+	/* console.log(props); */
 
 	const content = props.data.prismic.allWine_lists.edges[0].node.body[0].fields
 
