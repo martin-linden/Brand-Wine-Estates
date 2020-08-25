@@ -140,11 +140,11 @@ const singleWinePage = (props) => {
             )}
           </div>
           <div className="extern-link">
-            {content ? <a href={content.extern_link.url} target="_blank" id="link">Visa på systembolaget</a> : null}
+            {content.extern_link ? <a href={content.extern_link.url} target="_blank" id="link">Visa på systembolaget</a> : null}
             {content.number ? <h5 id="art-number">ART:NR: {content.number}</h5> : null}
           </div>
           <div>
-            {content.product_sheet.url ? <a href={content.product_sheet.url} target="_blank" id="link">Ladda ner produkblad</a> : null}
+            {content.product_sheet ? <a href={content.product_sheet.url} target="_blank" id="link">Ladda ner produkblad</a> : null}
           </div>
 
 
@@ -161,13 +161,13 @@ const singleWinePage = (props) => {
           </div>
           <div className="test">
             <p>Druva: {content.grape}</p>
-            <p>Alkoholhalt: {content.alcohol}</p>
-            <p>Flaska: {content.volume}</p>
+            <p>Alkoholhalt: {content.alcohol} %</p>
+            <p>Flaska: {content.volume} cl</p>
           </div>
           <div className="test">
-            <p>Syra: {content.acidity}</p>
-            <p>Sötma: {content.sweetness}</p>
-            <p>Temperatur: {content.temp}</p>
+            <p>Syra: {content.acidity} g/l</p>
+            <p>Sötma: {content.sweetness} g/l</p>
+            <p>Temperatur: {content.temp} (°C)</p>
           </div>
         </MoreFacts>
       </MoreFactsWrapper>

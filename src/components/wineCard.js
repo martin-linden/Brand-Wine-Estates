@@ -4,10 +4,20 @@ import tw from 'twin.macro'
 import Image from 'gatsby-image'
 import { navigate } from "gatsby";
 import { GlobalStyle } from '../components/globalStyle'
+import RedWine from '../images/type/red-circle.svg'
+import Rose from '../images/type/rose-circle.svg'
 
 const WineCard = ({ name, country, producer, year, imageSharp, link, typeImage }) => {
 
 
+
+    /*   if (year === "2017") {
+          year = <img src={RedWine}
+              id="icon-img" />
+      } else if (year === "2016") {
+          year = <img src={Rose}
+              id="icon-img" />
+      } */
 
     return (
         <CardWrapper onClick={() => navigate(`/${link}`)}>
@@ -26,9 +36,7 @@ const WineCard = ({ name, country, producer, year, imageSharp, link, typeImage }
                 <h5>{country} - {year}</h5>
             </div>
             <div>
-                <Image fixed={typeImage}
-                    imgStyle={{ objectFit: 'contain' }}
-                    style={{ maxWidth: 16, maxHeight: 16 }} />
+
             </div>
             <div>
                 <h6>Läs mer</h6>
@@ -88,7 +96,7 @@ h6{
 #icon-img{
     ${ tw` mt-1 mb-1`}
     
-    max-height: 20px;
+   width: 15px;
 }
 
 
