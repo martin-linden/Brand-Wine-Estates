@@ -19,6 +19,7 @@ query WineListQuery {
 				  country
 				  name
 				  producer
+				  type
 				  year
 				  wine_image
 				  wine_imageSharp {

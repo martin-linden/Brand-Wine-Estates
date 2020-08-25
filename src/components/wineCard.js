@@ -6,18 +6,21 @@ import { navigate } from "gatsby";
 import { GlobalStyle } from '../components/globalStyle'
 import RedWine from '../images/type/red-circle.svg'
 import Rose from '../images/type/rose-circle.svg'
+import WhiteWine from '../images/type/white-circle.svg'
 
-const WineCard = ({ name, country, producer, year, imageSharp, link, typeImage }) => {
+const WineCard = ({ name, country, producer, year, imageSharp, link, type }) => {
 
+    let typeIcon = null
+    /* let typeText = null */
 
-
-    /*   if (year === "2017") {
-          year = <img src={RedWine}
-              id="icon-img" />
-      } else if (year === "2016") {
-          year = <img src={Rose}
-              id="icon-img" />
-      } */
+    if (type === "Red Wine") {
+        typeIcon = <img src={RedWine}
+            id="icon-img" />
+        /*  typeText = "Rött vin" */
+    } else if (type === "White Wine") {
+        typeIcon = <img src={WhiteWine}
+            id="icon-img" />
+    }
 
     return (
         <CardWrapper onClick={() => navigate(`/${link}`)}>
@@ -36,7 +39,8 @@ const WineCard = ({ name, country, producer, year, imageSharp, link, typeImage }
                 <h5>{country} - {year}</h5>
             </div>
             <div>
-
+                {typeIcon}
+                {/* <h5>{typeText}</h5> */}
             </div>
             <div>
                 <h6>Läs mer</h6>

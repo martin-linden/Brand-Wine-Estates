@@ -6,6 +6,10 @@ import Image from 'gatsby-image'
 import Layout from '../components/layout'
 import { RichText } from 'prismic-reactjs'
 import { GlobalStyle } from '../components/globalStyle'
+import RedWine from '../images/type/red-circle.svg'
+import Rose from '../images/type/rose-circle.svg'
+import WhiteWine from '../images/type/white-circle.svg'
+
 
 
 export const query = graphql`
@@ -51,14 +55,6 @@ query SingleWineQuery($id: String) {
               }
             }
           }
-          type_image
-          type_imageSharp {
-            childImageSharp {
-              fixed {
-                ...GatsbyImageSharpFixed
-              }
-            }
-          }
           body {
             ... on PRISMIC_Single_wine_pageBodyCategory_list {
               type
@@ -86,13 +82,25 @@ query SingleWineQuery($id: String) {
 
 const singleWinePage = (props) => {
 
-  console.log(props.data.prismic.allSingle_wine_pages.edges[0].node.body[0].fields[0]);
-  console.log(props.data.prismic.allSingle_wine_pages.edges[0].node.body[0].fields[0].category_text);
-  console.log(props.data.prismic.allSingle_wine_pages.edges[0].node.body[0].fields[0].category_imageSharp.childImageSharp.fixed);
+  /* console.log(props.data.prismic.allSingle_wine_pages.edges[0].node.body[0].fields[0]); */
+
   /* console.log(props.data.prismic.allSingle_wine_pages.edges[0]); */
 
   const content = props.data.prismic.allSingle_wine_pages.edges[0].node;
   const iconSlice = props.data.prismic.allSingle_wine_pages.edges[0].node.body[0].fields;
+
+  let typeIcon = null
+  let typeText = null
+
+  if (content.type === "Red Wine") {
+    typeIcon = <img src={RedWine}
+      id="type-img" />
+    typeText = "Rött Vin"
+  } else if (content.type === "White Wine") {
+    typeIcon = <img src={WhiteWine}
+      id="type-img" />
+    typeText = "Vitt Vin"
+  }
 
   return (
     <Layout>
@@ -106,21 +114,12 @@ const singleWinePage = (props) => {
           />
         </div>
         <div className="content-wrapper">
-
           <h4>{content.producer}</h4>
-
           <h3>{content.name}</h3>
           <div className="type">
-            <h4 id="type-text">{content.type}</h4>
-            <Image
-              fixed={content.type_imageSharp.childImageSharp.fixed}
-              imgStyle={{ objectFit: 'contain' }}
-              id="icon-img"
-              style={{ maxHeight: 18, maxWidth: 18 }}
-            />
+            <h4 id="type-text">{typeText}</h4>
+            {typeIcon}
           </div>
-
-
           <div className="taste-text">
             <RichText render={content.text} />
           </div>
@@ -246,6 +245,11 @@ border-radius: 5px;
 #type-text{
   margin-bottom: 0;
   margin-right: 10px;
+}
+
+#type-img{
+  width: 15px;
+  margin-bottom: 0px;
 }
 
 .extern-link{
