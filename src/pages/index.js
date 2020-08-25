@@ -19,13 +19,28 @@ query WineListQuery {
 				  country
 				  name
 				  producer
-				  type_image
+				  type
 				  year
 				  wine_image
 				  wine_imageSharp {
 					childImageSharp {
+					  fluid {
+						...GatsbyImageSharpFluid
+					  }
+					}
+				  }
+				  type_image
+				  type_imageSharp {
+					childImageSharp {
 					  fixed {
 						...GatsbyImageSharpFixed
+					  }
+					}
+				  }
+				  link {
+					... on PRISMIC_Single_wine_page {
+					  _meta {
+						uid
 					  }
 					}
 				  }
@@ -44,11 +59,13 @@ query WineListQuery {
 
 const IndexPage = (props, i) => {
 
-	/* console.log(props.data.prismic.allWine_lists.edges[0].node.body[0].fields) */
+
+
+	console.log(props);
 
 	const content = props.data.prismic.allWine_lists.edges[0].node.body[0].fields
 
-	console.log(content);
+	/* console.log(content); */
 
 	return (
 		<Layout>

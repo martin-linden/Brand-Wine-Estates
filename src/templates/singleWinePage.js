@@ -4,6 +4,16 @@ import tw from 'twin.macro'
 import { graphql } from 'gatsby'
 import Image from 'gatsby-image'
 import Layout from '../components/layout'
+import { RichText } from 'prismic-reactjs'
+import { GlobalStyle } from '../components/globalStyle'
+import RedWine from '../images/type/red-circle.svg'
+import Rose from '../images/type/rose-circle.svg'
+import WhiteWine from '../images/type/white-circle.svg'
+import Fish from '../images/taste/fish.svg'
+import SeaFood from '../images/taste/seafood.svg'
+import Apertiff from '../images/taste/drink.svg'
+import Company from '../images/taste/company.svg'
+
 
 
 export const query = graphql`
@@ -16,6 +26,48 @@ query SingleWineQuery($id: String) {
             id
           }
           name
+          grape
+          extern_link {
+            ... on PRISMIC__ExternalLink {
+              _linkType
+              url
+            }
+          }
+          acidity
+          alcohol
+          country
+          number
+          producer
+          product_sheet {
+            ... on PRISMIC__FileLink {
+              _linkType
+              url
+            }
+          }
+          region
+          sweetness
+          temp
+          text
+          type
+          volume
+          year
+          wine_image
+          wine_imageSharp {
+            childImageSharp {
+              fixed {
+                ...GatsbyImageSharpFixed
+              }
+            }
+          }
+          body {
+            ... on PRISMIC_Single_wine_pageBodyCategory_list {
+              type
+              label
+              fields {
+                category
+              }
+            }
+          }
         }
       }
     }
@@ -27,18 +79,92 @@ query SingleWineQuery($id: String) {
 
 const singleWinePage = (props) => {
 
-  console.log(props.data.prismic.allSingle_wine_pages.edges[0].node);
+
+
+  console.log(props.data.prismic.allSingle_wine_pages.edges[0].node.body[0].fields);
 
   const content = props.data.prismic.allSingle_wine_pages.edges[0].node;
+  const iconSlice = props.data.prismic.allSingle_wine_pages.edges[0].node.body[0].fields;
+
+  let typeIcon = null
+  let typeText = null
+
+  if (content.type === "Red Wine") {
+    typeIcon = <img src={RedWine}
+      id="type-img" />
+    typeText = "Rött Vin"
+  } else if (content.type === "White Wine") {
+    typeIcon = <img src={WhiteWine}
+      id="type-img" />
+    typeText = "Vitt Vin"
+  }
+
 
   return (
     <Layout>
+      <GlobalStyle />
+      <CardWrapper>
+        <div>
+          <Image
+            fixed={content.wine_imageSharp.childImageSharp.fixed}
+            imgStyle={{ objectFit: 'contain' }}
+            className="wine-wrapper"
+          />
+        </div>
+        <div className="content-wrapper">
+          <h4>{content.producer}</h4>
+          <h3>{content.name}</h3>
+          <div className="type">
+            <h4 id="type-text">{typeText}</h4>
+            {typeIcon}
+          </div>
+          <div className="taste-text">
+            <RichText render={content.text} />
+          </div>
+          <div className="goes-with">
+
+            {iconSlice.map((icon, i) =>
+              <React.Fragment key={i}>
+                {icon.category === "Apertiff" ? <div className="category-wrapper"><img src={Apertiff} id="icon-img" /> <h4>Apertiff</h4></div> : null}
+                {icon.category === "Skaldjur" ? <div className="category-wrapper"><img src={SeaFood} id="icon-img" /> <h4>Skaldjur</h4></div> : null}
+                {icon.category === "Fisk" ? <div className="category-wrapper"><img src={Fish} id="icon-img" /> <h4>Fisk</h4></div> : null}
+                {icon.category === "Sällskap" ? <div className="category-wrapper"><img src={Company} id="icon-img" /> <h4>Sällskap</h4></div> : null}
+              </React.Fragment>
+
+            )}
+          </div>
+          <div className="extern-link">
+            {content.extern_link ? <a href={content.extern_link.url} target="_blank" id="link">Visa på systembolaget</a> : null}
+            {content.number ? <h5 id="art-number">ART:NR: {content.number}</h5> : null}
+          </div>
+          <div>
+            {content.product_sheet ? <a href={content.product_sheet.url} target="_blank" id="link">Ladda ner produkblad</a> : null}
+          </div>
 
 
-      <h1>{content.name}</h1>
+        </div>
+      </CardWrapper >
 
-
-
+      <MoreFactsWrapper>
+        <h4>Mer fakta:</h4>
+        <MoreFacts>
+          <div className="test">
+            <p>Land: {content.country}</p>
+            <p>Region: {content.region}</p>
+            <p>Producent: {content.producer}</p>
+          </div>
+          <div className="test">
+            <p>Druva: {content.grape}</p>
+            <p>Alkoholhalt: {content.alcohol} %</p>
+            <p>Flaska: {content.volume} cl</p>
+          </div>
+          <div className="test">
+            <p>Syra: {content.acidity} g/l</p>
+            <p>Sötma: {content.sweetness} g/l</p>
+            <p>Temperatur: {content.temp} (°C)</p>
+          </div>
+        </MoreFacts>
+      </MoreFactsWrapper>
     </Layout>
   )
 };
@@ -52,7 +178,6 @@ ${ tw` flex justify-center items-start  mt-10 mb-10`}
 padding: 25px;
 background: #fff;
 border-radius: 5px;
-font-family: Assistant;
 @media (max-width: 740px) {
   ${ tw` flex-col items-center mb-0`}
     }
@@ -79,9 +204,12 @@ font-family: Assistant;
 }
 
 .content-wrapper{
+  ${ tw` flex flex-col`}
   margin-left: 150px;
+  max-width: 430px;
   @media (max-width: 1060px) {
       margin-left: 0px;
+     
     }
   
     @media (max-width: 740px) {
@@ -92,50 +220,66 @@ font-family: Assistant;
   
 }
 
+.category-wrapper{
+  ${ tw` flex items-center`}
+  margin-right: 30px;
+  padding: 10px;
+  h4{
+    margin-left: 10px;
+    margin-bottom: 0px;
+  }
+
+}
+
+#category-text{
+  margin-bottom: 0px;
+  margin-left: 10px;
+  margin-right: 20px;
+
+}
+
+.type{
+  display: flex;
+  align-items: center;
+  margin-bottom: 26px;
+}
+
+#type-text{
+  margin-bottom: 0;
+  margin-right: 10px;
+}
+
+#type-img{
+  width: 15px;
+  margin-bottom: 0px;
+}
+
+.extern-link{
+  ${ tw` flex items-center`}
+}
+
 #icon-img{
-    ${ tw` mt-2`}
-   max-width: 20px;
-   min-width: 20px;
-    max-height: 20px;
+    ${ tw` `}
+   max-width: 25px;
+   min-width: 25px;
+  max-height: 20px;
+    margin-bottom: 0px;
 }
 
 #taste-img{
-    ${ tw` mr-3`}
-   max-width: 25px;
-   min-width: 25px;
-    max-height: 20px;
-}
-
-.taste-text{
-  max-width: 430px;
+    ${ tw` mb-0 mr-3`}
+    max-height: 28px;
+    max-width: 30px;
 }
 
 .goes-with{
-  ${ tw` mt-2 `}
+  ${ tw` mt-2 mb-6 flex flex-wrap`}
 }
 
-h2{
-    font-family: Assistant;
-    ${ tw` mb-2 `}
-}
-
-h4{
-    font-family: Assistant;
-    ${ tw` mb-2 `}
-}
-
-h3{
-    font-family: Assistant;
-    ${ tw` mb-1 `}
-}
-h5{
-    font-family: Assistant;
-    ${ tw` mb-2 `}
-}
-h6{
-    font-family: Assistant;
-    ${ tw` mb-1 mt-0 `}
-    
+#art-number{
+  margin-bottom:0px;
+  margin-top: 0px;
+  margin-left: 10px;
 }
 
 a{
@@ -143,8 +287,9 @@ a{
     text-decoration: none;
 }
 
-#systemet{
+#link{
   text-decoration: underline;
+  font-size: 90%;
 }
 
 img{
@@ -155,22 +300,7 @@ img{
 
 const MoreFactsWrapper = styled.div`
 ${ tw` flex justify-center items-center flex-col `}
-/* margin-top: 30px;
-margin-bottom: 50px; */
 height: auto;
-/* background: #fffbfb;  */
-/* background: linear-gradient(to bottom , #fffbfb, white); */
-
-
-h4{
-    font-family: Assistant;
-    ${ tw` mb-1  p-2 `}
-    border-bottom-style: solid; 
-border-bottom-width: 1px; 
-border-bottom-color: #ececec; 
-}
-
-
 `
 
 const MoreFacts = styled.div`
@@ -206,36 +336,6 @@ margin-bottom: 30px;
 
 .underline{
   text-decoration: underline;
-}
-
-p{
-  font-family: Assistant;
-    ${ tw` mb-2 `}
-    font-size: 90%;
-}
-
-h2{
-    font-family: Assistant;
-    ${ tw` mb-2 `}
-}
-
-h4{
-    font-family: Assistant;
-    ${ tw` mb-2 `}
-}
-
-h3{
-    font-family: Assistant;
-    ${ tw` mb-1 `}
-}
-h5{
-    font-family: Assistant;
-    ${ tw` mb-2 `}
-}
-h6{
-    font-family: Assistant;
-    ${ tw` mb-1 mt-0 `}
-    
 }
 
 `

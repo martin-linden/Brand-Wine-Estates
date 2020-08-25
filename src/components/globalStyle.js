@@ -1,13 +1,14 @@
 import { createGlobalStyle } from 'styled-components';
 
 export const GlobalStyle = createGlobalStyle`
-  @import url('https://fonts.googleapis.com/css2?family=Assistant:wght@200;300;400&display=swap');
+  
   :root {
     --primary-color: rebeccapurple;
     --white: #FFFAFF;
   }
   * {
     box-sizing: border-box;
+    font-family: Assistant;
   }
   html {
     font-family: lato;
@@ -24,8 +25,8 @@ export const GlobalStyle = createGlobalStyle`
   main {
     flex: 1 0 auto;
     h1,h2,h3,h4,h5,h6 {
-    font-family: Karla;
-    color: #0c2340;
+      font-family: Assistant;
+      font-weight: 400;
     }
     a {
       color: #2A5DB0;

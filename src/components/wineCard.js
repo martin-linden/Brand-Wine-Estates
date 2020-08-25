@@ -2,28 +2,50 @@ import React from "react"
 import styled from "styled-components"
 import tw from 'twin.macro'
 import Image from 'gatsby-image'
+import { navigate } from "gatsby";
+import { GlobalStyle } from '../components/globalStyle'
+import RedWine from '../images/type/red-circle.svg'
+import Rose from '../images/type/rose-circle.svg'
+import WhiteWine from '../images/type/white-circle.svg'
 
-const WineCard = ({ name, country, producer, year, imageSharp, typeImage }) => {
+const WineCard = ({ name, country, producer, year, imageSharp, link, type }) => {
 
+    let typeIcon = null
+    /* let typeText = null */
 
+    if (type === "Red Wine") {
+        typeIcon = <img src={RedWine}
+            id="icon-img" />
+        /*  typeText = "Rött vin" */
+    } else if (type === "White Wine") {
+        typeIcon = <img src={WhiteWine}
+            id="icon-img" />
+    }
 
     return (
-        <CardWrapper>
+        <CardWrapper onClick={() => navigate(`/${link}`)}>
 
-
-            <Image
-                fixed={imageSharp}
-                imgStyle={{ objectFit: 'contain' }}
-                style={{ maxWidth: 200 }}
-            />
+            <GlobalStyle />
+            <div className="wine-wrapper">
+                <Image
+                    fluid={imageSharp}
+                    imgStyle={{ objectFit: 'contain' }}
+                    style={{ minHeight: 200, maxHeight: 200 }}
+                />
+            </div>
             <div className="info-section">
                 <h5>{producer}</h5>
                 <h4>{name}</h4>
                 <h5>{country} - {year}</h5>
-                <img src={typeImage}
-                    id="icon-img" />
+            </div>
+            <div>
+                {typeIcon}
+                {/* <h5>{typeText}</h5> */}
+            </div>
+            <div>
                 <h6>Läs mer</h6>
             </div>
+
         </CardWrapper >
     )
 };
@@ -38,58 +60,49 @@ width: 235px;
 padding: 20px;
 background: #fff;
 border-radius: 5px;
+text-align: center;
 display: flex;
 flex-direction: column;
-justify-content: center;
+justify-content: space-between;
 align-items: center;
-text-align: center;
 
-/* .wine-wrapper{
-    max-width: 100px;
-    min-width: 100px;
-} */
+.wine-wrapper{
+    
+    width: 100px;
+    min-height: 205px;
+    max-height: 205px;
+    
+   
+}
+
+
 
 .image-wrapper{
-    max-width: 70px;
+    width: 100px;
     max-height: 200px;
 }
 
 .info-section{
     ${ tw`mt-5 `}
+    h5  {
+        margin-bottom: 15px;
+    }
+    h4 {
+        margin-bottom: 15px;
+    }
+    
 }
 
-.year-type{
-    ${ tw`flex items-center`}
+h6{
+    margin-bottom: 15px;
 }
-
 
 #icon-img{
     ${ tw` mt-1 mb-1`}
     
-    max-height: 16px;
+   width: 15px;
 }
 
-h4{
-    font-family: Assistant;
-    ${ tw` mb-2 `}
-}
-
-h3{
-    font-family: Assistant;
-    ${ tw` mb-1 `}
-}
-h5{
-    font-family: Assistant;
-    ${ tw` mb-2 `}
-}
-h6{
-    font-family: Assistant;
-    ${ tw` mb-1 mt-0 `}
-    
-}
-.goes-with{
-    ${ tw` mb-5 mt-5 flex items-center  `}
-}
 
 
 `
