@@ -9,6 +9,10 @@ import { GlobalStyle } from '../components/globalStyle'
 import RedWine from '../images/type/red-circle.svg'
 import Rose from '../images/type/rose-circle.svg'
 import WhiteWine from '../images/type/white-circle.svg'
+import Fish from '../images/taste/fish.svg'
+import SeaFood from '../images/taste/seafood.svg'
+import Apertiff from '../images/taste/drink.svg'
+import Company from '../images/taste/company.svg'
 
 
 
@@ -58,16 +62,9 @@ query SingleWineQuery($id: String) {
           body {
             ... on PRISMIC_Single_wine_pageBodyCategory_list {
               type
+              label
               fields {
-                category_text
-                category_image
-                category_imageSharp {
-                  childImageSharp {
-                    fixed {
-                      ...GatsbyImageSharpFixed
-                    }
-                  }
-                }
+                category
               }
             }
           }
@@ -82,9 +79,9 @@ query SingleWineQuery($id: String) {
 
 const singleWinePage = (props) => {
 
-  /* console.log(props.data.prismic.allSingle_wine_pages.edges[0].node.body[0].fields[0]); */
 
-  /* console.log(props.data.prismic.allSingle_wine_pages.edges[0]); */
+
+  console.log(props.data.prismic.allSingle_wine_pages.edges[0].node.body[0].fields);
 
   const content = props.data.prismic.allSingle_wine_pages.edges[0].node;
   const iconSlice = props.data.prismic.allSingle_wine_pages.edges[0].node.body[0].fields;
@@ -101,6 +98,7 @@ const singleWinePage = (props) => {
       id="type-img" />
     typeText = "Vitt Vin"
   }
+
 
   return (
     <Layout>
@@ -126,16 +124,13 @@ const singleWinePage = (props) => {
           <div className="goes-with">
 
             {iconSlice.map((icon, i) =>
-              <div className="category-wrapper">
-                <Image
-                  fixed={icon.category_imageSharp.childImageSharp.fixed}
-                  imgStyle={{ objectFit: 'contain' }}
-                  style={{ maxHeight: 32, maxWidth: 32 }}
-                  key={i}
-                />
-                <p>{icon.category_text}</p>
+              <React.Fragment key={i}>
+                {icon.category === "Apertiff" ? <div className="category-wrapper"><img src={Apertiff} id="icon-img" /> <h4>Apertiff</h4></div> : null}
+                {icon.category === "Skaldjur" ? <div className="category-wrapper"><img src={SeaFood} id="icon-img" /> <h4>Skaldjur</h4></div> : null}
+                {icon.category === "Fisk" ? <div className="category-wrapper"><img src={Fish} id="icon-img" /> <h4>Fisk</h4></div> : null}
+                {icon.category === "Sällskap" ? <div className="category-wrapper"><img src={Company} id="icon-img" /> <h4>Sällskap</h4></div> : null}
+              </React.Fragment>
 
-              </div>
             )}
           </div>
           <div className="extern-link">
@@ -227,12 +222,19 @@ border-radius: 5px;
 
 .category-wrapper{
   ${ tw` flex items-center`}
-  margin-right: 45px;
+  margin-right: 30px;
   padding: 10px;
-  p{
+  h4{
     margin-left: 10px;
     margin-bottom: 0px;
   }
+
+}
+
+#category-text{
+  margin-bottom: 0px;
+  margin-left: 10px;
+  margin-right: 20px;
 
 }
 
@@ -258,8 +260,8 @@ border-radius: 5px;
 
 #icon-img{
     ${ tw` `}
-   max-width: 10px;
-   min-width: 10px;
+   max-width: 25px;
+   min-width: 25px;
   max-height: 20px;
     margin-bottom: 0px;
 }
