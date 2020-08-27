@@ -29,14 +29,6 @@ query WineListQuery {
 					  }
 					}
 				  }
-				  type_image
-				  type_imageSharp {
-					childImageSharp {
-					  fixed {
-						...GatsbyImageSharpFixed
-					  }
-					}
-				  }
 				  link {
 					... on PRISMIC_Single_wine_page {
 					  _meta {

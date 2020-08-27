@@ -4,20 +4,20 @@ import tw from 'twin.macro'
 import Image from 'gatsby-image'
 import { navigate } from "gatsby";
 import { GlobalStyle } from '../components/globalStyle'
-import RedWine from '../images/type/red-circle.svg'
+import RedWine from '../images/type/red.svg'
 import Rose from '../images/type/rose-circle.svg'
-import WhiteWine from '../images/type/white-circle.svg'
+import WhiteWine from '../images/type/white.svg'
 
 const WineCard = ({ name, country, producer, year, imageSharp, link, type }) => {
 
     let typeIcon = null
     /* let typeText = null */
 
-    if (type === "Red Wine") {
+    if (type === "Rött") {
         typeIcon = <img src={RedWine}
             id="icon-img" />
         /*  typeText = "Rött vin" */
-    } else if (type === "White Wine") {
+    } else if (type === "Vitt") {
         typeIcon = <img src={WhiteWine}
             id="icon-img" />
     }
@@ -31,6 +31,7 @@ const WineCard = ({ name, country, producer, year, imageSharp, link, type }) => 
                     fluid={imageSharp}
                     imgStyle={{ objectFit: 'contain' }}
                     style={{ minHeight: 200, maxHeight: 200 }}
+                    loading="lazy"
                 />
             </div>
             <div className="info-section">

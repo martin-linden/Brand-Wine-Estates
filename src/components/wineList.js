@@ -22,7 +22,6 @@ const WineList = ({ data }) => {
                             year={data.year}
                             imageSharp={data.wine_imageSharp.childImageSharp.fluid}
                             link={data.link._meta.uid}
-                            typeImage={data.type_imageSharp.childImageSharp.fixed}
                             type={data.type}
                         />
                     )

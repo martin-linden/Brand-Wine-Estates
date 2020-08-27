@@ -6,13 +6,29 @@ import Image from 'gatsby-image'
 import Layout from '../components/layout'
 import { RichText } from 'prismic-reactjs'
 import { GlobalStyle } from '../components/globalStyle'
-import RedWine from '../images/type/red-circle.svg'
+import RedWine from '../images/type/red.svg'
 import Rose from '../images/type/rose-circle.svg'
-import WhiteWine from '../images/type/white-circle.svg'
+import WhiteWine from '../images/type/white.svg'
 import Fish from '../images/taste/fish.svg'
 import SeaFood from '../images/taste/seafood.svg'
 import Apertiff from '../images/taste/drink.svg'
 import Company from '../images/taste/company.svg'
+import Pork from '../images/taste/pork.svg'
+import Elk from '../images/taste/elk.svg'
+import Lamb from '../images/taste/lamb.svg'
+import Desert from '../images/taste/desert.svg'
+import Bird from '../images/taste/bird.svg'
+import Vegetable from '../images/taste/vegetable.svg'
+import Asia from '../images/taste/asia.svg'
+import Beef from '../images/taste/beef.svg'
+import Cheese from '../images/taste/cheese.svg'
+import Chilli from '../images/taste/chilli.svg'
+import Mushroom from '../images/taste/mushroom.svg'
+import Carrot from '../images/taste/carrot.svg'
+
+
+
+
 
 
 
@@ -89,11 +105,11 @@ const singleWinePage = (props) => {
   let typeIcon = null
   let typeText = null
 
-  if (content.type === "Red Wine") {
+  if (content.type === "Rött") {
     typeIcon = <img src={RedWine}
       id="type-img" />
     typeText = "Rött Vin"
-  } else if (content.type === "White Wine") {
+  } else if (content.type === "Vitt") {
     typeIcon = <img src={WhiteWine}
       id="type-img" />
     typeText = "Vitt Vin"
@@ -113,7 +129,7 @@ const singleWinePage = (props) => {
         </div>
         <div className="content-wrapper">
           <h4>{content.producer}</h4>
-          <h3>{content.name}</h3>
+          <h3>{content.name} - {content.year}</h3>
           <div className="type">
             <h4 id="type-text">{typeText}</h4>
             {typeIcon}
@@ -129,6 +145,7 @@ const singleWinePage = (props) => {
                 {icon.category === "Skaldjur" ? <div className="category-wrapper"><img src={SeaFood} id="icon-img" /> <h4>Skaldjur</h4></div> : null}
                 {icon.category === "Fisk" ? <div className="category-wrapper"><img src={Fish} id="icon-img" /> <h4>Fisk</h4></div> : null}
                 {icon.category === "Sällskap" ? <div className="category-wrapper"><img src={Company} id="icon-img" /> <h4>Sällskap</h4></div> : null}
+                {icon.category === "Fläsk" ? <div className="category-wrapper"><img src={Pork} id="icon-img" /> <h4>Fläsk</h4></div> : null}
               </React.Fragment>
 
             )}
