@@ -294,8 +294,18 @@ border-radius: 5px;
     max-width: 30px;
 }
 
+.taste-text{
+  max-height: 400px;
+  overflow: scroll;
+  overflow-x: hidden;
+
+}
+/* :-webkit-scrollbar{
+    background-color: red;
+  } */
+
 .goes-with{
-  ${ tw` mt-2 mb-6 flex flex-wrap`}
+  ${ tw` mt-6 mb-6 flex flex-wrap`}
 }
 
 #art-number{
