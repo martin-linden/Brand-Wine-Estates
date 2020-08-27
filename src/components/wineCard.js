@@ -5,22 +5,23 @@ import Image from 'gatsby-image'
 import { navigate } from "gatsby";
 import { GlobalStyle } from '../components/globalStyle'
 import RedWine from '../images/type/red.svg'
-import Rose from '../images/type/rose-circle.svg'
+import Rose from '../images/type/rose.svg'
 import WhiteWine from '../images/type/white.svg'
+import Sparkling from '../images/type/sparkling2.svg'
 
 const WineCard = ({ name, country, producer, year, imageSharp, link, type }) => {
 
-    let typeIcon = null
-    /* let typeText = null */
-
-    if (type === "Rött") {
-        typeIcon = <img src={RedWine}
-            id="icon-img" />
-        /*  typeText = "Rött vin" */
-    } else if (type === "Vitt") {
-        typeIcon = <img src={WhiteWine}
-            id="icon-img" />
-    }
+    /*     let typeIcon = null
+    
+    
+        if (type === "Rött") {
+            typeIcon = <img src={RedWine}
+                id="icon-img" />
+         
+        } else if (type === "Vitt") {
+            typeIcon = <img src={WhiteWine}
+                id="icon-img" />
+        } */
 
     return (
         <CardWrapper onClick={() => navigate(`/${link}`)}>
@@ -40,8 +41,10 @@ const WineCard = ({ name, country, producer, year, imageSharp, link, type }) => 
                 <h5>{country} - {year}</h5>
             </div>
             <div>
-                {typeIcon}
-                {/* <h5>{typeText}</h5> */}
+                {type === "Rött" ? <img src={RedWine} id="icon-img" /> : null}
+                {type === "Vitt" ? <img src={WhiteWine} id="icon-img" /> : null}
+                {type === "Rosé" ? <img src={Rose} id="icon-img" /> : null}
+                {type === "Mousserande" ? <img src={Sparkling} id="icon-img" /> : null}
             </div>
             <div>
                 <h6>Läs mer</h6>
@@ -56,8 +59,8 @@ export default WineCard;
 
 const CardWrapper = styled.div`
 ${ tw`shadow hover:shadow-lg cursor-pointer`}
-height: 430px;
-width: 235px;
+height: 450px;
+width: 238px;
 padding: 20px;
 background: #fff;
 border-radius: 5px;
@@ -102,6 +105,8 @@ h6{
     ${ tw` mt-1 mb-1`}
     
    width: 15px;
+   max-height: 37px;
+   min-height: 37px;
 }
 
 

@@ -7,18 +7,20 @@ import Layout from '../components/layout'
 import { RichText } from 'prismic-reactjs'
 import { GlobalStyle } from '../components/globalStyle'
 import RedWine from '../images/type/red.svg'
-import Rose from '../images/type/rose-circle.svg'
+import Rose from '../images/type/rose.svg'
+import Sparkling from '../images/type/sparkling2.svg'
 import WhiteWine from '../images/type/white.svg'
 import Fish from '../images/taste/fish.svg'
 import SeaFood from '../images/taste/seafood.svg'
 import Apertiff from '../images/taste/drink.svg'
 import Company from '../images/taste/company.svg'
 import Pork from '../images/taste/pork.svg'
+import Vegetable from '../images/taste/vegetable.svg'
 import Elk from '../images/taste/elk.svg'
+import Rabbit from '../images/taste/rabbit.svg'
 import Lamb from '../images/taste/lamb.svg'
 import Desert from '../images/taste/desert.svg'
 import Bird from '../images/taste/bird.svg'
-import Vegetable from '../images/taste/vegetable.svg'
 import Asia from '../images/taste/asia.svg'
 import Beef from '../images/taste/beef.svg'
 import Cheese from '../images/taste/cheese.svg'
@@ -102,18 +104,6 @@ const singleWinePage = (props) => {
   const content = props.data.prismic.allSingle_wine_pages.edges[0].node;
   const iconSlice = props.data.prismic.allSingle_wine_pages.edges[0].node.body[0].fields;
 
-  let typeIcon = null
-  let typeText = null
-
-  if (content.type === "Rött") {
-    typeIcon = <img src={RedWine}
-      id="type-img" />
-    typeText = "Rött Vin"
-  } else if (content.type === "Vitt") {
-    typeIcon = <img src={WhiteWine}
-      id="type-img" />
-    typeText = "Vitt Vin"
-  }
 
 
   return (
@@ -131,8 +121,10 @@ const singleWinePage = (props) => {
           <h4>{content.producer}</h4>
           <h3>{content.name} - {content.year}</h3>
           <div className="type">
-            <h4 id="type-text">{typeText}</h4>
-            {typeIcon}
+            {content.type === "Rött" ? <><h4 id="type-text">Rött</h4> <img src={RedWine} id="type-img" /> </> : null}
+            {content.type === "Vitt" ? <><h4 id="type-text">Vitt</h4> <img src={WhiteWine} id="type-img" /> </> : null}
+            {content.type === "Rosé" ? <><h4 id="type-text">Rosé</h4> <img src={Rose} id="type-img" /> </> : null}
+            {content.type === "Mousserande" ? <><h4 id="type-text">Mousserande</h4> <img src={Sparkling} id="type-img" /> </> : null}
           </div>
           <div className="taste-text">
             <RichText render={content.text} />
@@ -146,6 +138,18 @@ const singleWinePage = (props) => {
                 {icon.category === "Fisk" ? <div className="category-wrapper"><img src={Fish} id="icon-img" /> <h4>Fisk</h4></div> : null}
                 {icon.category === "Sällskap" ? <div className="category-wrapper"><img src={Company} id="icon-img" /> <h4>Sällskap</h4></div> : null}
                 {icon.category === "Fläsk" ? <div className="category-wrapper"><img src={Pork} id="icon-img" /> <h4>Fläsk</h4></div> : null}
+                {icon.category === "Grönsaker" ? <div className="category-wrapper"><img src={Vegetable} id="icon-img" /> <h4>Grönsaker</h4></div> : null}
+                {icon.category === "Lamm" ? <div className="category-wrapper"><img src={Lamb} id="icon-img" /> <h4>Lamm</h4></div> : null}
+                {icon.category === "Dessert" ? <div className="category-wrapper"><img src={Desert} id="icon-img" /> <h4>Dessert</h4></div> : null}
+                {icon.category === "Fågel" ? <div className="category-wrapper"><img src={Bird} id="icon-img" /> <h4>Fågel</h4></div> : null}
+                {icon.category === "Asiatisk" ? <div className="category-wrapper"><img src={Asia} id="icon-img" /> <h4>Asiatisk</h4></div> : null}
+                {icon.category === "Nötkött" ? <div className="category-wrapper"><img src={Beef} id="icon-img" /> <h4>Nötkött</h4></div> : null}
+                {icon.category === "Ost" ? <div className="category-wrapper"><img src={Cheese} id="icon-img" /> <h4>Ost</h4></div> : null}
+                {icon.category === "Chilli" ? <div className="category-wrapper"><img src={Chilli} id="icon-img" /> <h4>Chilli</h4></div> : null}
+                {icon.category === "Svamp" ? <div className="category-wrapper"><img src={Mushroom} id="icon-img" /> <h4>Svamp</h4></div> : null}
+                {icon.category === "Morot" ? <div className="category-wrapper"><img src={Carrot} id="icon-img" /> <h4>Morot</h4></div> : null}
+                {icon.category === "Vilt (stor)" ? <div className="category-wrapper"><img src={Elk} id="icon-img" /> <h4>Vilt (stor)</h4></div> : null}
+                {icon.category === "Vilt (små)" ? <div className="category-wrapper"><img src={Rabbit} id="icon-img" /> <h4>Vilt (små)</h4></div> : null}
               </React.Fragment>
 
             )}
@@ -268,6 +272,7 @@ border-radius: 5px;
 
 #type-img{
   width: 15px;
+  max-height: 37px;
   margin-bottom: 0px;
 }
 
