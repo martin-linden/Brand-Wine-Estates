@@ -66,6 +66,8 @@ query SingleWineQuery($id: String) {
           sweetness
           temp
           text
+          info
+          launch_date
           type
           volume
           year
@@ -99,7 +101,7 @@ const singleWinePage = (props) => {
 
 
 
-  console.log(props.data.prismic.allSingle_wine_pages.edges[0].node.body[0].fields);
+  console.log(props.data.prismic.allSingle_wine_pages.edges[0]);
 
   const content = props.data.prismic.allSingle_wine_pages.edges[0].node;
   const iconSlice = props.data.prismic.allSingle_wine_pages.edges[0].node.body[0].fields;
@@ -155,9 +157,11 @@ const singleWinePage = (props) => {
             )}
           </div>
           <div className="extern-link">
-            {content.extern_link ? <a href={content.extern_link.url} target="_blank" id="link">Visa på systembolaget</a> : null}
+            {content.extern_link ? <a href={content.extern_link.url} target="_blank" id="link">Visa på systembolaget</a> : <h4>Endast Horeca</h4>}
+
             {content.number ? <h5 id="art-number">ART:NR: {content.number}</h5> : null}
           </div>
+          {content.launch_date ? <h4>Lanseras: {content.launch_date.split('T')[0]}</h4> : null}
           <div>
             {content.product_sheet ? <a href={content.product_sheet.url} target="_blank" id="link">Ladda ner produkblad</a> : null}
           </div>
@@ -165,6 +169,10 @@ const singleWinePage = (props) => {
 
         </div>
       </CardWrapper >
+
+      <TextInfoWrapper>
+        <RichText render={content.info} />
+      </TextInfoWrapper>
 
       <MoreFactsWrapper>
         <h4>Mer fakta:</h4>
@@ -327,6 +335,17 @@ a{
 img{
   ${ tw`mb-2`}
 }
+
+`
+
+const TextInfoWrapper = styled.div`
+padding: 25px;
+max-width: 1200px;
+display: flex;
+justify-content: center;
+margin-left: auto;
+margin-right: auto;
+
 
 `
 
