@@ -44,12 +44,6 @@ module.exports = {
 				repositoryName: 'brandwineestates',
 				pages: [
 					{
-						type: 'Contact',
-						match: '/:uid',
-						path: '/',
-						component: require.resolve('./src/pages/contact.js')
-					},
-					{
 						type: 'Single_Producer_Page',
 						match: '/:uid',
 						path: '/',

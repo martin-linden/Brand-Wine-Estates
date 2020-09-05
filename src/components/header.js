@@ -45,11 +45,11 @@ class Header extends React.Component {
               <li>
                 <Link to="/restaurang" activeClassName="active">Restaurang</Link>
               </li>
-              <li>
+              {/*  <li>
                 <Link to="/recensioner" activeClassName="active">Recensioner</Link>
-              </li>
+              </li> */}
               <li>
-                <Link to="/contact" activeClassName="active"> Om oss / kontakt</Link>
+                <Link to="/contact" activeClassName="active">Kontakt</Link>
               </li>
             </ul>
           </div>
