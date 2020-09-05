@@ -11,18 +11,6 @@ import Sparkling from '../images/type/sparkling2.svg'
 
 const WineCard = ({ name, country, producer, year, imageSharp, link, type }) => {
 
-    /*     let typeIcon = null
-    
-    
-        if (type === "Rött") {
-            typeIcon = <img src={RedWine}
-                id="icon-img" />
-         
-        } else if (type === "Vitt") {
-            typeIcon = <img src={WhiteWine}
-                id="icon-img" />
-        } */
-
     return (
         <CardWrapper onClick={() => navigate(`/${link}`)}>
 
