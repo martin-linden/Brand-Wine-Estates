@@ -8,6 +8,8 @@ import RedWine from '../images/type/red.svg'
 import Rose from '../images/type/rose.svg'
 import WhiteWine from '../images/type/white.svg'
 import Sparkling from '../images/type/sparkling2.svg'
+import Gin from '../images/type/gin.svg'
+import DessertWine from '../images/type/dessert2.svg'
 import Arrow from '../images/arrow.svg'
 
 const WineCard = ({ name, country, producer, year, imageSharp, link, type }) => {
@@ -35,6 +37,8 @@ const WineCard = ({ name, country, producer, year, imageSharp, link, type }) => 
                     {type === "Vitt" ? <img src={WhiteWine} id="icon-img" /> : null}
                     {type === "Rosé" ? <img src={Rose} id="icon-img" /> : null}
                     {type === "Mousserande" ? <img src={Sparkling} id="icon-img" /> : null}
+                    {type === "Gin" ? <img src={Gin} id="icon-img-gin" /> : null}
+                    {type === "Desertvin" ? <img src={DessertWine} id="icon-img-dessert" /> : null}
                 </div>
                 <div className="test">
 
@@ -129,6 +133,22 @@ h6{
    min-height: 29px;
 margin-top: 10px; 
 }
+#icon-img-gin{
+    ${ tw` mt-1 mb-1`}
+    
+   width: 20px;
+   max-height: 29px;
+   min-height: 29px;
+margin-top: 10px; 
+}
+#icon-img-dessert{
+    ${ tw` mt-1 mb-1`}
+    
+   width: 20px;
+   max-height: 29px;
+   min-height: 29px;
+margin-top: 10px; 
+}
 
 #read-more-text{
     margin: 0;
@@ -137,7 +157,7 @@ margin-top: 10px;
 
 #read-more-img{
     
-    width: 15px;
+    width: 20px;
    max-height: 29px;
    min-height: 29px;
    margin: 0px;
