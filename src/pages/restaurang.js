@@ -7,26 +7,22 @@ import tw from 'twin.macro'
 
 export const query = graphql`
 query RestaurantQuery {
+    
     prismic {
-      allSingle_wine_pages {
+      allSingle_wine_pages(after: "YXJyYXljb25uZWN0aW9uOjIw") {
         edges {
           node {
-            _meta {
-              id
-            }
             name
             grape
-            acidity
-            alcohol
-            country
-            number
-            producer
           }
+          cursor
         }
       }
     }
   }
+  
   `
+
 
 
 const restaurantPage = (props, i) => {

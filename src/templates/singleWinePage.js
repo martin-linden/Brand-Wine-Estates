@@ -101,7 +101,7 @@ const singleWinePage = (props) => {
 
 
 
-  console.log(props.data.prismic.allSingle_wine_pages.edges[0]);
+  console.log(props);
 
   const content = props.data.prismic.allSingle_wine_pages.edges[0].node;
   const iconSlice = props.data.prismic.allSingle_wine_pages.edges[0].node.body[0].fields;
@@ -280,7 +280,7 @@ border-radius: 5px;
 
 #type-img{
   width: 15px;
-  max-height: 37px;
+  max-height: 30px;
   margin-bottom: 0px;
 }
 
