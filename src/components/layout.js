@@ -73,3 +73,27 @@ export default Layout
     )}
   />
 ) */
+
+/* const Layout = ({ children }) => (
+  <StaticQuery
+    query={graphql`
+      query SiteTitleQuery {
+        site {
+          siteMetadata {
+            title
+          }
+        }
+      }
+    `}
+    render={data => (
+      <>
+        <GlobalStyle />
+        <MainWrapper>
+          <Header siteTitle={data.site.siteMetadata.title} />
+          <main>{children}</main>
+          <Footer />
+        </MainWrapper>
+      </>
+    )}
+  />
+) */

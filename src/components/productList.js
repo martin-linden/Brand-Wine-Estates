@@ -10,17 +10,19 @@ const ProductList = ({ data }) => {
     console.log(data);
 
 
+
+
+
     return (
 
         <React.Fragment>
             {data.map((data, i) => {
                 return (
-
                     <ProductCard
                         key={i}
                         name={data.node.name}
                         grape={data.node.grape}
-
+                        producer={data.node.producer}
                     />
                 )
             })}

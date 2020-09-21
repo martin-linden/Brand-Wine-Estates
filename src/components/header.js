@@ -101,11 +101,11 @@ export default Header;
 
 const StyledHeader = styled.div`
   ${ tw`  text-secondary flex justify-between items-center h-24 uppercase `}
-  /* display: grid;
-  grid-template-columns: 300px 1fr 100px;*/
   border-bottom-style: solid;
   border-bottom-width: 1px;
   border-bottom-color: #efefef;
+  background-color: white;
+ 
 
 
   

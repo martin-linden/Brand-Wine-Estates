@@ -5,6 +5,9 @@ import ProductList from '../components/productList'
 import styled from "styled-components"
 import tw from 'twin.macro'
 
+
+
+
 export const query = graphql`
 query RestaurantQuery {
     
@@ -14,6 +17,7 @@ query RestaurantQuery {
           node {
             name
             grape
+            producer
           }
           cursor
         }
@@ -27,19 +31,19 @@ query RestaurantQuery {
 
 const restaurantPage = (props, i) => {
 
-    /*  console.log(props.data.prismic.allSingle_wine_pages.edges); */
+  /*  console.log(props.data.prismic.allSingle_wine_pages.edges); */
 
-    const content = props.data.prismic.allSingle_wine_pages.edges;
-    console.log(content);
+  const content = props.data.prismic.allSingle_wine_pages.edges;
+  /*  console.log(content); */
 
 
-    return (
-        <Layout>
-            <ProductList
-                key={i}
-                data={content} />
-        </Layout>
-    )
+  return (
+    <Layout>
+      <ProductList
+        key={i}
+        data={content} />
+    </Layout>
+  )
 };
 
 export default restaurantPage
