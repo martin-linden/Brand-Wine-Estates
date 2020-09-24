@@ -7,6 +7,7 @@ import { graphql } from 'gatsby'
 import { Helmet } from 'react-helmet'
 
 
+
 export const query = graphql`
 query WineListQuery {
 	prismic {
@@ -26,14 +27,6 @@ query WineListQuery {
 					childImageSharp {
 					  fluid {
 						...GatsbyImageSharpFluid
-					  }
-					}
-				  }
-				  type_image
-				  type_imageSharp {
-					childImageSharp {
-					  fixed {
-						...GatsbyImageSharpFixed
 					  }
 					}
 				  }
@@ -61,14 +54,15 @@ const IndexPage = (props, i) => {
 
 
 
-	console.log(props);
+	console.log(props.location.pathname);
 
 	const content = props.data.prismic.allWine_lists.edges[0].node.body[0].fields
 
 	/* console.log(content); */
 
 	return (
-		<Layout>
+		<Layout >
+
 			<WineList
 				data={content}
 				key={i} />

@@ -5,8 +5,79 @@ import { GlobalStyle } from "./globalStyle"
 import { MainWrapper } from "./layoutComponents"
 import Header from "./header"
 import Footer from "./footer"
+import { Transition } from "react-spring/renderprops"
+import { useScrollRestoration } from "gatsby"
 
-const Layout = ({ children }) => (
+/* let Path = location.pathname; */
+
+
+const Layout = ({ children, path }) => (
+  <StaticQuery
+    query={graphql`
+      query SiteTitleQuery {
+        site {
+          siteMetadata {
+            title
+          }
+        }
+      }
+    `}
+    render={data => (
+      <>
+        <GlobalStyle />
+        <MainWrapper>
+          <Header siteTitle={data.site.siteMetadata.title} />
+          <main>{children}</main>
+          {path !== "/contact" ? <Footer /> : null}
+        </MainWrapper>
+      </>
+    )}
+  />
+)
+Layout.propTypes = {
+  children: PropTypes.node.isRequired,
+}
+
+
+export default Layout
+
+
+
+/* const Layout = ({ children }) => (
+  <StaticQuery
+    query={graphql`
+      query SiteTitleQuery {
+        site {
+          siteMetadata {
+            title
+          }
+        }
+      }
+    `}
+    render={data => (
+      <>
+        <GlobalStyle />
+        <Header siteTitle={data.site.siteMetadata.title} />
+        <Transition
+          config={{ duration: 300, delay: 50 }}
+          from={{ opacity: 0 }}
+          enter={{ opacity: 1 }}
+          leave={{ opacity: 0 }}
+        >
+          {() => style =>
+            <MainWrapper style={style}>
+              <main>{children}</main>
+            </MainWrapper>
+          }
+        </Transition>
+        <Footer />
+
+      </>
+    )}
+  />
+) */
+
+/* const Layout = ({ children }) => (
   <StaticQuery
     query={graphql`
       query SiteTitleQuery {
@@ -28,10 +99,4 @@ const Layout = ({ children }) => (
       </>
     )}
   />
-)
-
-Layout.propTypes = {
-  children: PropTypes.node.isRequired,
-}
-
-export default Layout
+) */
