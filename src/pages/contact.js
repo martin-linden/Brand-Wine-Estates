@@ -107,7 +107,7 @@ const ContactPage = (props) => {
                   <h4>{data.phone_number}</h4>
                 </div>
 
-                <div className="contact-content">
+                <div className="contact-content ">
                   <img src={MailLogo} alt="phone logotype" className="icon" />
                   <a href={data.email.url}>frida@brandwineestates.com</a>
                 </div>
@@ -116,10 +116,10 @@ const ContactPage = (props) => {
             </div>
             <hr></hr>
             {/* <h4 className="contact-logo-text">Kontakta Brand Wine Estates på sociala medier</h4> */}
-            <div className="contact-logo-wrapper">
+            <div className="contact-logo-wrapper ">
               <a href="https://www.instagram.com/brandwineestates/?hl=sv">Instagram</a>
 
-              <a href="https://www.linkedin.com/company/bwe-brand-wine-estates/">LinkedIn</a>
+              <a href="https://www.linkedin.com/company/bwe-brand-wine-estates/" >LinkedIn</a>
             </div>
           </div>
         </ContactWrapper>
@@ -144,9 +144,12 @@ padding: 50px;
 background-color: rgba(0,0,0,.5);
 margin-left: auto;
 margin-right: auto;
-border-radius: 5px;
 color: white;
 height: 90vh;
+
+a:hover{
+     color: #cdcdcdee;
+   }
 
 
 
@@ -163,9 +166,6 @@ height: 90vh;
  h4{
    margin: 0;
  }
-
-
-
 
 .icon{
   width: 27px;
@@ -204,6 +204,7 @@ height: 90vh;
      margin-left: 15px;
      margin-right: 15px;
    }
+   
     
   }
 

@@ -120,14 +120,17 @@ const singleWinePage = (props) => {
           />
         </div>
         <div className="content-wrapper">
-          <h4>{content.producer}</h4>
-          <h3>{content.name} - {content.year}</h3>
-          <div className="type">
-            {content.type === "Rött" ? <><h4 id="type-text">Rött</h4> <img src={RedWine} id="type-img" /> </> : null}
-            {content.type === "Vitt" ? <><h4 id="type-text">Vitt</h4> <img src={WhiteWine} id="type-img" /> </> : null}
-            {content.type === "Rosé" ? <><h4 id="type-text">Rosé</h4> <img src={Rose} id="type-img" /> </> : null}
-            {content.type === "Mousserande" ? <><h4 id="type-text">Mousserande</h4> <img src={Sparkling} id="type-img" /> </> : null}
+          <div className="prod-type">
+            <h4>{content.producer}</h4>
+            <div className="type">
+              {content.type === "Rött" ? <><h5 id="type-text">Rött</h5> <img src={RedWine} id="type-img" /> </> : null}
+              {content.type === "Vitt" ? <><h5 id="type-text">Vitt</h5> <img src={WhiteWine} id="type-img" /> </> : null}
+              {content.type === "Rosé" ? <><h5 id="type-text">Rosé</h5> <img src={Rose} id="type-img" /> </> : null}
+              {content.type === "Mousserande" ? <><h5 id="type-text">Mousserande</h5> <img src={Sparkling} id="type-img" /> </> : null}
+            </div>
           </div>
+          <h3>{content.name} - {content.year}</h3>
+
           <div className="taste-text">
             <RichText render={content.text} />
           </div>
@@ -169,13 +172,22 @@ const singleWinePage = (props) => {
 
         </div>
       </CardWrapper >
-
+      {/* <Line>
+        <hr></hr>
+      </Line> */}
       <TextInfoWrapper>
+
         <RichText render={content.info} />
       </TextInfoWrapper>
+      <Arrow>
+        <div class="demo">
 
+          <i class="arrow down"></i>
+
+        </div>
+      </Arrow>
       <MoreFactsWrapper>
-        <h4>Mer fakta:</h4>
+        {/*   <h4>Mer fakta:</h4> */}
         <MoreFacts>
           <div className="test">
             <p>Land: {content.country}</p>
@@ -201,14 +213,43 @@ const singleWinePage = (props) => {
 
 export default singleWinePage;
 
+const Line = styled.div`
+
+
+/* hr{
+  border-top: 1px solid black;
+ 
+} */
+
+
+`
+
+const Arrow = styled.div`
+display: flex;
+justify-content: center;
+margin-bottom: 50px;
+
+.arrow {
+  border: solid #edcccc;
+  border-width: 0 2px 2px 0;
+  display: inline-block;
+  padding: 10px;
+}
+
+.down {
+  transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+}
+`
+
 
 const CardWrapper = styled.div`
-${ tw` flex justify-center items-start  mt-10 mb-10`}
+${tw` flex justify-center items-start  mt-10 mb-16`}
 padding: 25px;
 background: #fff;
 border-radius: 5px;
 @media (max-width: 740px) {
-  ${ tw` flex-col items-center mb-0`}
+  ${tw` flex-col items-center mb-0`}
     }
 
 .wine-wrapper{
@@ -233,7 +274,7 @@ border-radius: 5px;
 }
 
 .content-wrapper{
-  ${ tw` flex flex-col`}
+  ${tw` flex flex-col`}
   margin-left: 150px;
   max-width: 430px;
   @media (max-width: 1060px) {
@@ -249,10 +290,22 @@ border-radius: 5px;
   
 }
 
+.prod-type{
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 25px;
+  h4{
+    margin-bottom: 5px;
+  }
+  
+
+}
+
 .category-wrapper{
-  ${ tw` flex items-center`}
+  ${tw` flex items-center`}
   margin-right: 30px;
-  padding: 10px;
+  padding-top: 10px;
+  padding-bottom: 10px;
   h4{
     margin-left: 10px;
     margin-bottom: 0px;
@@ -270,7 +323,6 @@ border-radius: 5px;
 .type{
   display: flex;
   align-items: center;
-  margin-bottom: 26px;
 }
 
 #type-text{
@@ -285,11 +337,11 @@ border-radius: 5px;
 }
 
 .extern-link{
-  ${ tw` flex items-center`}
+  ${tw` flex items-center`}
 }
 
 #icon-img{
-    ${ tw` `}
+    ${tw` `}
    max-width: 25px;
    min-width: 25px;
   max-height: 20px;
@@ -297,15 +349,19 @@ border-radius: 5px;
 }
 
 #taste-img{
-    ${ tw` mb-0 mr-3`}
+    ${tw` mb-0 mr-3`}
     max-height: 28px;
     max-width: 30px;
 }
 
 .taste-text{
   max-height: 400px;
-  overflow: scroll;
-  overflow-x: hidden;
+  overflow-x: hidden; 
+  -webkit-mask-image: linear-gradient(to bottom, black 50%, transparent 100%);
+  /* -webkit-mask-image: linear-gradient(to top, black 90%, transparent 100%); */
+  p{
+  margin-top: 10px;
+  }
 
 }
 /* :-webkit-scrollbar{
@@ -313,7 +369,7 @@ border-radius: 5px;
   } */
 
 .goes-with{
-  ${ tw` mt-6 mb-6 flex flex-wrap`}
+  ${tw` mt-6 mb-6 flex flex-wrap`}
 }
 
 #art-number{
@@ -333,50 +389,55 @@ a{
 }
 
 img{
-  ${ tw`mb-2`}
+  ${tw`mb-2`}
 }
 
 `
 
 const TextInfoWrapper = styled.div`
 padding: 25px;
-max-width: 1200px;
+max-width: 1100px;
 display: flex;
 justify-content: center;
 margin-left: auto;
 margin-right: auto;
 
+p{
+  margin: 0px;
+}
+
+
+
 
 `
 
 const MoreFactsWrapper = styled.div`
-${ tw` flex justify-center items-center flex-col `}
+${tw` flex justify-center items-center flex-col `}
 height: auto;
+background: linear-gradient(#fffafa 85%, #fff);
+
+margin-bottom: 50px;
 `
 
 const MoreFacts = styled.div`
-${ tw` grid grid-cols-3 gap-2 `}
+${tw` grid grid-cols-3 gap-2 `}
 padding:20px;
 margin-top: 50px;
 margin-bottom: 50px; 
 text-align: start; 
-border-top-style: solid; 
-border-top-width: 1px; 
-border-top-color: #efefef; 
-border-bottom-style: solid; 
-border-bottom-width: 1px; 
-border-bottom-color: #efefef; 
+
 @media (max-width: 1060px) {
-  ${ tw`grid-cols-1 gap-5`}
+  ${tw`grid-cols-1 gap-5`}
   margin-top: 30px;
 margin-bottom: 30px;
     }
 
 .test{
-  ${ tw``}
+  ${tw``}
   justify-self: center;
   margin-left: 50px;
   margin-right: 50px;
+  font-size: 90%;
   
 
   @media (max-width: 1060px) {

@@ -43,7 +43,7 @@ background: #FAF8F8;
 `;
 
 const ProducerListWrapper = styled.div`
-${ tw` mt-24 mb-24 grid grid-cols-3 gap-10`}
+${tw` mt-24 mb-24 grid grid-cols-3 gap-3`}
 
 
 

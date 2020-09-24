@@ -39,9 +39,9 @@ class Header extends React.Component {
               <li>
                 <Link to="/" activeClassName="active">sortiment</Link>
               </li>
-              <li>
+              {/*  <li>
                 <Link to="/producent" activeClassName="active">producenter</Link>
-              </li>
+              </li> */}
               <li>
                 <Link to="/restaurang" activeClassName="active">Restaurang</Link>
               </li>
@@ -62,7 +62,7 @@ class Header extends React.Component {
             {activeLink === "/recensioner" ? <Link to="/recensioner" activeClassName="active">recensioner</Link> : null}
             {activeLink === "/kontakt" ? <Link to="/kontakt" activeClassName="active">kontakt</Link> : null}
           </div> */}
-          <h5>SE/NO</h5>
+          {/* <h5>SE/NO</h5> */}
           <RiMenu2Line
             className="hamburger-menu"
             size="30"
@@ -74,14 +74,11 @@ class Header extends React.Component {
             <li>
               <Link to="/" activeClassName="active">sortiment</Link>
             </li>
-            <li>
+            {/* <li>
               <Link to="/producent" activeClassName="active">producent</Link>
-            </li>
+            </li> */}
             <li>
               <Link to="/restaurang" activeClassName="active">Restaurang</Link>
-            </li>
-            <li>
-              <Link to="/recensioner" activeClassName="active">Recensioner</Link>
             </li>
             <li>
               <Link to="/contact" activeClassName="active"> Om oss / kontakt</Link>
@@ -100,7 +97,7 @@ export default Header;
 
 
 const StyledHeader = styled.div`
-  ${ tw`  text-secondary flex justify-between items-center h-24 uppercase `}
+  ${tw`  text-secondary flex justify-between items-center h-24 uppercase `}
   border-bottom-style: solid;
   border-bottom-width: 1px;
   border-bottom-color: #efefef;
@@ -110,7 +107,7 @@ const StyledHeader = styled.div`
 
   
  .test{
-    ${ tw`flex justify-center items-center`}
+    ${tw`flex justify-center items-center`}
     
   }
 
@@ -124,14 +121,14 @@ const StyledHeader = styled.div`
   }
 
   .active-page{
-    ${ tw`flex justify-center items-center`}
+    ${tw`flex justify-center items-center`}
     @media (min-width: 805px) {
         display: none;
 	}  
   }
 
   .hamburger-menu {
-    ${ tw`mr-10 cursor-pointer`}
+    ${tw`mr-10 cursor-pointer`}
    
     @media (min-width: 805px) {
         display: none;
@@ -141,33 +138,33 @@ const StyledHeader = styled.div`
 
   h5{
     
-    ${ tw`m-0 font-thin mr-10`}
+    ${tw`m-0 font-thin mr-10`}
    
     @media (max-width: 805px) {
         display: none;
 	}  
   }
   img{
-    ${ tw`w-32 m-0 ml-10`}
+    ${tw`w-32 m-0 ml-10`}
     @media (max-width: 910px) {
-      ${ tw`w-24`}
+      ${tw`w-24`}
 	}  
   }
 
   .horizontal-menu{
-    ${ tw`mb-0  text-sm flex`}
+    ${tw`mb-0  text-sm flex`}
     list-style: none;
   
     @media (max-width: 910px) {
-      ${ tw`text-xs`}
+      ${tw`text-xs`}
   }  
   
   @media (max-width: 805px) {
-      ${ tw`hidden`}
+      ${tw`hidden`}
   }  
   
     li{
-      ${ tw`m-0 mt-1 pl-5 hover:text-gray-500`}
+      ${tw`m-0 mt-1 pl-5 hover:text-gray-500`}
       
       
     }
@@ -177,12 +174,11 @@ const StyledHeader = styled.div`
 `
 
 const DropDownMenu = styled.div`
-${ tw`uppercase flex flex-col justify-center items-center m-0 `}
+${tw`uppercase flex flex-col justify-center items-center m-0 `}
 list-style: none;
 font-family: Assistant;
 text-align: start;
-background: #ffe7e7;
-box-shadow: 0 1px  #e5e5e5;
+background: linear-gradient(#fffafa 85%, #FAF8F8);
 max-height: 300px;
 overflow: hidden;
 transition: ease-in-out 0.5s;
@@ -198,7 +194,7 @@ transition: max-height 0.5s cubic-bezier(.73,.42,.99,1);
 
 
 li {
-  ${ tw`mt-5`}
+  ${tw`mt-5`}
   color: #2c2c2c;
 }
 
