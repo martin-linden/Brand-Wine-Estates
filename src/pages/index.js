@@ -54,14 +54,14 @@ const IndexPage = (props, i) => {
 
 
 
-	console.log(props);
+	console.log(props.location.pathname);
 
 	const content = props.data.prismic.allWine_lists.edges[0].node.body[0].fields
 
 	/* console.log(content); */
 
 	return (
-		<Layout>
+		<Layout >
 
 			<WineList
 				data={content}

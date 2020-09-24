@@ -8,7 +8,10 @@ import Footer from "./footer"
 import { Transition } from "react-spring/renderprops"
 import { useScrollRestoration } from "gatsby"
 
-const Layout = ({ children }) => (
+/* let Path = location.pathname; */
+
+
+const Layout = ({ children, path }) => (
   <StaticQuery
     query={graphql`
       query SiteTitleQuery {
@@ -25,16 +28,16 @@ const Layout = ({ children }) => (
         <MainWrapper>
           <Header siteTitle={data.site.siteMetadata.title} />
           <main>{children}</main>
-          <Footer />
+          {path !== "/contact" ? <Footer /> : null}
         </MainWrapper>
       </>
     )}
   />
 )
-
 Layout.propTypes = {
   children: PropTypes.node.isRequired,
 }
+
 
 export default Layout
 
