@@ -27,6 +27,8 @@ import Cheese from '../images/taste/cheese.svg'
 import Chilli from '../images/taste/chilli.svg'
 import Mushroom from '../images/taste/mushroom.svg'
 import Carrot from '../images/taste/carrot.svg'
+import Gin from '../images/type/gin.svg'
+import DessertWine from '../images/type/dessert2.svg'
 
 
 
@@ -127,6 +129,9 @@ const singleWinePage = (props) => {
               {content.type === "Vitt" ? <><h5 id="type-text">Vitt</h5> <img src={WhiteWine} id="type-img" /> </> : null}
               {content.type === "Rosé" ? <><h5 id="type-text">Rosé</h5> <img src={Rose} id="type-img" /> </> : null}
               {content.type === "Mousserande" ? <><h5 id="type-text">Mousserande</h5> <img src={Sparkling} id="type-img" /> </> : null}
+              {content.type === "Gin" ? <><h5 id="type-text">Gin</h5> <img src={Gin} id="type-img" /> </> : null}
+              {content.type === "Desertvin" ? <><h5 id="type-text">Desertvin</h5> <img src={DessertWine} id="type-img" /> </> : null}
+
             </div>
           </div>
           <h3>{content.name} - {content.year}</h3>
