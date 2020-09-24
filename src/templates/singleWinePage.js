@@ -249,7 +249,7 @@ margin-bottom: 50px;
 
 
 const CardWrapper = styled.div`
-${tw` flex justify-center items-start  mt-10 mb-16`}
+${tw` flex justify-center items-start  mt-10`}
 padding: 25px;
 background: #fff;
 border-radius: 5px;
