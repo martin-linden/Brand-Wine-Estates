@@ -24,16 +24,17 @@ const CookieConsentPage = () => {
 
                 enableDeclineButton
                 onDecline={() => {
-                    navigate("/contact")
+                    navigate("/under-20")
                 }}
                 declineButtonStyle={{
                     background: "#d84a4a"
                 }}
+                setDeclineCookie={false}
                 overlay={true}
                 cookieValue={true}
                 expires={999}
                 hideOnAccept={true}
-                sameSite="lax"
+                sameSite="strict"
                 debug={false}
                 overlayStyle={{
                     background: "rgba(0, 0, 0, 0.9)"
