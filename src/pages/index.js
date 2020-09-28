@@ -8,6 +8,8 @@ import { Helmet } from 'react-helmet'
 
 
 
+
+
 export const query = graphql`
 query WineListQuery {
 	prismic {
@@ -62,7 +64,6 @@ const IndexPage = (props, i) => {
 
 	return (
 		<Layout >
-
 			<WineList
 				data={content}
 				key={i} />

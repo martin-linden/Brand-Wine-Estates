@@ -7,11 +7,12 @@ import Header from "./header"
 import Footer from "./footer"
 import { Transition } from "react-spring/renderprops"
 import { useScrollRestoration } from "gatsby"
+import Cookies from '../components/cookieConsent'
 
 /* let Path = location.pathname; */
 
 
-const Layout = ({ children, path }) => (
+const Layout = ({ children, path, newPath }) => (
   <StaticQuery
     query={graphql`
       query SiteTitleQuery {
@@ -24,11 +25,14 @@ const Layout = ({ children, path }) => (
     `}
     render={data => (
       <>
+
+        {newPath !== "/under-20" && newPath !== "/under-20/" ? <Cookies /> : null}
         <GlobalStyle />
+
         <MainWrapper>
-          <Header siteTitle={data.site.siteMetadata.title} />
+          {newPath !== "/under-20" && newPath !== "/under-20/" ? <Header siteTitle={data.site.siteMetadata.title} /> : null}
           <main>{children}</main>
-          {path !== "/contact" ? <Footer /> : null}
+          {path !== "/contact" && path !== "/contact/" && newPath !== "/under-20" && newPath !== "/under-20/" ? <Footer /> : null}
         </MainWrapper>
       </>
     )}
