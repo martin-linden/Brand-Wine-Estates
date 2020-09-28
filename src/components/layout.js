@@ -7,6 +7,7 @@ import Header from "./header"
 import Footer from "./footer"
 import { Transition } from "react-spring/renderprops"
 import { useScrollRestoration } from "gatsby"
+import Cookies from '../components/cookieConsent'
 
 /* let Path = location.pathname; */
 
@@ -24,6 +25,7 @@ const Layout = ({ children, path }) => (
     `}
     render={data => (
       <>
+        <Cookies />
         <GlobalStyle />
         <MainWrapper>
           <Header siteTitle={data.site.siteMetadata.title} />
