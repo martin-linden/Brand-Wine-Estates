@@ -362,7 +362,7 @@ border-radius: 5px;
 .taste-text{
   max-height: 400px;
   overflow-x: hidden; 
-  -webkit-mask-image: linear-gradient(to bottom, black 50%, transparent 100%);
+  /* -webkit-mask-image: linear-gradient(to bottom, black 50%, transparent 100%); */
   /* -webkit-mask-image: linear-gradient(to top, black 90%, transparent 100%); */
   p{
   margin-top: 10px;
@@ -403,12 +403,13 @@ const TextInfoWrapper = styled.div`
 padding: 25px;
 max-width: 1100px;
 display: flex;
+flex-direction: column;
 justify-content: center;
 margin-left: auto;
 margin-right: auto;
 
 p{
-  margin: 0px;
+  
 }
 
 
