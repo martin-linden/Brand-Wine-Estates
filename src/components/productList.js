@@ -7,25 +7,33 @@ import ProductCard from '../components/productCard'
 
 const ProductList = ({ data }) => {
 
-    console.log(data);
+    /* console.log(data); */
 
 
+    /* let italy = data.filter(e => e.country === "Italien"); */
 
+    const vineProducers = data.map(function (e) {
+        return e.producer
+    })
 
+    /*    console.log(vineProducers); */
+
+    const sortetNames = data.sort((a, b) => (a.year > b.year ? 1 : -1))
+
+    console.log(sortetNames);
 
     return (
 
         <React.Fragment>
-            {data.map((data, i) => {
+            {/*   {data.map((data, i) => {
                 return (
                     <ProductCard
-                        key={i}
-                        name={data.node.name}
-                        grape={data.node.grape}
-                        producer={data.node.producer}
-                    />
+                        producer={vineProducers}
+                    ></ProductCard>
                 )
-            })}
+            })} */}
+
+            {/* <p>{italy}</p> */}
         </React.Fragment>
 
 

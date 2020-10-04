@@ -125,10 +125,10 @@ const singleWinePage = (props) => {
           <div className="prod-type">
             <h4>{content.producer}</h4>
             <div className="type">
-              {content.type === "Rött" ? <><h5 id="type-text">Rött</h5> <img src={RedWine} id="type-img" /> </> : null}
+              {content.type === "Rött" ? <>{/* <h5 id="type-text">Rött</h5> */} <img src={RedWine} id="type-img" /> </> : null}
               {content.type === "Vitt" ? <><h5 id="type-text">Vitt</h5> <img src={WhiteWine} id="type-img" /> </> : null}
               {content.type === "Rosé" ? <><h5 id="type-text">Rosé</h5> <img src={Rose} id="type-img" /> </> : null}
-              {content.type === "Mousserande" ? <><h5 id="type-text">Mousserande</h5> <img src={Sparkling} id="type-img" /> </> : null}
+              {content.type === "Mousserande" ? <>{/* <h5 id="type-text">Mousserande</h5> */} <img src={Sparkling} id="type-img" /> </> : null}
               {content.type === "Gin" ? <><h5 id="type-text">Gin</h5> <img src={Gin} id="type-img" /> </> : null}
               {content.type === "Desertvin" ? <><h5 id="type-text">Desertvin</h5> <img src={DessertWine} id="type-img" /> </> : null}
 
@@ -195,19 +195,19 @@ const singleWinePage = (props) => {
         {/*   <h4>Mer fakta:</h4> */}
         <MoreFacts>
           <div className="test">
+            <p>Producent: {content.producer}</p>
             <p>Land: {content.country}</p>
             <p>Region: {content.region}</p>
-            <p>Producent: {content.producer}</p>
           </div>
           <div className="test">
             <p>Druva: {content.grape}</p>
-            <p>Alkoholhalt: {content.alcohol} %</p>
             <p>Flaska: {content.volume} cl</p>
+            <p>Temperatur: {content.temp} (°C)</p>
           </div>
           <div className="test">
             <p>Syra: {content.acidity} g/l</p>
             <p>Sötma: {content.sweetness} g/l</p>
-            <p>Temperatur: {content.temp} (°C)</p>
+            <p>Temperatur: {content.alcohol} %</p>
           </div>
         </MoreFacts>
       </MoreFactsWrapper>
@@ -297,10 +297,12 @@ border-radius: 5px;
 
 .prod-type{
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  align-items: center;
   margin-bottom: 25px;
   h4{
-    margin-bottom: 5px;
+    margin: 0px;
+    margin-right: 7px;
   }
   
 
@@ -422,28 +424,36 @@ ${tw` flex justify-center items-center flex-col `}
 height: auto;
 background: linear-gradient(#fffafa 85%, #fff);
 
-margin-bottom: 50px;
+margin-bottom: 50px; 
+
+@media (max-width: 1060px) {
+  margin-bottom: 0px;
+    }
 `
 
 const MoreFacts = styled.div`
-${tw` grid grid-cols-3 gap-2 `}
-padding:20px;
+/* ${tw` grid grid-cols-3 gap-2 `} */
+display: grid;
+grid-template-columns: repeat(3,minmax(0,1fr));
+/* padding:20px; */
 margin-top: 50px;
 margin-bottom: 50px; 
 text-align: start; 
 
 @media (max-width: 1060px) {
-  ${tw`grid-cols-1 gap-5`}
+  /* ${tw`grid-cols-3 gap-5`} */
   margin-top: 30px;
-margin-bottom: 30px;
+  margin-bottom: 30px;
+  font-size: 80%; 
     }
 
 .test{
   ${tw``}
   justify-self: center;
-  margin-left: 50px;
-  margin-right: 50px;
+  /* margin-left: 50px;
+  margin-right: 50px; */
   font-size: 90%;
+  padding: 20px;
   
 
   @media (max-width: 1060px) {

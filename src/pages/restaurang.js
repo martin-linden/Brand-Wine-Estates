@@ -8,33 +8,55 @@ import tw from 'twin.macro'
 
 
 
+
 export const query = graphql`
-query RestaurantQuery {
-    
-    prismic {
-      allSingle_wine_pages(after: "YXJyYXljb25uZWN0aW9uOjIw") {
-        edges {
-          node {
-            name
-            grape
-            producer
-          }
-          cursor
-        }
-      }
-    }
+query ProductListQuery {
+	prismic {
+	  allWine_lists {
+		edges {
+		  node {
+			body {
+			  ... on PRISMIC_Wine_listBodyWine_list {
+				fields {
+				  country
+				  name
+				  producer
+				  type
+				  year
+				  wine_image
+				  wine_imageSharp {
+					childImageSharp {
+					  fluid {
+						...GatsbyImageSharpFluid
+					  }
+					}
+				  }
+				  link {
+					... on PRISMIC_Single_wine_page {
+					  _meta {
+						uid
+					  }
+					}
+				  }
+				}
+			  }
+			}
+		  }
+		}
+	  }
+	}
   }
   
-  `
+`;
 
 
 
 const restaurantPage = (props, i) => {
 
-  /*  console.log(props.data.prismic.allSingle_wine_pages.edges); */
+  /* console.log(props.data.prismic.allWine_lists.edges[0].node.body[0].fields) */
 
-  const content = props.data.prismic.allSingle_wine_pages.edges;
-  /*  console.log(content); */
+  const content = props.data.prismic.allWine_lists.edges[0].node.body[0].fields;
+
 
 
   return (
