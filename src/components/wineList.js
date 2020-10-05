@@ -2,11 +2,23 @@ import React from "react"
 import styled from "styled-components"
 import tw from 'twin.macro'
 import WineCard from '../components/wineCard'
+import { TweenMax, Power3 } from 'gsap'
 
 
 const WineList = ({ data }) => {
 
-    console.log(data[0].type);
+    /*   let animationItem = useRef(null);
+  
+  
+      useEffect(() => {
+          console.log(animationItem);
+          TweenMax.fromTo(
+              animationItem,
+              { opacity: 0 }, { opacity: 1, duration: .9, ease: "ease" }
+          )
+      }, [])
+  
+      console.log(animationItem); */
 
 
     return (
@@ -43,16 +55,16 @@ background: #FAF8F8;
 `;
 
 const WineListWrapper = styled.div`
-${ tw` mt-24 mb-24 grid grid-cols-4 gap-16`}
+${tw` mt-24 mb-24 grid grid-cols-4 gap-16`}
 
 @media (max-width: 1380px) {
-    ${ tw` grid-cols-3`}
+    ${tw` grid-cols-3`}
     }
 @media (max-width: 1090px) {
-    ${ tw` grid-cols-2`}
+    ${tw` grid-cols-2`}
     }
 @media (max-width: 670px) {
-    ${ tw` grid-cols-1`}
+    ${tw` grid-cols-1`}
     }
 
 
