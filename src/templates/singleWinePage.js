@@ -110,6 +110,8 @@ const singleWinePage = (props) => {
 
 
 
+
+
   return (
     <Layout>
       <GlobalStyle />

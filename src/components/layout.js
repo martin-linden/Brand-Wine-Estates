@@ -15,18 +15,18 @@ import { TweenMax, Power3 } from 'gsap'
 
 const Layout = ({ children, path, newPath }) => {
 
-  let animationItem = useRef(null);
+  let opacityEase = useRef(null);
 
 
   useEffect(() => {
-    console.log(animationItem);
+    console.log(opacityEase);
     TweenMax.fromTo(
-      animationItem,
+      opacityEase,
       { opacity: 0 }, { opacity: 1, duration: 0.8, ease: "ease", delay: .2 }
     )
   }, [])
 
-  console.log(animationItem);
+  console.log(opacityEase);
 
   return (
     <StaticQuery
@@ -46,7 +46,7 @@ const Layout = ({ children, path, newPath }) => {
           <GlobalStyle />
           <MainWrapper>
             {newPath !== "/under-20" && newPath !== "/under-20/" ? <Header siteTitle={data.site.siteMetadata.title} /> : null}
-            <main ref={el => { animationItem = el }}>{children}</main>
+            <main ref={el => { opacityEase = el }}>{children}</main>
             {path !== "/contact" && path !== "/contact/" && newPath !== "/under-20" && newPath !== "/under-20/" ? <Footer /> : null}
           </MainWrapper>
         </>
