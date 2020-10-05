@@ -255,6 +255,7 @@ background: #fff;
 border-radius: 5px;
 @media (max-width: 740px) {
   ${tw` flex-col items-center mb-0`}
+  
     }
 
 .wine-wrapper{
