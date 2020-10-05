@@ -46,7 +46,7 @@ query MyQuery {
                 background_image
                 background_imageSharp {
                   childImageSharp {
-                    fluid(maxWidth: 3080, quality: 100) {
+                    fluid(maxWidth: 1080, quality: 100) {
                       ...GatsbyImageSharpFluid
                     }
                   }
@@ -141,12 +141,12 @@ const ContactPage = (props) => {
 
               <div className="contact-content ">
                 <img src={InstaLogo} alt="phone logotype" className="icon" />
-                <a href={data.email.url}>Instagram</a>
+                <a href="https://www.instagram.com/brandwineestates/?hl=sv">Instagram</a>
               </div>
 
               <div className="contact-content ">
                 <img src={LinkedinLogo} alt="phone logotype" className="icon" />
-                <a href={data.email.url}>LinkedIn</a>
+                <a href="https://www.linkedin.com/company/bwe-brand-wine-estates/">LinkedIn</a>
               </div>
             </div>
 

@@ -185,9 +185,9 @@ const singleWinePage = (props) => {
         <RichText render={content.info} />
       </TextInfoWrapper>
       <Arrow>
-        <div class="demo">
+        <div className="demo">
 
-          <i class="arrow down"></i>
+          <i className="arrow down"></i>
 
         </div>
       </Arrow>
@@ -195,19 +195,19 @@ const singleWinePage = (props) => {
         {/*   <h4>Mer fakta:</h4> */}
         <MoreFacts>
           <div className="test">
-            <p>Producent: {content.producer}</p>
-            <p>Land: {content.country}</p>
-            <p>Region: {content.region}</p>
+            <p><span>Producent:</span> {content.producer}</p>
+            <p><span>Land:</span> {content.country}</p>
+            <p><span>Region:</span> {content.region}</p>
           </div>
           <div className="test">
-            <p>Druva: {content.grape}</p>
-            <p>Flaska: {content.volume} cl</p>
-            <p>Temperatur: {content.temp} (°C)</p>
+            <p><span>Druva:</span> {content.grape}</p>
+            <p><span>Flaska:</span> {content.volume} cl</p>
+            <p><span>Temperatur:</span> {content.temp} (°C)</p>
           </div>
           <div className="test">
-            <p>Syra: {content.acidity} g/l</p>
-            <p>Sötma: {content.sweetness} g/l</p>
-            <p>Temperatur: {content.alcohol} %</p>
+            <p><span>Syra:</span> {content.acidity} g/l</p>
+            <p><span>Sötma:</span> {content.sweetness} g/l</p>
+            <p><span>Volymprocent:</span> {content.alcohol} %</p>
           </div>
         </MoreFacts>
       </MoreFactsWrapper>
@@ -377,6 +377,9 @@ border-radius: 5px;
 
 .goes-with{
   ${tw` mt-6 mb-6 flex flex-wrap`}
+  @media (max-width: 364px) {
+    ${tw`justify-center`}
+    }
 }
 
 #art-number{
@@ -440,11 +443,20 @@ margin-top: 50px;
 margin-bottom: 50px; 
 text-align: start; 
 
+span{
+font-weight: 600;
+}
+
 @media (max-width: 1060px) {
-  /* ${tw`grid-cols-3 gap-5`} */
+
+  font-size: 90%; 
+    }
+
+@media (max-width: 740px) {
+  ${tw`grid-cols-1 gap-0`}
   margin-top: 30px;
   margin-bottom: 30px;
-  font-size: 80%; 
+  font-size: 100%;  
     }
 
 .test{
