@@ -2,41 +2,32 @@ import React from "react"
 import styled from "styled-components"
 import tw from 'twin.macro'
 import ProductCard from '../components/productCard'
-
+import ProductListCategory from '../components/productListCategory'
 
 
 const ProductList = ({ data }) => {
+    console.log(data);
 
-    /* console.log(data); */
+    const italy = data.filter(e => e.country === "Italien");
+    const england = data.filter(e => e.country === "Storbritannien");
+    const frankrike = data.filter(e => e.country === "Frankrike");
+
+    const products = [
+        england,
+        italy,
+        frankrike
+    ]
 
 
-    /* let italy = data.filter(e => e.country === "Italien"); */
+    console.log(products);
 
-    const vineProducers = data.map(function (e) {
-        return e.producer
-    })
+    console.log(products);
 
-    /*    console.log(vineProducers); */
-
-    const sortetNames = data.sort((a, b) => (a.year > b.year ? 1 : -1))
-
-    console.log(sortetNames);
-
+    console.log(products);
     return (
-
-        <React.Fragment>
-            {/*   {data.map((data, i) => {
-                return (
-                    <ProductCard
-                        producer={vineProducers}
-                    ></ProductCard>
-                )
-            })} */}
-
-            {/* <p>{italy}</p> */}
-        </React.Fragment>
-
-
+        <>
+            {products.map(product => <ProductListCategory productCategory={product} />)}
+        </>
     )
 
 };

@@ -4,6 +4,7 @@ import { graphql } from 'gatsby'
 import ProductList from '../components/productList'
 import styled from "styled-components"
 import tw from 'twin.macro'
+import { GlobalStyle } from '../components/globalStyle'
 
 
 
@@ -53,19 +54,22 @@ query ProductListQuery {
 
 const restaurantPage = (props, i) => {
 
-  /* console.log(props.data.prismic.allWine_lists.edges[0].node.body[0].fields) */
+	/* console.log(props.data.prismic.allWine_lists.edges[0].node.body[0].fields) */
 
-  const content = props.data.prismic.allWine_lists.edges[0].node.body[0].fields;
+	const content = props.data.prismic.allWine_lists.edges[0].node.body[0].fields;
 
 
 
-  return (
-    <Layout>
-      <ProductList
-        key={i}
-        data={content} />
-    </Layout>
-  )
+	return (
+		<>
+			<GlobalStyle />
+			<Layout>
+				<ProductList
+					key={i}
+					data={content} />
+			</Layout>
+		</>
+	)
 };
 
 export default restaurantPage
