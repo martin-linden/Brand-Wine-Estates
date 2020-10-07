@@ -19,7 +19,6 @@ const ProductListCategory = (Props) => {
                     <tr>
                         <td><span>Namn</span></td>
                         <td><span>Producent</span></td>
-                        <td><span>Region</span></td>
                         <td><span>Årgång</span></td>
                         <td><span>Produkttyp</span></td>
                         <td><span>Pris</span></td>
@@ -45,7 +44,6 @@ padding: 20px;
 @media (max-width: 1000px) {
     margin-left: 0%;
 margin-right: 0%; 
-font-size: 80%;
     }
     
     hr{
@@ -54,6 +52,13 @@ font-size: 80%;
     td{
         padding: 10px;
         width: 15%;
+        font-size: 16px;
+        @media (max-width: 1000px) { 
+    font-size: 14px;
+    }
+        @media (max-width: 680px) {
+    font-size: 10px;
+    }
 
         span{
             font-weight: 600;

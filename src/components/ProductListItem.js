@@ -17,7 +17,6 @@ const ProductListItem = (Props) => {
                         <tr>
                             <td onClick={() => navigate(`/${link}`)}>{wine.name}</td>
                             <td>{wine.producer}</td>
-                            <td>{wine.region}</td>
                             <td>{wine.year}</td>
                             <td>{wine.type}</td>
                             <td>{wine.price}</td>
