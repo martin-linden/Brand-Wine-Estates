@@ -14,10 +14,16 @@ const ProductListCategory = (Props) => {
         <Container>
             <h2>{wineOfProducers[0][0].country}</h2>
             <hr />
-            {/*  <tr>
-                <td>Name</td>
-                <td>world</td>
-            </tr> */}
+            <table>
+                <tbody>
+                    <tr>
+                        <td><span>Namn</span></td>
+                        <td><span>Producent</span></td>
+                        <td><span>Årgång</span></td>
+                        <td><span>Produkttyp</span></td>
+                    </tr>
+                </tbody>
+            </table>
             {wineOfProducers.map(wines => <ProductListCategoryWines
                 list={wines}
 
@@ -42,6 +48,14 @@ font-size: 80%;
     
     hr{
         border-top: 1px solid #ffd1d1;
+    }
+    td{
+        padding: 10px;
+        width: 15%;
+
+        span{
+            font-weight: 600;
+        }
     }
 
 `
