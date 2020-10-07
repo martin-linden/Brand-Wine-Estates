@@ -8,29 +8,10 @@ const ProductListItem = (Props) => {
     return (
         <FlexContainer>
             <Container>
-                <div className="test">
-                    <div className="test2">
-                        <p>{wine.name}</p>
-                    </div>
-                </div>
-
-                <div className="test">
-                    <div className="test2">
-                        <p>{wine.producer}</p>
-                    </div>
-                </div>
-
-                <div className="test">
-                    <div className="test2">
-                        <p>{wine.year}</p>
-                    </div>
-                </div>
-
-                <div className="test">
-                    <div className="test2">
-                        <p>{wine.type}</p>
-                    </div>
-                </div>
+                <p className="padding">{wine.name}</p>
+                <p className="padding">{wine.producer}</p>
+                <p className="padding">{wine.year}</p>
+                <p className="padding">{wine.type}</p>
             </Container>
         </FlexContainer>
     )
@@ -39,29 +20,18 @@ const ProductListItem = (Props) => {
 export default ProductListItem
 
 export const FlexContainer = styled.div`
-display: flex;
-justify-content: center;
 
 `
 
 export const Container = styled.div`
 
 display: grid;
-    grid-template-columns: 1fr 1fr 100px 1fr;
-    gap: 1.25rem;
+    grid-template-columns: 1fr 1fr 1fr 1fr
+    /* gap: 1.25rem; */
 
-.test{
-    
-   width: 300px;
-  display: flex;
-  justify-content: center;
- /*  background: pink; */
-   
-    .test2{
-       display: flex;
-      /*   background: green;  */
-       width: 200px;
+    p{
+        padding: 5px;
     }
-}
+
 
 `

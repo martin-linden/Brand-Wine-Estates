@@ -12,7 +12,7 @@ const ProductListCategory = (Props) => {
 
     return (
         <Container>
-            <h1>{wineOfProducers[0][0].country}</h1>
+            <h2>{wineOfProducers[0][0].country}</h2>
             {wineOfProducers.map(wines => <ProductListCategoryWines
                 list={wines}
 
@@ -24,15 +24,15 @@ const ProductListCategory = (Props) => {
 export default ProductListCategory
 
 export const Container = styled.div`
-display: flex;
-flex-direction: column;
-align-items: flex-start;
+margin-left: 20%;
+margin-right: 10%;  
 
-margin-left: auto;
-margin-right: auto;
+@media (max-width: 1000px) {
+    margin-left: 0%;
+margin-right: 0%; 
+font-size: 80%;
+    }
+    
 
-h1{
-    margin-left: 45px;
-}
-/* padding: 50px; */
 `
+

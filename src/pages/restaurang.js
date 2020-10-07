@@ -63,13 +63,19 @@ const restaurantPage = (props, i) => {
 	return (
 		<>
 			<GlobalStyle />
-			<Layout>
-				<ProductList
-					key={i}
-					data={content} />
-			</Layout>
+			<Container>
+				<Layout>
+					<ProductList
+						key={i}
+						data={content} />
+				</Layout>
+			</Container>
 		</>
 	)
 };
 
 export default restaurantPage
+
+export const Container = styled.div`
+padding: 20px;
+`
