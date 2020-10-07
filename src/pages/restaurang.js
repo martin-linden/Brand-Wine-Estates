@@ -77,5 +77,5 @@ const restaurantPage = (props, i) => {
 export default restaurantPage
 
 export const Container = styled.div`
-padding: 20px;
+
 `

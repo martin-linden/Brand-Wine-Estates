@@ -6,24 +6,21 @@ import ProductListCategory from '../components/productListCategory'
 
 
 const ProductList = ({ data }) => {
-    console.log(data);
+
 
     const italy = data.filter(e => e.country === "Italien");
     const england = data.filter(e => e.country === "Storbritannien");
     const frankrike = data.filter(e => e.country === "Frankrike");
+    const india = data.filter(e => e.country === "Indien")
 
     const products = [
         england,
         italy,
-        frankrike
+        frankrike,
+        india
+
     ]
 
-
-    console.log(products);
-
-    console.log(products);
-
-    console.log(products);
     return (
         <>
             {products.map(product => <ProductListCategory productCategory={product} />)}

@@ -13,6 +13,11 @@ const ProductListCategory = (Props) => {
     return (
         <Container>
             <h2>{wineOfProducers[0][0].country}</h2>
+            <hr />
+            {/*  <tr>
+                <td>Name</td>
+                <td>world</td>
+            </tr> */}
             {wineOfProducers.map(wines => <ProductListCategoryWines
                 list={wines}
 
@@ -24,8 +29,10 @@ const ProductListCategory = (Props) => {
 export default ProductListCategory
 
 export const Container = styled.div`
-margin-left: 20%;
+margin-left: 10%;
 margin-right: 10%;  
+margin-top: 50px; 
+padding: 20px;
 
 @media (max-width: 1000px) {
     margin-left: 0%;
@@ -33,6 +40,9 @@ margin-right: 0%;
 font-size: 80%;
     }
     
+    hr{
+        border-top: 1px solid #ffd1d1;
+    }
 
 `
 

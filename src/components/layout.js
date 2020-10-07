@@ -26,7 +26,6 @@ const Layout = ({ children, path, newPath }) => {
     )
   }, [])
 
-  console.log(opacityEase);
 
   return (
     <StaticQuery

@@ -8,10 +8,20 @@ const ProductListItem = (Props) => {
     return (
         <FlexContainer>
             <Container>
-                <p className="padding">{wine.name}</p>
+                <table>
+                    <tbody>
+                        <tr>
+                            <td>{wine.name}</td>
+                            <td>{wine.producer}</td>
+                            <td>{wine.year}</td>
+                            <td>{wine.type}</td>
+                        </tr>
+                    </tbody>
+                </table>
+                {/* <p className="padding">{wine.name}</p>
                 <p className="padding">{wine.producer}</p>
                 <p className="padding">{wine.year}</p>
-                <p className="padding">{wine.type}</p>
+                <p className="padding">{wine.type}</p> */}
             </Container>
         </FlexContainer>
     )
@@ -25,12 +35,13 @@ export const FlexContainer = styled.div`
 
 export const Container = styled.div`
 
-display: grid;
+/* display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr
-    /* gap: 1.25rem; */
+   */
 
-    p{
-        padding: 5px;
+    td{
+        padding: 10px;
+        width: 15%;
     }
 
 
