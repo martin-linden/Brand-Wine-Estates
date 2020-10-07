@@ -10,13 +10,13 @@ const ProductList = ({ data }) => {
 
     const italy = data.filter(e => e.country === "Italien");
     const england = data.filter(e => e.country === "Storbritannien");
-    const frankrike = data.filter(e => e.country === "Frankrike");
+    const france = data.filter(e => e.country === "Frankrike");
     const india = data.filter(e => e.country === "Indien")
 
     const products = [
         england,
+        france,
         italy,
-        frankrike,
         india
 
     ]

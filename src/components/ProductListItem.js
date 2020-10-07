@@ -1,20 +1,26 @@
 import React from 'react'
 import styled from "styled-components"
+import { navigate } from "gatsby";
 import tw from 'twin.macro'
 
 
 const ProductListItem = (Props) => {
+
     const { wine } = Props
+    const link = wine.link._meta.uid;
+
     return (
         <FlexContainer>
             <Container>
                 <table>
                     <tbody>
                         <tr>
-                            <td>{wine.name}</td>
+                            <td onClick={() => navigate(`/${link}`)}>{wine.name}</td>
                             <td>{wine.producer}</td>
+                            <td>{wine.region}</td>
                             <td>{wine.year}</td>
                             <td>{wine.type}</td>
+                            <td>{wine.price}</td>
                         </tr>
                     </tbody>
                 </table>
@@ -46,3 +52,5 @@ export const Container = styled.div`
 
 
 `
+
+/* onClick={() => navigate(`/${link}`)}>{wine.name} */

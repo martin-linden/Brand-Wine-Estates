@@ -24,14 +24,6 @@ query ProductListQuery {
 				  producer
 				  type
 				  year
-				  wine_image
-				  wine_imageSharp {
-					childImageSharp {
-					  fluid {
-						...GatsbyImageSharpFluid
-					  }
-					}
-				  }
 				  link {
 					... on PRISMIC_Single_wine_page {
 					  _meta {
@@ -39,6 +31,8 @@ query ProductListQuery {
 					  }
 					}
 				  }
+				  region
+				  price
 				}
 			  }
 			}
@@ -47,7 +41,6 @@ query ProductListQuery {
 	  }
 	}
   }
-  
 `;
 
 

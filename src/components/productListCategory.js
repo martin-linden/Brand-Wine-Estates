@@ -19,8 +19,10 @@ const ProductListCategory = (Props) => {
                     <tr>
                         <td><span>Namn</span></td>
                         <td><span>Producent</span></td>
+                        <td><span>Region</span></td>
                         <td><span>Årgång</span></td>
                         <td><span>Produkttyp</span></td>
+                        <td><span>Pris</span></td>
                     </tr>
                 </tbody>
             </table>
