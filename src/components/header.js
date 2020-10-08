@@ -77,7 +77,7 @@ class Header extends React.Component {
 
           <DropDownMenu className={isExpanded ? '' : 'hidden'}>
             <div className="flex-container">
-              <div>
+              <div className="content-container">
                 <li>
                   <Link to="/" activeClassName="active-link">{this.props.sortiment}</Link>
                 </li>
@@ -203,15 +203,16 @@ width: 100%;
 list-style: none;
 font-family: Assistant;
 text-align: start;
-background: #f9f9f9;
+background: #fff;
 max-height: 300px;
 overflow: hidden;
-transition: ease-in-out 0.8s;
-transition: max-height 0.5s cubic-bezier(.73,.42,.99,1); 
-border-bottom-style: solid;
-border-bottom-width: 1px;
-border-bottom-color: #efefef; 
-${tw`shadow`}
+/* transition: ease-in-out 3s; */
+transition: max-height 800ms cubic-bezier(0.76, 0.25, 0.43, 0.7); 
+border: none;
+border-bottom-left-radius: 15px;
+border-bottom-right-radius: 15px;  
+${tw`shadow-lg`}
+
 
 
 .flex-container{
@@ -219,7 +220,9 @@ ${tw`shadow`}
 }
 
 
-
+.content-container{
+padding: 20px;
+}
 
 
 
@@ -233,12 +236,13 @@ ${tw`shadow`}
 
 
 li {
-  ${tw`mt-5`}
+  ${tw`mt-8`}
   color: #2c2c2c;
 }
 
 .active{
     border-bottom: 1px solid #cecece; 
+    
    
     
     
@@ -246,10 +250,11 @@ li {
 
   .active-link{
 
- 
-    
     
   }
+
+  
+
 
 
  
