@@ -6,26 +6,35 @@ import tw from 'twin.macro'
 const ProductListCategory = (Props) => {
     const { productCategory } = Props
 
+    /*   console.log(productCategory);
+   */
+
+    const regions = [...new Set(productCategory.map(item => item.region))];
     const producers = [...new Set(productCategory.map(item => item.producer))];
-    const wineOfProducers = producers.map(producer => productCategory.filter(product => product.producer === producer))
-    wineOfProducers.forEach(wineGroup => wineGroup.sort((a, b) => a.type < b.type))
+
+    /*  console.log(producers); */
+
+
+
+    /* console.log(regionsOfProducers); */
+    /* const wineOfProducers = producers.map(producer => productCategory.filter(product => product.producer === producer)) */
+    const wineOfRegions = regions.map(producer => productCategory.filter(region => region.region === producer))
+
+
+
+    /*  wineOfProducers.forEach(wineGroup => wineGroup.sort((a, b) => a.type < b.type)) */
+
+    /*  console.log(wineOfProducers); */
+
+    /* console.log(wineOfRegions[0][0]); */
+
 
     return (
         <Container>
-            <h2>{wineOfProducers[0][0].country}</h2>
+            <h2>{wineOfRegions[0][0].country}</h2>
             <hr />
-            <table>
-                <tbody>
-                    <tr>
-                        <td><span>Namn</span></td>
-                        <td><span>Producent</span></td>
-                        <td><span>Årgång</span></td>
-                        <td><span>Produkttyp</span></td>
-                        <td><span>Pris</span></td>
-                    </tr>
-                </tbody>
-            </table>
-            {wineOfProducers.map(wines => <ProductListCategoryWines
+
+            {wineOfRegions.map(wines => <ProductListCategoryWines
                 list={wines}
 
             />)}
@@ -40,6 +49,10 @@ margin-left: 10%;
 margin-right: 10%;  
 margin-top: 50px; 
 padding: 20px;
+
+h2{
+    padding: 10px;
+}
 
 @media (max-width: 1000px) {
     margin-left: 0%;
