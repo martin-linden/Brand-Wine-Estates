@@ -15,6 +15,7 @@ import Arrow from '../images/arrow.svg'
 const WineCard = ({ name, country, producer, year, imageSharp, link, type }) => {
 
     return (
+
         <CardWrapper onClick={() => navigate(`/${link}`)}>
 
             <GlobalStyle />
@@ -50,6 +51,7 @@ const WineCard = ({ name, country, producer, year, imageSharp, link, type }) => 
             </div>
 
         </CardWrapper >
+
     )
 };
 
@@ -58,15 +60,11 @@ export default WineCard;
 const ReadMore = styled.div`
 
  opacity: 0%;
-
- transition: 0.3s ease-in-out; 
- 
-
 `
 
 
 const CardWrapper = styled.div`
-${ tw`shadow hover:shadow-lg cursor-pointer`}
+${tw`shadow hover:shadow-lg cursor-pointer`}
 min-height: 450px;
 max-height: 470px; 
 width: 238px;
@@ -110,7 +108,7 @@ margin-top: 0px;
 }
 
 .info-section{
-    ${ tw`mt-5 `}
+    ${tw`mt-5 `}
     h5  {
         margin-bottom: 15px;
     }
@@ -126,7 +124,7 @@ h6{
 }
 
 #icon-img{
-    ${ tw` mt-1 mb-1`}
+    ${tw` mt-1 mb-1`}
     
    width: 15px;
    max-height: 29px;
@@ -134,7 +132,7 @@ h6{
 margin-top: 10px; 
 }
 #icon-img-gin{
-    ${ tw` mt-1 mb-1`}
+    ${tw` mt-1 mb-1`}
     
    width: 20px;
    max-height: 29px;
@@ -142,7 +140,7 @@ margin-top: 10px;
 margin-top: 10px; 
 }
 #icon-img-dessert{
-    ${ tw` mt-1 mb-1`}
+    ${tw` mt-1 mb-1`}
     
    width: 20px;
    max-height: 29px;
