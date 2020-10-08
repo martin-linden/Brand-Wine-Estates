@@ -15,8 +15,6 @@ class Header extends React.Component {
 
     this.state = {
       isExpanded: false,
-      unPinExpanded: true,
-
     }
   }
 
@@ -27,11 +25,6 @@ class Header extends React.Component {
     })
   }
 
-  UnpinToggle() {
-    this.setState({
-      unPinExpanded: this.state.isExpanded === false
-    })
-  }
 
 
   render() {
@@ -39,7 +32,7 @@ class Header extends React.Component {
     /* const activeLink = window.location.pathname; //show pathname of page */
 
     const { isExpanded } = this.state;
-    const { unPinExpanded } = this.state;
+
 
 
     console.log(this.state);
@@ -52,7 +45,9 @@ class Header extends React.Component {
           pinStart={0}
           disableInlineStyles={true}
           onUnpin={() => {
-            this.UnpinToggle()
+            this.setState({
+              isExpanded: this.state.isExpanded = false
+            })
           }}
         >
 
