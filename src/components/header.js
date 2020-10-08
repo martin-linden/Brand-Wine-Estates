@@ -5,6 +5,7 @@ import tw from 'twin.macro'
 import Logo from '../images/bwe-logo.png'
 import { RiMenu2Line, RiTruckLine } from 'react-icons/ri';
 import Headroom from 'react-headroom'
+import HamburgerMenu from 'react-hamburger-menu'
 
 
 
@@ -15,6 +16,7 @@ class Header extends React.Component {
 
     this.state = {
       isExpanded: false,
+      open: false,
     }
   }
 
@@ -25,6 +27,12 @@ class Header extends React.Component {
     })
   }
 
+  handleClick() {
+    this.setState({
+      open: !this.state.open
+    });
+  }
+
 
 
   render() {
@@ -32,6 +40,7 @@ class Header extends React.Component {
     /* const activeLink = window.location.pathname; //show pathname of page */
 
     const { isExpanded } = this.state;
+    /*  const { open } = this.state; */
 
 
 
@@ -46,7 +55,8 @@ class Header extends React.Component {
           disableInlineStyles={true}
           onUnpin={() => {
             this.setState({
-              isExpanded: this.state.isExpanded = false
+              isExpanded: this.state.isExpanded = false,
+              open: this.state.open = false,
             })
           }}
         >
@@ -68,13 +78,21 @@ class Header extends React.Component {
               </ul>
             </div>
 
+            <div className="hamburger-menu" onClick={() => this.handleToggle()}>
+              <HamburgerMenu
+                isOpen={this.state.open}
+                menuClicked={this.handleClick.bind(this)}
+                width={25}
+                height={23}
+                strokeWidth={1}
+                rotate={0}
+                color='black'
+                borderRadius={0}
+                animationDuration={0.5}
+              />
+            </div>
 
-            <RiMenu2Line
-              className="hamburger-menu"
-              size="30"
-              onClick={() => this.handleToggle()} />
           </StyledHeader>
-
           <DropDownMenu className={isExpanded ? '' : 'hidden'}>
             <div className="flex-container">
               <div className="content-container">
