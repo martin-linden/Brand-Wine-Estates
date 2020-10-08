@@ -44,30 +44,16 @@ class Header extends React.Component {
                 <li>
                   <Link to="/" activeClassName="active">sortiment</Link>
                 </li>
-                {/*  <li>
-                <Link to="/producent" activeClassName="active">producenter</Link>
-              </li> */}
                 <li>
                   <Link to="/restaurang" activeClassName="active">Restaurang</Link>
                 </li>
-                {/*  <li>
-                <Link to="/recensioner" activeClassName="active">Recensioner</Link>
-              </li> */}
                 <li>
                   <Link to="/contact" activeClassName="active">Kontakt</Link>
                 </li>
               </ul>
             </div>
-            {/*  <div
-            className={isExpanded ? 'hidden-menu' : 'active-page'}>
 
-            {activeLink === "/" ? <Link to="/" activeClassName="active">sortiment</Link> : null}
-            {activeLink === "/producent" ? <Link to="/producent" activeClassName="active">producent</Link> : null}
-            {activeLink === "/restaurang" ? <Link to="/restaurang" activeClassName="active">restaurang</Link> : null}
-            {activeLink === "/recensioner" ? <Link to="/recensioner" activeClassName="active">recensioner</Link> : null}
-            {activeLink === "/kontakt" ? <Link to="/kontakt" activeClassName="active">kontakt</Link> : null}
-          </div> */}
-            {/* <h5>SE/NO</h5> */}
+
             <RiMenu2Line
               className="hamburger-menu"
               size="30"
@@ -79,9 +65,6 @@ class Header extends React.Component {
               <li>
                 <Link to="/" activeClassName="active">sortiment</Link>
               </li>
-              {/* <li>
-              <Link to="/producent" activeClassName="active">producent</Link>
-            </li> */}
               <li>
                 <Link to="/restaurang" activeClassName="active">Restaurang</Link>
               </li>

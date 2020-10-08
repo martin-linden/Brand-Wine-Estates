@@ -44,7 +44,10 @@ const Layout = ({ children, path, newPath }) => {
           {newPath !== "/under-20" && newPath !== "/under-20/" ? <Cookies /> : null}
           <GlobalStyle />
           <MainWrapper>
-            {newPath !== "/under-20" && newPath !== "/under-20/" ? <Header siteTitle={data.site.siteMetadata.title} /> : null}
+            {newPath !== "/under-20" && newPath !== "/under-20/" ? <Header
+              siteTitle={data.site.siteMetadata.title}
+
+            /> : null}
             <main ref={el => { opacityEase = el }}>{children}</main>
             {path !== "/contact" && path !== "/contact/" && newPath !== "/under-20" && newPath !== "/under-20/" ? <Footer /> : null}
           </MainWrapper>
