@@ -4,46 +4,71 @@ import { graphql } from 'gatsby'
 import ProductList from '../components/productList'
 import styled from "styled-components"
 import tw from 'twin.macro'
+import { GlobalStyle } from '../components/globalStyle'
+
 
 
 
 
 export const query = graphql`
-query RestaurantQuery {
-    
-    prismic {
-      allSingle_wine_pages(after: "YXJyYXljb25uZWN0aW9uOjIw") {
-        edges {
-          node {
-            name
-            grape
-            producer
-          }
-          cursor
-        }
-      }
-    }
+query ProductListQuery {
+	prismic {
+	  allWine_lists {
+		edges {
+		  node {
+			body {
+			  ... on PRISMIC_Wine_listBodyWine_list {
+				fields {
+				  country
+				  name
+				  producer
+				  type
+				  year
+				  link {
+					... on PRISMIC_Single_wine_page {
+					  _meta {
+						uid
+					  }
+					}
+				  }
+				  region
+				  price
+				}
+			  }
+			}
+		  }
+		}
+	  }
+	}
   }
-  
-  `
+`;
 
 
 
 const restaurantPage = (props, i) => {
 
-  /*  console.log(props.data.prismic.allSingle_wine_pages.edges); */
+	/* console.log(props.data.prismic.allWine_lists.edges[0].node.body[0].fields) */
 
-  const content = props.data.prismic.allSingle_wine_pages.edges;
-  /*  console.log(content); */
+	const content = props.data.prismic.allWine_lists.edges[0].node.body[0].fields;
 
 
-  return (
-    <Layout>
-      <ProductList
-        key={i}
-        data={content} />
-    </Layout>
-  )
+
+	return (
+		<>
+			<GlobalStyle />
+			<Container>
+				<Layout>
+					<ProductList
+						key={i}
+						data={content} />
+				</Layout>
+			</Container>
+		</>
+	)
 };
 
 export default restaurantPage
+
+export const Container = styled.div`
+
+`

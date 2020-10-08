@@ -77,46 +77,34 @@ const StyledFooter = styled.div`
  padding: 10px;
 /*  margin-top: 20px;
  margin-bottom: 20px; */
-
  @media (max-width: 822px) {
-  ${tw` flex items-center flex-col `}
+  ${tw` flex items-start flex-col `}
     }
  
 p{
   ${tw`mt-0 mb-0`}
 }
-
 .contact-img {
 width: 30px;
 margin: 0px;
 margin-right: 10px;
 }
-
 .icon-wrapper{
   display: flex;
   padding: 15px;
   align-items: center;
 }
-
-
 .logo{
-  width: 100px;
+  width: 80px;
   margin-bottom: 0px;
   margin-right: 10px;
 }
-
 .credits{
   font-size: 80%;
 }
-
 .ml-img{
   width: 20px;
   margin-bottom: 0px;
   margin-right: 10px;
-
 }
-
 `
-
-
-

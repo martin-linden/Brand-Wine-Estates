@@ -4,6 +4,7 @@ import styled from "styled-components"
 import tw from 'twin.macro'
 import Logo from '../images/bwe-logo.png'
 import { RiMenu2Line, RiTruckLine } from 'react-icons/ri';
+import Headroom from 'react-headroom'
 
 
 
@@ -31,29 +32,33 @@ class Header extends React.Component {
 
 
     return (
-      <React.Fragment>
-        <StyledHeader>
-          <div className="test">
-            <Link to="/"><img id="logo" alt="Brand Wine Estates Logo" src={Logo} /></Link>
-            <ul className="horizontal-menu">
-              <li>
-                <Link to="/" activeClassName="active">sortiment</Link>
-              </li>
-              {/*  <li>
+      <Container>
+        <Headroom
+          pinStart={0}
+          disableInlineStyles={true}>
+
+          <StyledHeader>
+            <div className="test">
+              <Link to="/"><img id="logo" alt="Brand Wine Estates Logo" src={Logo} /></Link>
+              <ul className="horizontal-menu">
+                <li>
+                  <Link to="/" activeClassName="active">sortiment</Link>
+                </li>
+                {/*  <li>
                 <Link to="/producent" activeClassName="active">producenter</Link>
               </li> */}
-              <li>
-                <Link to="/restaurang" activeClassName="active">Restaurang</Link>
-              </li>
-              {/*  <li>
+                <li>
+                  <Link to="/restaurang" activeClassName="active">Restaurang</Link>
+                </li>
+                {/*  <li>
                 <Link to="/recensioner" activeClassName="active">Recensioner</Link>
               </li> */}
-              <li>
-                <Link to="/contact" activeClassName="active">Kontakt</Link>
-              </li>
-            </ul>
-          </div>
-          {/*  <div
+                <li>
+                  <Link to="/contact" activeClassName="active">Kontakt</Link>
+                </li>
+              </ul>
+            </div>
+            {/*  <div
             className={isExpanded ? 'hidden-menu' : 'active-page'}>
 
             {activeLink === "/" ? <Link to="/" activeClassName="active">sortiment</Link> : null}
@@ -62,30 +67,31 @@ class Header extends React.Component {
             {activeLink === "/recensioner" ? <Link to="/recensioner" activeClassName="active">recensioner</Link> : null}
             {activeLink === "/kontakt" ? <Link to="/kontakt" activeClassName="active">kontakt</Link> : null}
           </div> */}
-          {/* <h5>SE/NO</h5> */}
-          <RiMenu2Line
-            className="hamburger-menu"
-            size="30"
-            onClick={() => this.handleToggle()} />
-        </StyledHeader>
+            {/* <h5>SE/NO</h5> */}
+            <RiMenu2Line
+              className="hamburger-menu"
+              size="30"
+              onClick={() => this.handleToggle()} />
+          </StyledHeader>
 
-        <DropDownMenu className={isExpanded ? '' : 'hidden'}>
-          <div>
-            <li>
-              <Link to="/" activeClassName="active">sortiment</Link>
-            </li>
-            {/* <li>
+          <DropDownMenu className={isExpanded ? '' : 'hidden'}>
+            <div>
+              <li>
+                <Link to="/" activeClassName="active">sortiment</Link>
+              </li>
+              {/* <li>
               <Link to="/producent" activeClassName="active">producent</Link>
             </li> */}
-            <li>
-              <Link to="/restaurang" activeClassName="active">Restaurang</Link>
-            </li>
-            <li>
-              <Link to="/contact" activeClassName="active"> Om oss / kontakt</Link>
-            </li>
-          </div>
-        </DropDownMenu>
-      </React.Fragment>
+              <li>
+                <Link to="/restaurang" activeClassName="active">Restaurang</Link>
+              </li>
+              <li>
+                <Link to="/contact" activeClassName="active"> Om oss / kontakt</Link>
+              </li>
+            </div>
+          </DropDownMenu>
+        </Headroom>
+      </Container>
     )
 
   }
@@ -94,7 +100,30 @@ class Header extends React.Component {
 export default Header;
 
 
+const Container = styled.div`
+.headroom {
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1;
+}
+.headroom--unfixed {
+  position: relative;
+  transform: translateY(0);
+}
+.headroom--scrolled {
+  transition: transform 600ms ease-in-out;
+}
+.headroom--unpinned {
+  position: fixed;
+  transform: translateY(-100%);
+}
+.headroom--pinned {
+  position: fixed;
+  transform: translateY(0%);
+}
 
+`
 
 const StyledHeader = styled.div`
   ${tw`  text-secondary flex justify-between items-center h-24 uppercase `}
