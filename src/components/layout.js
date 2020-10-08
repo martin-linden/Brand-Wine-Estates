@@ -46,8 +46,9 @@ const Layout = ({ children, path, newPath }) => {
           <MainWrapper>
             {newPath !== "/under-20" && newPath !== "/under-20/" ? <Header
               siteTitle={data.site.siteMetadata.title}
-
-            /> : null}
+              sortiment={"Sortiment"}
+              productlist={"Restaurang"}
+              contact={"Kontakt"} /> : null}
             <main ref={el => { opacityEase = el }}>{children}</main>
             {path !== "/contact" && path !== "/contact/" && newPath !== "/under-20" && newPath !== "/under-20/" ? <Footer /> : null}
           </MainWrapper>
@@ -64,61 +65,3 @@ Layout.propTypes = {
 export default Layout
 
 
-
-/* const Layout = ({ children }) => (
-  <StaticQuery
-    query={graphql`
-      query SiteTitleQuery {
-        site {
-          siteMetadata {
-            title
-          }
-        }
-      }
-    `}
-    render={data => (
-      <>
-        <GlobalStyle />
-        <Header siteTitle={data.site.siteMetadata.title} />
-        <Transition
-          config={{ duration: 300, delay: 50 }}
-          from={{ opacity: 0 }}
-          enter={{ opacity: 1 }}
-          leave={{ opacity: 0 }}
-        >
-          {() => style =>
-            <MainWrapper style={style}>
-              <main>{children}</main>
-            </MainWrapper>
-          }
-        </Transition>
-        <Footer />
-
-      </>
-    )}
-  />
-) */
-
-/* const Layout = ({ children }) => (
-  <StaticQuery
-    query={graphql`
-      query SiteTitleQuery {
-        site {
-          siteMetadata {
-            title
-          }
-        }
-      }
-    `}
-    render={data => (
-      <>
-        <GlobalStyle />
-        <MainWrapper>
-          <Header siteTitle={data.site.siteMetadata.title} />
-          <main>{children}</main>
-          <Footer />
-        </MainWrapper>
-      </>
-    )}
-  />
-) */
