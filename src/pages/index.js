@@ -72,7 +72,7 @@ const IndexPage = (props, i) => {
 					key={i} />
 
 
-				<SEO title={props.path} keywords={[`Brand Wine Estates`, `Wine import `, `Simpsons Wine`]} />
+				<SEO title="Sortiment" keywords={[`Brand Wine Estates`, `Wine import`, `Simpsons Wine`]} />
 
 			</Layout>
 		</>

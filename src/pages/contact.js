@@ -1,5 +1,6 @@
 import React from "react"
 import Layout from "../components/layout"
+import SEO from '../components/seo';
 import { graphql } from 'gatsby'
 import Image from 'gatsby-image'
 import MailLogo from '../images/mail-logo.svg'
@@ -158,6 +159,7 @@ const ContactPage = (props) => {
           </div> */}
         </div>
       </ContactWrapper>
+      <SEO title="Kontakt" keywords={[`Kontakt`, `Frida Brunnström`, `frida@brandwineestates.com`]} />
     </Layout>
 
 

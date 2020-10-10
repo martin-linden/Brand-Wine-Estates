@@ -5,6 +5,7 @@ import ProductList from '../components/productList'
 import styled from "styled-components"
 import tw from 'twin.macro'
 import { GlobalStyle } from '../components/globalStyle'
+import SEO from '../components/seo';
 
 
 
@@ -61,6 +62,7 @@ const restaurantPage = (props, i) => {
 					<ProductList
 						key={i}
 						data={content} />
+					<SEO title="Restaurang" keywords={[`Restaurang`, `Prislista`, `produktblad`]} />
 				</Layout>
 			</Container>
 		</>

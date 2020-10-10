@@ -2,7 +2,7 @@ require(`dotenv`).config({ path: `.env.${process.env.NODE_ENV}` });
 
 module.exports = {
 	siteMetadata: {
-		title: `Brand Wine Estates`,
+		title: `Brand Wine Estatesss`,
 		description: `Brand Wine Estates Sverige`,
 		author: `Martin Lindén`
 	},
