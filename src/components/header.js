@@ -67,13 +67,13 @@ class Header extends React.Component {
               <Link to="/"><img id="logo" alt="Brand Wine Estates Logo" src={Logo} /></Link>
               <ul className="horizontal-menu">
                 <li>
-                  <Link to="/" activeClassName="active-link{">{this.props.sortiment}</Link>
+                  <Link to="/" activeClassName="active-link">{this.props.sortiment}</Link>
                 </li>
                 <li>
-                  <Link to="/restaurang" activeClassName="active-link{">{this.props.productlist}</Link>
+                  <Link to="/restaurang" activeClassName="active-link">{this.props.productlist}</Link>
                 </li>
                 <li>
-                  <Link to="/contact" activeClassName="active-link{">{this.props.contact}</Link>
+                  <Link to="/contact" activeClassName="active-link">{this.props.contact}</Link>
                 </li>
               </ul>
             </div>
@@ -267,7 +267,7 @@ li {
   }
 
   .active-link{
-
+    border-bottom: 1px solid #cecece; 
     
   }
 
