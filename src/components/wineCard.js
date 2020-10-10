@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useState } from 'react'
 import styled from "styled-components"
 import tw from 'twin.macro'
 import Image from 'gatsby-image'
@@ -14,9 +14,21 @@ import Arrow from '../images/arrow.svg'
 
 const WineCard = ({ name, country, producer, year, imageSharp, link, type }) => {
 
+    const [hover, setHover] = useState(false)
+
+    const toggleTrueFalse = () => setHover(!hover);
+
+
+    let divStyle;
+    if (hover) {
+        divStyle = { opacity: '100', transition: '0.3s ease-in-out' }
+    } else {
+        divStyle = { opacity: '0', transition: '0.3s ease-in-out' }
+    }
+
     return (
 
-        <CardWrapper onClick={() => navigate(`/${link}`)}>
+        <CardWrapper onClick={() => navigate(`/${link}`)} onMouseEnter={toggleTrueFalse} onMouseLeave={toggleTrueFalse}>
 
             <GlobalStyle />
             <div className="wine-wrapper">
@@ -43,9 +55,9 @@ const WineCard = ({ name, country, producer, year, imageSharp, link, type }) => 
                 </div>
                 <div className="test">
 
-                    <ReadMore>
+                    <div style={divStyle}>
                         <img src={Arrow} id="read-more-img"></img>
-                    </ReadMore>
+                    </div>
                     <h6 id="read-more-text">Läs mer</h6>
                 </div>
             </div>
@@ -56,11 +68,6 @@ const WineCard = ({ name, country, producer, year, imageSharp, link, type }) => 
 };
 
 export default WineCard;
-
-const ReadMore = styled.div`
-
- opacity: 0%;
-`
 
 
 const CardWrapper = styled.div`
@@ -77,12 +84,6 @@ flex-direction: column;
 justify-content: flex-start;
 align-items: center;
 transition: 0.3s ease-in-out;  
-
-&:hover ${ReadMore} {
- opacity: 100%;
- transition: 0.3s ease-in-out; 
-
-}
 
 .test {
     display: flex;
