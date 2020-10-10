@@ -16,7 +16,10 @@ const WineCard = ({ name, country, producer, year, imageSharp, link, type }) => 
 
     const [hover, setHover] = useState(false)
 
-    const toggleTrueFalse = () => setHover(!hover);
+    /*  const toggleTrueFalse = () => setHover(!hover); */
+
+    const focusFalse = () => setHover(false)
+    const focusTrue = () => setHover(true)
 
 
     let divStyle;
@@ -28,7 +31,7 @@ const WineCard = ({ name, country, producer, year, imageSharp, link, type }) => 
 
     return (
 
-        <CardWrapper onClick={() => navigate(`/${link}`)} onMouseEnter={toggleTrueFalse} onMouseLeave={toggleTrueFalse}>
+        <CardWrapper onClick={() => navigate(`/${link}`)} onMouseOver={focusTrue} onMouseLeave={focusFalse}>
 
             <GlobalStyle />
             <div className="wine-wrapper">
