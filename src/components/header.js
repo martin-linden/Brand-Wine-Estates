@@ -64,7 +64,7 @@ class Header extends React.Component {
 
           <StyledHeader>
             <div className="test">
-              <Link to="/"><img id="logo" alt="Brand Wine Estates Logo" src={Logo} /></Link>
+              <Link to="/"><img id="logo" alt="Brand Wine Estates Logo" src={Logo} alt="brand wine estates logo" /></Link>
               <ul className="horizontal-menu">
                 <li>
                   <Link to="/" activeClassName="active-link">{this.props.sortiment}</Link>

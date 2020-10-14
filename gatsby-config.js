@@ -3,7 +3,8 @@ require(`dotenv`).config({ path: `.env.${process.env.NODE_ENV}` });
 module.exports = {
 	siteMetadata: {
 		title: `Brand Wine Estatesss`,
-		description: `Brand Wine Estates Sverige`,
+		description: `Välkommen till BWE! Vi har en unik och spännande portfölj med viner från Frankrike, Italien och England och framförallt en stor passion för mat och dryck!
+		Vi importerar vin av hög kvalitet från producenter med enorm kunskap, passion och kärlek till sina viner.`,
 		author: `Martin Lindén`
 	},
 	plugins: [

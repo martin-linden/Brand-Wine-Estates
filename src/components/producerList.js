@@ -1,4 +1,4 @@
-import React from "react"
+/* import React from "react"
 import styled from "styled-components"
 import tw from 'twin.macro'
 import ProducerCard from '../components/producerCard'
@@ -7,8 +7,6 @@ import ProducerCard from '../components/producerCard'
 
 const ProducerList = ({ data }) => {
 
-    /* console.log(data[0].link._meta.uid);
- */
 
 
     return (
@@ -49,4 +47,4 @@ ${tw` mt-24 mb-24 grid grid-cols-3 gap-3`}
 
 
 
-`
+` */

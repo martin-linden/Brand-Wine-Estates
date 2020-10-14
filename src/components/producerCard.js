@@ -1,4 +1,4 @@
-import React from "react"
+/* import React from "react"
 import styled from "styled-components"
 import tw from 'twin.macro'
 import Image from 'gatsby-image'
@@ -16,11 +16,7 @@ const ProducerCard = ({ name, country, imageSharp, link }) => {
                     fluid={imageSharp}
                 />
             </div>
-            {/*  <div className="info-section">
-                <h4>{country}</h4>
-                <h6>{name}</h6>
-                <h5>Läs mer</h5>
-            </div> */}
+
         </CardWrapper>
     )
 };
@@ -35,7 +31,7 @@ width: 700px;
 background: #fff;
 border-radius: 5px;
 
-/* overflow: hidden;  //round img corner */
+
 
 .info-section{
     ${tw` pl-3 pr-3 pt-3 `}
@@ -45,6 +41,6 @@ border-radius: 5px;
     ${tw` m-0 `}
     width: fit-content;
 }
- 
 
-`
+
+` */

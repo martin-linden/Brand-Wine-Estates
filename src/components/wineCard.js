@@ -12,7 +12,7 @@ import Gin from '../images/type/gin.svg'
 import DessertWine from '../images/type/dessert2.svg'
 import Arrow from '../images/arrow.svg'
 
-const WineCard = ({ name, country, producer, year, imageSharp, link, type }) => {
+const WineCard = ({ name, country, producer, year, imageSharp, link, type, alt }) => {
 
     const [hover, setHover] = useState(false)
 
@@ -40,6 +40,7 @@ const WineCard = ({ name, country, producer, year, imageSharp, link, type }) => 
                     imgStyle={{ objectFit: 'contain' }}
                     style={{ minHeight: 200, maxHeight: 200 }}
                     loading="lazy"
+                    alt={alt}
                 />
             </div>
             <div className="info-section">
@@ -49,17 +50,17 @@ const WineCard = ({ name, country, producer, year, imageSharp, link, type }) => 
             </div>
             <div>
                 <div>
-                    {type === "Rött" ? <img src={RedWine} id="icon-img" /> : null}
-                    {type === "Vitt" ? <img src={WhiteWine} id="icon-img" /> : null}
-                    {type === "Rosé" ? <img src={Rose} id="icon-img" /> : null}
-                    {type === "Mousserande" ? <img src={Sparkling} id="icon-img" /> : null}
-                    {type === "Gin" ? <img src={Gin} id="icon-img-gin" /> : null}
-                    {type === "Desertvin" ? <img src={DessertWine} id="icon-img-dessert" /> : null}
+                    {type === "Rött" ? <img src={RedWine} id="icon-img" alt="icon of red wine" /> : null}
+                    {type === "Vitt" ? <img src={WhiteWine} id="icon-img" alt="icon of white wine" /> : null}
+                    {type === "Rosé" ? <img src={Rose} id="icon-img" alt="icon of rose wine" /> : null}
+                    {type === "Mousserande" ? <img src={Sparkling} id="icon-img" alt="icon of sparkling wine" /> : null}
+                    {type === "Gin" ? <img src={Gin} id="icon-img-gin" alt="icon of gin drink" /> : null}
+                    {type === "Desertvin" ? <img src={DessertWine} id="icon-img-dessert" alt="icon of dessert wine" /> : null}
                 </div>
                 <div className="test">
 
                     <div style={divStyle}>
-                        <img src={Arrow} id="read-more-img"></img>
+                        <img src={Arrow} id="read-more-img" alt="icon of arrow"></img>
                     </div>
                     <h6 id="read-more-text">Läs mer</h6>
                 </div>

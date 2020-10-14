@@ -91,26 +91,12 @@ const ContactPage = (props) => {
       <ContactWrapper>
         <div className="top-wrapper">
 
-          {/*  <div className="plane-wrapper">
-          <h1>Kontakta oss</h1>
-          <img src={PaperPlane} className="paper-plane"></img>
-
-        </div> */}
           <div className="intro-wrapper">
 
             <div className="contact-intro">
               <h2>Kontakta oss</h2>
-              {/* <h3>{data.contact_name}</h3>
-              <h3>{data.job_title}</h3> */}
             </div>
-            <img src={PaperPlane} className="paper-plane"></img>
-            {/*  <Image
-            fixed={data.contact_imageSharp.childImageSharp.fixed}
-            alt={data.contact_image.alt}
-            imgStyle={{ objectFit: 'cover' }}
-            style={{ maxWidth: 180, maxHeight: 180 }}
-            className="contact-image"
-          /> */}
+            <img src={PaperPlane} className="paper-plane" alt="icon of paper plane"></img>
           </div>
 
           <div className="content-wrapper">
@@ -131,32 +117,26 @@ const ContactPage = (props) => {
               </div>
 
               <div className="contact-content">
-                <img src={PhoneLogo} alt="mail logotype" className="icon" />
+                <img src={PhoneLogo} alt="mail icon" className="icon" />
                 <h4>{data.phone_number}</h4>
               </div>
 
               <div className="contact-content ">
-                <img src={MailLogo} alt="phone logotype" className="icon" />
+                <img src={MailLogo} alt="phone icon" className="icon" />
                 <a href={data.email.url}>frida@brandwineestates.com</a>
               </div>
 
               <div className="contact-content ">
-                <img src={InstaLogo} alt="phone logotype" className="icon" />
+                <img src={InstaLogo} alt="instagram logotype" className="icon" />
                 <a href="https://www.instagram.com/brandwineestates/?hl=sv">Instagram</a>
               </div>
 
               <div className="contact-content ">
-                <img src={LinkedinLogo} alt="phone logotype" className="icon" />
+                <img src={LinkedinLogo} alt="linkedIn logotype" className="icon" />
                 <a href="https://www.linkedin.com/company/bwe-brand-wine-estates/">LinkedIn</a>
               </div>
             </div>
-
           </div>
-          {/* <div className="contact-logo-wrapper ">
-            <a href="https://www.instagram.com/brandwineestates/?hl=sv">Instagram</a>
-
-            <a href="https://www.linkedin.com/company/bwe-brand-wine-estates/" >LinkedIn</a>
-          </div> */}
         </div>
       </ContactWrapper>
       <SEO title="Kontakt" keywords={[`Kontakt`, `Frida Brunnström`, `frida@brandwineestates.com`]} />

@@ -16,13 +16,13 @@ const Footer = () => (
       <div>
         <a href="https://www.instagram.com/brandwineestates/?hl=sv">
           <div className="icon-wrapper">
-            <img src={InstaLogo} className="contact-img"></img>
+            <img src={InstaLogo} className="contact-img" alt="instagram logo"></img>
             <p>Instagram</p>
           </div>
         </a>
         <a href="https://www.linkedin.com/company/bwe-brand-wine-estates/">
           <div className="icon-wrapper">
-            <img src={LinkedinLogo} className="contact-img"></img>
+            <img src={LinkedinLogo} className="contact-img" alt="linkedin logo"></img>
             <p>LinkedIn</p>
           </div>
         </a>
@@ -33,12 +33,12 @@ const Footer = () => (
       <div>
         <a href="mailto:frida@brandwineestates.com">
           <div className="icon-wrapper">
-            <img src={MailLogo} className="contact-img"></img>
+            <img src={MailLogo} className="contact-img" alt="mail icon"></img>
             <p>frida@brandwineestates.com</p>
           </div>
         </a>
         <div className="icon-wrapper">
-          <img src={PhoneLogo} className="contact-img"></img>
+          <img src={PhoneLogo} className="contact-img" alt="phone icon"></img>
           <p>+46 700 43 3010</p>
         </div>
       </div>
@@ -48,13 +48,13 @@ const Footer = () => (
       <div>
         <a href="/">
           <div className="icon-wrapper">
-            <img src={Logo} className="logo"></img>
+            <img src={Logo} className="logo" alt="brand wine estates logo"></img>
             <p className="credits">Brand Wine Estates Sweden</p>
           </div>
         </a>
         <a href="https://www.martinlinden.com/">
           <div className="icon-wrapper">
-            <img src={MlLogo} className="ml-img"></img>
+            <img src={MlLogo} className="ml-img" alt="martin linden logo"></img>
             <p className="credits">Website Designed & Built By Martin Lindén</p>
           </div>
         </a>
