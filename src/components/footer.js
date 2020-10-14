@@ -78,7 +78,7 @@ const StyledFooter = styled.div`
 /*  margin-top: 20px;
  margin-bottom: 20px; */
  @media (max-width: 822px) {
-  ${tw` flex items-start flex-col `}
+  ${tw` flex items-center flex-col `}
     }
  
 p{
@@ -93,6 +93,7 @@ margin-right: 10px;
   display: flex;
   padding: 15px;
   align-items: center;
+  min-width:270px; 
 }
 .logo{
   width: 80px;
