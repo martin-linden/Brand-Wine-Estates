@@ -1,11 +1,11 @@
 import React from 'react'
 import ProductListItem from '../components/ProductListItem'
 import styled from "styled-components"
-import tw from 'twin.macro'
+
 
 const ProductListCategoryWines = (Props) => {
     const { list } = Props
-    console.log(list[0].region);
+    /*  console.log(list[0].region); */
     return (
         <Container>
             <div className="header">

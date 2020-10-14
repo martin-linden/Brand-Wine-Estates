@@ -10,6 +10,7 @@ import { Helmet } from 'react-helmet'
 
 
 
+
 export const query = graphql`
 query WineListQuery {
 	prismic {
@@ -55,10 +56,10 @@ query WineListQuery {
 const IndexPage = (props, i) => {
 
 
-
 	console.log(props);
 
-	const content = props.data.prismic.allWine_lists.edges[0].node.body[0].fields
+
+	const content = props.data.prismic.allWine_lists.edges[0].node.body[1].fields
 
 
 	/* console.log(content); */
