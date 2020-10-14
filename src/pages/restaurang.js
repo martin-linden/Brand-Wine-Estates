@@ -42,6 +42,14 @@ query ProductListQuery {
 				label
 				primary {
 				  terms
+				  price_list {
+					_linkType
+					... on PRISMIC__FileLink {
+					  _linkType
+					  url
+					  name
+					}
+				  }
 				}
 			  }
 			}
@@ -50,6 +58,7 @@ query ProductListQuery {
 	  }
 	}
   }
+  
 `;
 
 
@@ -61,7 +70,8 @@ const restaurantPage = (props, i) => {
 
 	const content = props.data.prismic.allWine_lists.edges[0].node.body[1].fields;
 	const termsContent = props.data.prismic.allWine_lists.edges[0].node.body[0].primary.terms;
-	console.log(termsContent)
+	const termsPdf = props.data.prismic.allWine_lists.edges[0].node.body[0].primary.price_list.url
+	/* 	console.log(props.data.prismic.allWine_lists.edges[0].node.body[0].primary.price_list.url) */
 
 
 
@@ -73,8 +83,12 @@ const restaurantPage = (props, i) => {
 
 					<ProductList
 						key={i}
-						data={content} />
-					<Terms data={termsContent} />
+						data={content}
+					/>
+					<Terms
+						data={termsContent}
+						pdf={termsPdf}
+					/>
 					<SEO title="Restaurang" keywords={[`Restaurang`, `Prislista`, `produktblad`]} />
 				</Layout>
 			</Container>

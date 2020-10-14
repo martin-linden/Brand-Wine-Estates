@@ -4,7 +4,7 @@ import styled from "styled-components"
 import tw from 'twin.macro'
 
 
-const Terms = ({ data }) => {
+const Terms = ({ data, pdf }) => {
 
     console.log();
 
@@ -13,6 +13,10 @@ const Terms = ({ data }) => {
         <Container>
             <TextWrapper>
                 <RichText render={data} />
+                <div className="link">
+                    <a href={pdf} target="_blank">Ladda ner prislistan som pdf här </a>
+                </div>
+
             </TextWrapper>
         </Container>
 
@@ -38,5 +42,9 @@ margin-right: auto;
 padding: 20px;
 padding-top: 50px;
 padding-bottom: 50px;
+
+.link{
+    padding: 20px;
+}
 
 `
