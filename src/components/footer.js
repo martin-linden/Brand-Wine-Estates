@@ -12,6 +12,23 @@ const Footer = () => (
   <StyledFooter>
 
 
+
+
+    <div className="icon-wrapper">
+      <div>
+        <a href="mailto:frida@brandwineestates.com">
+          <div className="icon-wrapper">
+            <img src={MailLogo} className="contact-img" alt="mail icon"></img>
+            <p>frida@brandwineestates.com</p>
+          </div>
+        </a>
+        <div className="icon-wrapper">
+          <img src={PhoneLogo} className="contact-img" alt="phone icon"></img>
+          <p>+46 700 43 3010</p>
+        </div>
+      </div>
+    </div>
+
     <div className="icon-wrapper">
       <div>
         <a href="https://www.instagram.com/brandwineestates/?hl=sv">
@@ -26,21 +43,6 @@ const Footer = () => (
             <p>LinkedIn</p>
           </div>
         </a>
-      </div>
-    </div>
-
-    <div className="icon-wrapper">
-      <div>
-        <a href="mailto:frida@brandwineestates.com">
-          <div className="icon-wrapper">
-            <img src={MailLogo} className="contact-img" alt="mail icon"></img>
-            <p>frida@brandwineestates.com</p>
-          </div>
-        </a>
-        <div className="icon-wrapper">
-          <img src={PhoneLogo} className="contact-img" alt="phone icon"></img>
-          <p>+46 700 43 3010</p>
-        </div>
       </div>
     </div>
 
@@ -77,7 +79,7 @@ const StyledFooter = styled.div`
  padding: 10px;
 /*  margin-top: 20px;
  margin-bottom: 20px; */
- @media (max-width: 822px) {
+ @media (max-width: 1070px) {
   ${tw` flex items-center flex-col `}
     }
  
@@ -93,7 +95,7 @@ margin-right: 10px;
   display: flex;
   padding: 15px;
   align-items: center;
-  min-width:270px; 
+  min-width: 300px;
 }
 .logo{
   width: 80px;
