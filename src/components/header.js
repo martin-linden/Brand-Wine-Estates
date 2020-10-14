@@ -73,7 +73,7 @@ class Header extends React.Component {
                   <Link to="/restaurang" activeClassName="active-link">{this.props.productlist}</Link>
                 </li>
                 <li>
-                  <Link to="/contact" activeClassName="active-link">{this.props.contact}</Link>
+                  <Link to="/kontakt" activeClassName="active-link">{this.props.contact}</Link>
                 </li>
               </ul>
             </div>
@@ -103,7 +103,7 @@ class Header extends React.Component {
                   <Link to="/restaurang" activeClassName="active-link">{this.props.productlist}</Link>
                 </li>
                 <li>
-                  <Link to="/contact" activeClassName="active-link">{this.props.contact}</Link>
+                  <Link to="/kontakt" activeClassName="active-link">{this.props.contact}</Link>
                 </li>
               </div>
             </div>
