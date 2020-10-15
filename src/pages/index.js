@@ -117,11 +117,6 @@ justify-content: center;
             transition: 0.3s ease-in-out;
             color: black;
         }
-        &:active{
-            background-color: black;
-            border: none;
-           
-        }
         
     }
 
