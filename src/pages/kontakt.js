@@ -82,7 +82,6 @@ const ContactPage = (props) => {
           fluid={data.background_imageSharp.childImageSharp.fluid}
           alt={data.background_image.alt}
           imgStyle={{ objectFit: 'cover' }}
-          fadeIn
           className="overlay"
           backgroundColor={`#040e18`}
         >
@@ -155,6 +154,10 @@ const BgWrapper = styled.div`
 
 .overlay{
   height: 300px;
+
+  @media (max-width: 700px) {
+    height:200px;
+    }
 }
 
 .intro-wrapper{
@@ -164,12 +167,13 @@ const BgWrapper = styled.div`
   align-items: center;
   color: white;
   height: 100%;
-  background: rgb(0 0 0 / 31%);
+  background: rgb(0 0 0 / 15%);
 
 }
 
 .paper-plane{
     width: 60px;
+    margin: 0px;
   /*   margin-top: 15px; */
   }
 `

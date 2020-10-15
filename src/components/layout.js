@@ -46,6 +46,7 @@ const Layout = ({ children, path, newPath }) => {
           <MainWrapper>
             {newPath !== "/under-20" && newPath !== "/under-20/" ? <Header
               siteTitle={data.site.siteMetadata.title}
+              home={"Hem"}
               sortiment={"Sortiment"}
               productlist={"Restaurang"}
               contact={"Kontakt"} /> : null}
