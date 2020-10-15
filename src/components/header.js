@@ -2,17 +2,22 @@ import { Link } from "gatsby"
 import React from "react"
 import styled from "styled-components"
 import tw from 'twin.macro'
-import Logo from '../images/bwe-logo.png'
+import Logo from '../images/logo-black-text.svg'
 import { RiMenu2Line, RiTruckLine } from 'react-icons/ri';
 import Headroom from 'react-headroom'
+import HamburgerMenu from 'react-hamburger-menu'
 
 
 
 class Header extends React.Component {
 
-  state = {
-    isExpanded: false,
+  constructor(props) {
+    super(props)
 
+    this.state = {
+      isExpanded: false,
+      open: false,
+    }
   }
 
   handleToggle() {
@@ -22,72 +27,91 @@ class Header extends React.Component {
     })
   }
 
+  handleClick() {
+    this.setState({
+      open: !this.state.open
+    });
+  }
+
+
 
   render() {
 
     /* const activeLink = window.location.pathname; //show pathname of page */
 
-    /* console.log(this.state); */
     const { isExpanded } = this.state;
+    /*  const { open } = this.state; */
+
+
+
+    console.log(this.state);
+
 
 
     return (
       <Container>
         <Headroom
           pinStart={0}
-          disableInlineStyles={true}>
+          disableInlineStyles={true}
+          onUnpin={() => {
+            this.setState({
+              isExpanded: this.state.isExpanded = false,
+              open: this.state.open = false,
+            })
+          }}
+        >
+
 
           <StyledHeader>
             <div className="test">
-              <Link to="/"><img id="logo" alt="Brand Wine Estates Logo" src={Logo} /></Link>
+              <Link to="/"><img id="logo" alt="Brand Wine Estates Logo" src={Logo} alt="brand wine estates logo" /></Link>
               <ul className="horizontal-menu">
+             {/*  <li>
+                  <Link to="/" activeClassName="active-link">{this.props.home}</Link>
+                </li> */}
                 <li>
-                  <Link to="/" activeClassName="active">sortiment</Link>
+                  <Link to="/sortiment" activeClassName="active-link">{this.props.sortiment}</Link>
                 </li>
-                {/*  <li>
-                <Link to="/producent" activeClassName="active">producenter</Link>
-              </li> */}
                 <li>
-                  <Link to="/restaurang" activeClassName="active">Restaurang</Link>
+                  <Link to="/restaurang" activeClassName="active-link">{this.props.productlist}</Link>
                 </li>
-                {/*  <li>
-                <Link to="/recensioner" activeClassName="active">Recensioner</Link>
-              </li> */}
                 <li>
-                  <Link to="/contact" activeClassName="active">Kontakt</Link>
+                  <Link to="/kontakt" activeClassName="active-link">{this.props.contact}</Link>
                 </li>
               </ul>
             </div>
-            {/*  <div
-            className={isExpanded ? 'hidden-menu' : 'active-page'}>
 
-            {activeLink === "/" ? <Link to="/" activeClassName="active">sortiment</Link> : null}
-            {activeLink === "/producent" ? <Link to="/producent" activeClassName="active">producent</Link> : null}
-            {activeLink === "/restaurang" ? <Link to="/restaurang" activeClassName="active">restaurang</Link> : null}
-            {activeLink === "/recensioner" ? <Link to="/recensioner" activeClassName="active">recensioner</Link> : null}
-            {activeLink === "/kontakt" ? <Link to="/kontakt" activeClassName="active">kontakt</Link> : null}
-          </div> */}
-            {/* <h5>SE/NO</h5> */}
-            <RiMenu2Line
-              className="hamburger-menu"
-              size="30"
-              onClick={() => this.handleToggle()} />
+            <div className="hamburger-menu" onClick={() => this.handleToggle()}>
+              <HamburgerMenu
+                isOpen={this.state.open}
+                menuClicked={this.handleClick.bind(this)}
+                width={25}
+                height={23}
+                strokeWidth={1}
+                rotate={0}
+                color='black'
+                borderRadius={0}
+                animationDuration={0.5}
+              />
+            </div>
+
           </StyledHeader>
-
           <DropDownMenu className={isExpanded ? '' : 'hidden'}>
-            <div>
-              <li>
-                <Link to="/" activeClassName="active">sortiment</Link>
-              </li>
-              {/* <li>
-              <Link to="/producent" activeClassName="active">producent</Link>
-            </li> */}
-              <li>
-                <Link to="/restaurang" activeClassName="active">Restaurang</Link>
-              </li>
-              <li>
-                <Link to="/contact" activeClassName="active"> Om oss / kontakt</Link>
-              </li>
+            <div className="flex-container">
+              <div className="content-container">
+             {/*  <li>
+                  <Link to="/" activeClassName="active-link">{this.props.home}</Link>
+                </li> */}
+                <li>
+                  <Link to="/sortiment" activeClassName="active-link">{this.props.sortiment}</Link>
+                </li>
+                <li>
+                  <Link to="/restaurang" activeClassName="active-link">{this.props.productlist}</Link>
+                </li>
+                <li>
+                  <Link to="/kontakt" activeClassName="active-link">{this.props.contact}</Link>
+                </li>
+              </div>
             </div>
           </DropDownMenu>
         </Headroom>
@@ -126,15 +150,13 @@ const Container = styled.div`
 `
 
 const StyledHeader = styled.div`
-  ${tw`  text-secondary flex justify-between items-center h-24 uppercase `}
+  ${tw`  text-secondary flex justify-between items-center h-24  `}
   border-bottom-style: solid;
   border-bottom-width: 1px;
-  border-bottom-color: #efefef;
+  border-bottom-color: #efefef; 
   background-color: white;
+
  
-
-
-  
  .test{
     ${tw`flex justify-center items-center`}
     
@@ -144,16 +166,15 @@ const StyledHeader = styled.div`
     display: none;
   }
  
-  .active{
+  .active-link{
     border-bottom: 1px solid #cecece; 
-    
   }
 
   .active-page{
     ${tw`flex justify-center items-center`}
     @media (min-width: 805px) {
         display: none;
-	}  
+	  }  
   }
 
   .hamburger-menu {
@@ -162,7 +183,7 @@ const StyledHeader = styled.div`
     @media (min-width: 805px) {
         display: none;
         
-	}  
+	  }  
 	}
 
   h5{
@@ -171,13 +192,15 @@ const StyledHeader = styled.div`
    
     @media (max-width: 805px) {
         display: none;
-	}  
+
+      }  
   }
+  
   img{
     ${tw`w-32 m-0 ml-10`}
     @media (max-width: 910px) {
       ${tw`w-24`}
-	}  
+	  }  
   }
 
   .horizontal-menu{
@@ -194,43 +217,72 @@ const StyledHeader = styled.div`
   
     li{
       ${tw`m-0 mt-1 pl-5 hover:text-gray-500`}
-      
-      
     }
-
-  
 }
 `
 
 const DropDownMenu = styled.div`
-${tw`uppercase flex flex-col justify-center items-center m-0 `}
+position: absolute;
+width: 100%;
 list-style: none;
 font-family: Assistant;
 text-align: start;
-background: linear-gradient(#fffafa 85%, #FAF8F8);
+background: #fff;
 max-height: 300px;
 overflow: hidden;
-transition: ease-in-out 0.5s;
-transition: max-height 0.5s cubic-bezier(.73,.42,.99,1); 
+/* transition: ease-in-out 3s; */
+transition: max-height 800ms cubic-bezier(0.76, 0.25, 0.43, 0.7); 
+border: none;
+border-bottom-left-radius: 15px;
+border-bottom-right-radius: 15px;  
+${tw`shadow-lg`}
 
+
+
+.flex-container{
+  ${tw` flex flex-col justify-center items-center m-0 `}
+}
+
+
+.content-container{
+padding: 20px;
+display: flex;
+flex-direction: column;
+align-items: center;
+}
 
 
 
 &.hidden{
     max-height: 0px;
     overflow: hidden;
+    border-bottom-width: 0px;
+    
+   
   }
 
 
 li {
-  ${tw`mt-5`}
+  ${tw`mt-8`}
   color: #2c2c2c;
 }
 
 .active{
     border-bottom: 1px solid #cecece; 
     
+   
+    
+    
   }
+
+  .active-link{
+    border-bottom: 1px solid #cecece; 
+    
+  }
+
+  
+
+
 
  
 

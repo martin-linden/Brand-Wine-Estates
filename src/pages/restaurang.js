@@ -5,6 +5,8 @@ import ProductList from '../components/productList'
 import styled from "styled-components"
 import tw from 'twin.macro'
 import { GlobalStyle } from '../components/globalStyle'
+import SEO from '../components/seo';
+import Terms from '../components/terms'
 
 
 
@@ -35,21 +37,41 @@ query ProductListQuery {
 				  price
 				}
 			  }
+			  ... on PRISMIC_Wine_listBodyPrislista___villkor {
+				type
+				label
+				primary {
+				  terms
+				  price_list {
+					_linkType
+					... on PRISMIC__FileLink {
+					  _linkType
+					  url
+					  name
+					}
+				  }
+				}
+			  }
 			}
 		  }
 		}
 	  }
 	}
   }
+  
 `;
 
 
 
 const restaurantPage = (props, i) => {
 
-	/* console.log(props.data.prismic.allWine_lists.edges[0].node.body[0].fields) */
 
-	const content = props.data.prismic.allWine_lists.edges[0].node.body[0].fields;
+
+
+	const content = props.data.prismic.allWine_lists.edges[0].node.body[1].fields;
+	const termsContent = props.data.prismic.allWine_lists.edges[0].node.body[0].primary.terms;
+	const termsPdf = props.data.prismic.allWine_lists.edges[0].node.body[0].primary.price_list.url
+	/* 	console.log(props.data.prismic.allWine_lists.edges[0].node.body[0].primary.price_list.url) */
 
 
 
@@ -58,9 +80,16 @@ const restaurantPage = (props, i) => {
 			<GlobalStyle />
 			<Container>
 				<Layout>
+
 					<ProductList
 						key={i}
-						data={content} />
+						data={content}
+					/>
+					<Terms
+						data={termsContent}
+						pdf={termsPdf}
+					/>
+					<SEO title="Restaurang" keywords={[`Restaurang`, `Prislista`, `produktblad`]} />
 				</Layout>
 			</Container>
 		</>

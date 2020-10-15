@@ -3,7 +3,8 @@ require(`dotenv`).config({ path: `.env.${process.env.NODE_ENV}` });
 module.exports = {
 	siteMetadata: {
 		title: `Brand Wine Estates`,
-		description: `Wine Import`,
+		description: `Välkommen till BWE! Vi har en unik och spännande portfölj med viner från Frankrike, Italien och England och framförallt en stor passion för mat och dryck!
+		Vi importerar vin av hög kvalitet från producenter med enorm kunskap, passion och kärlek till sina viner.`,
 		author: `Martin Lindén`
 	},
 	plugins: [
@@ -34,7 +35,7 @@ module.exports = {
 				background_color: `#663399`,
 				theme_color: `#663399`,
 				display: `minimal-ui`,
-				icon: `src/images/wine.png` // This path is relative to the root of the site.
+				icon: `src/images/wine-icon.png` // This path is relative to the root of the site.
 			}
 		},
 		`gatsby-plugin-styled-components`,

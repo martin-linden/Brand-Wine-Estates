@@ -24,15 +24,22 @@ const ProductList = ({ data }) => {
 
 
     return (
-        <>
+        <Container>
             {products.map(product => <ProductListCategory productCategory={product} />)}
-        </>
+        </Container>
     )
 
 };
 export default ProductList;
 
 
+export const Container = styled.div`
+margin-bottom: 40px;
+@media (max-width: 680px) {
+    margin-bottom: 0px;;
+    }
+
+`
 
 
 

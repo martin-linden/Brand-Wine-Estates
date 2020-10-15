@@ -1,5 +1,6 @@
 import React from "react"
 import Layout from "../components/layout"
+import SEO from '../components/seo';
 import { graphql } from 'gatsby'
 import Image from 'gatsby-image'
 import MailLogo from '../images/mail-logo.svg'
@@ -81,39 +82,20 @@ const ContactPage = (props) => {
           fluid={data.background_imageSharp.childImageSharp.fluid}
           alt={data.background_image.alt}
           imgStyle={{ objectFit: 'cover' }}
-          fadeIn
           className="overlay"
           backgroundColor={`#040e18`}
         >
+          <div className="intro-wrapper">
+          <div className="contact-intro">
+  <h2>Kontakta oss</h2>
+</div>
+          <img src={PaperPlane} className="paper-plane" alt="icon of paper plane"></img>
+          </div>
         </BackgroundImage>
       </BgWrapper>
       <ContactWrapper>
         <div className="top-wrapper">
-
-          {/*  <div className="plane-wrapper">
-          <h1>Kontakta oss</h1>
-          <img src={PaperPlane} className="paper-plane"></img>
-
-        </div> */}
-          <div className="intro-wrapper">
-
-            <div className="contact-intro">
-              <h2>Kontakta oss</h2>
-              {/* <h3>{data.contact_name}</h3>
-              <h3>{data.job_title}</h3> */}
-            </div>
-            <img src={PaperPlane} className="paper-plane"></img>
-            {/*  <Image
-            fixed={data.contact_imageSharp.childImageSharp.fixed}
-            alt={data.contact_image.alt}
-            imgStyle={{ objectFit: 'cover' }}
-            style={{ maxWidth: 180, maxHeight: 180 }}
-            className="contact-image"
-          /> */}
-          </div>
-
-          <div className="content-wrapper">
-
+        <div className="content-wrapper">
             <div className="content-text-wrapper">
               <div className="contact-intro">
                 <h3>{data.contact_name}</h3>
@@ -130,34 +112,29 @@ const ContactPage = (props) => {
               </div>
 
               <div className="contact-content">
-                <img src={PhoneLogo} alt="mail logotype" className="icon" />
+                <img src={PhoneLogo} alt="mail icon" className="icon" />
                 <h4>{data.phone_number}</h4>
               </div>
 
               <div className="contact-content ">
-                <img src={MailLogo} alt="phone logotype" className="icon" />
+                <img src={MailLogo} alt="phone icon" className="icon" />
                 <a href={data.email.url}>frida@brandwineestates.com</a>
               </div>
 
               <div className="contact-content ">
-                <img src={InstaLogo} alt="phone logotype" className="icon" />
+                <img src={InstaLogo} alt="instagram logotype" className="icon" />
                 <a href="https://www.instagram.com/brandwineestates/?hl=sv">Instagram</a>
               </div>
 
               <div className="contact-content ">
-                <img src={LinkedinLogo} alt="phone logotype" className="icon" />
+                <img src={LinkedinLogo} alt="linkedIn logotype" className="icon" />
                 <a href="https://www.linkedin.com/company/bwe-brand-wine-estates/">LinkedIn</a>
               </div>
             </div>
-
           </div>
-          {/* <div className="contact-logo-wrapper ">
-            <a href="https://www.instagram.com/brandwineestates/?hl=sv">Instagram</a>
-
-            <a href="https://www.linkedin.com/company/bwe-brand-wine-estates/" >LinkedIn</a>
-          </div> */}
         </div>
       </ContactWrapper>
+      <SEO title="Kontakta oss" keywords={[`Kontakt`, `Frida Brunnström`, `frida@brandwineestates.com`]} />
     </Layout>
 
 
@@ -177,7 +154,28 @@ const BgWrapper = styled.div`
 
 .overlay{
   height: 300px;
+
+  @media (max-width: 700px) {
+    height:200px;
+    }
 }
+
+.intro-wrapper{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  height: 100%;
+  background: rgb(0 0 0 / 15%);
+
+}
+
+.paper-plane{
+    width: 60px;
+    margin: 0px;
+  /*   margin-top: 15px; */
+  }
 `
 
 const ContactWrapper = styled.div`
@@ -192,7 +190,7 @@ margin-right: auto;
 /* color: white; */
 
 .top-wrapper{
-  margin-top: 25px;
+/*   margin-top: 25px; */
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -205,13 +203,7 @@ margin-right: auto;
   margin-bottom: 30px;
 }
 
-.intro-wrapper{
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
 
-}
 
 a:hover{
      color: #cdcdcdee;
@@ -304,10 +296,7 @@ a:hover{
     color: black;
   }
 
-  .paper-plane{
-    width: 60px;
-  /*   margin-top: 15px; */
-  }
+
 
 .plane-wrapper{
   display: flex;

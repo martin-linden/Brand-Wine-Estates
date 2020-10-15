@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useState } from 'react'
 import styled from "styled-components"
 import tw from 'twin.macro'
 import Image from 'gatsby-image'
@@ -12,10 +12,26 @@ import Gin from '../images/type/gin.svg'
 import DessertWine from '../images/type/dessert2.svg'
 import Arrow from '../images/arrow.svg'
 
-const WineCard = ({ name, country, producer, year, imageSharp, link, type }) => {
+const WineCard = ({ name, country, producer, year, imageSharp, link, type, alt }) => {
+
+    const [hover, setHover] = useState(false)
+
+    /*  const toggleTrueFalse = () => setHover(!hover); */
+
+    const focusFalse = () => setHover(false)
+    const focusTrue = () => setHover(true)
+
+
+    let divStyle;
+    if (hover) {
+        divStyle = { opacity: '100', transition: '0.3s ease-in-out' }
+    } else {
+        divStyle = { opacity: '0', transition: '0.3s ease-in-out' }
+    }
 
     return (
-        <CardWrapper onClick={() => navigate(`/${link}`)}>
+
+        <CardWrapper onClick={() => navigate(`/${link}`)} onMouseOver={focusTrue} onMouseLeave={focusFalse}>
 
             <GlobalStyle />
             <div className="wine-wrapper">
@@ -24,6 +40,7 @@ const WineCard = ({ name, country, producer, year, imageSharp, link, type }) => 
                     imgStyle={{ objectFit: 'contain' }}
                     style={{ minHeight: 200, maxHeight: 200 }}
                     loading="lazy"
+                    alt={alt}
                 />
             </div>
             <div className="info-section">
@@ -33,40 +50,32 @@ const WineCard = ({ name, country, producer, year, imageSharp, link, type }) => 
             </div>
             <div>
                 <div>
-                    {type === "Rött" ? <img src={RedWine} id="icon-img" /> : null}
-                    {type === "Vitt" ? <img src={WhiteWine} id="icon-img" /> : null}
-                    {type === "Rosé" ? <img src={Rose} id="icon-img" /> : null}
-                    {type === "Mousserande" ? <img src={Sparkling} id="icon-img" /> : null}
-                    {type === "Gin" ? <img src={Gin} id="icon-img-gin" /> : null}
-                    {type === "Desertvin" ? <img src={DessertWine} id="icon-img-dessert" /> : null}
+                    {type === "Rött" ? <img src={RedWine} id="icon-img" alt="icon of red wine" /> : null}
+                    {type === "Vitt" ? <img src={WhiteWine} id="icon-img" alt="icon of white wine" /> : null}
+                    {type === "Rosé" ? <img src={Rose} id="icon-img" alt="icon of rose wine" /> : null}
+                    {type === "Mousserande" ? <img src={Sparkling} id="icon-img" alt="icon of sparkling wine" /> : null}
+                    {type === "Gin" ? <img src={Gin} id="icon-img-gin" alt="icon of gin drink" /> : null}
+                    {type === "Desertvin" ? <img src={DessertWine} id="icon-img-dessert" alt="icon of dessert wine" /> : null}
                 </div>
                 <div className="test">
 
-                    <ReadMore>
-                        <img src={Arrow} id="read-more-img"></img>
-                    </ReadMore>
+                    <div style={divStyle}>
+                        <img src={Arrow} id="read-more-img" alt="icon of arrow"></img>
+                    </div>
                     <h6 id="read-more-text">Läs mer</h6>
                 </div>
             </div>
 
         </CardWrapper >
+
     )
 };
 
 export default WineCard;
 
-const ReadMore = styled.div`
-
- opacity: 0%;
-
- transition: 0.3s ease-in-out; 
- 
-
-`
-
 
 const CardWrapper = styled.div`
-${ tw`shadow hover:shadow-lg cursor-pointer`}
+${tw`shadow hover:shadow-lg cursor-pointer`}
 min-height: 450px;
 max-height: 470px; 
 width: 238px;
@@ -79,12 +88,6 @@ flex-direction: column;
 justify-content: flex-start;
 align-items: center;
 transition: 0.3s ease-in-out;  
-
-&:hover ${ReadMore} {
- opacity: 100%;
- transition: 0.3s ease-in-out; 
-
-}
 
 .test {
     display: flex;
@@ -110,7 +113,7 @@ margin-top: 0px;
 }
 
 .info-section{
-    ${ tw`mt-5 `}
+    ${tw`mt-5 `}
     h5  {
         margin-bottom: 15px;
     }
@@ -126,7 +129,7 @@ h6{
 }
 
 #icon-img{
-    ${ tw` mt-1 mb-1`}
+    ${tw` mt-1 mb-1`}
     
    width: 15px;
    max-height: 29px;
@@ -134,7 +137,7 @@ h6{
 margin-top: 10px; 
 }
 #icon-img-gin{
-    ${ tw` mt-1 mb-1`}
+    ${tw` mt-1 mb-1`}
     
    width: 20px;
    max-height: 29px;
@@ -142,7 +145,7 @@ margin-top: 10px;
 margin-top: 10px; 
 }
 #icon-img-dessert{
-    ${ tw` mt-1 mb-1`}
+    ${tw` mt-1 mb-1`}
     
    width: 20px;
    max-height: 29px;

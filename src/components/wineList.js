@@ -2,23 +2,13 @@ import React from "react"
 import styled from "styled-components"
 import tw from 'twin.macro'
 import WineCard from '../components/wineCard'
-import { TweenMax, Power3 } from 'gsap'
+
 
 
 const WineList = ({ data }) => {
 
-    /*   let animationItem = useRef(null);
-  
-  
-      useEffect(() => {
-          console.log(animationItem);
-          TweenMax.fromTo(
-              animationItem,
-              { opacity: 0 }, { opacity: 1, duration: .9, ease: "ease" }
-          )
-      }, [])
-  
-      console.log(animationItem); */
+
+    /*  console.log(data[0].wine_image.alt); */
 
 
     return (
@@ -35,6 +25,7 @@ const WineList = ({ data }) => {
                             imageSharp={data.wine_imageSharp.childImageSharp.fluid}
                             link={data.link._meta.uid}
                             type={data.type}
+                            alt={data.wine_image.alt}
                         />
                     )
                 })}

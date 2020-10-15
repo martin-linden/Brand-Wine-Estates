@@ -5,24 +5,41 @@ import InstaLogo from '../images/insta-logo.svg'
 import LinkedinLogo from '../images/linkedin-logo.svg'
 import MailLogo from '../images/mail-logo.svg'
 import PhoneLogo from '../images/phone-logo.svg'
-import Logo from '../images/bwe-logo.png'
+import Logo from '../images/logo-black-text.svg'
 import MlLogo from '../images/ml-logo.svg'
 
 const Footer = () => (
   <StyledFooter>
 
 
+
+
+    <div className="icon-wrapper">
+      <div>
+        <a href="mailto:frida@brandwineestates.com">
+          <div className="icon-wrapper">
+            <img src={MailLogo} className="contact-img" alt="mail icon"></img>
+            <p>frida@brandwineestates.com</p>
+          </div>
+        </a>
+        <div className="icon-wrapper">
+          <img src={PhoneLogo} className="contact-img" alt="phone icon"></img>
+          <p>+46 700 43 3010</p>
+        </div>
+      </div>
+    </div>
+
     <div className="icon-wrapper">
       <div>
         <a href="https://www.instagram.com/brandwineestates/?hl=sv">
           <div className="icon-wrapper">
-            <img src={InstaLogo} className="contact-img"></img>
+            <img src={InstaLogo} className="contact-img" alt="instagram logo"></img>
             <p>Instagram</p>
           </div>
         </a>
         <a href="https://www.linkedin.com/company/bwe-brand-wine-estates/">
           <div className="icon-wrapper">
-            <img src={LinkedinLogo} className="contact-img"></img>
+            <img src={LinkedinLogo} className="contact-img" alt="linkedin logo"></img>
             <p>LinkedIn</p>
           </div>
         </a>
@@ -31,30 +48,15 @@ const Footer = () => (
 
     <div className="icon-wrapper">
       <div>
-        <a href="mailto:frida@brandwineestates.com">
-          <div className="icon-wrapper">
-            <img src={MailLogo} className="contact-img"></img>
-            <p>frida@brandwineestates.com</p>
-          </div>
-        </a>
-        <div className="icon-wrapper">
-          <img src={PhoneLogo} className="contact-img"></img>
-          <p>+46 700 43 3010</p>
-        </div>
-      </div>
-    </div>
-
-    <div className="icon-wrapper">
-      <div>
         <a href="/">
           <div className="icon-wrapper">
-            <img src={Logo} className="logo"></img>
+            <img src={Logo} className="logo" alt="brand wine estates logo"></img>
             <p className="credits">Brand Wine Estates Sweden</p>
           </div>
         </a>
         <a href="https://www.martinlinden.com/">
           <div className="icon-wrapper">
-            <img src={MlLogo} className="ml-img"></img>
+            <img src={MlLogo} className="ml-img" alt="martin linden logo"></img>
             <p className="credits">Website Designed & Built By Martin Lindén</p>
           </div>
         </a>
@@ -77,8 +79,8 @@ const StyledFooter = styled.div`
  padding: 10px;
 /*  margin-top: 20px;
  margin-bottom: 20px; */
- @media (max-width: 822px) {
-  ${tw` flex items-start flex-col `}
+ @media (max-width: 1070px) {
+  ${tw` flex items-center flex-col `}
     }
  
 p{
@@ -93,6 +95,7 @@ margin-right: 10px;
   display: flex;
   padding: 15px;
   align-items: center;
+  min-width: 300px;
 }
 .logo{
   width: 80px;

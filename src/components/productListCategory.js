@@ -50,6 +50,7 @@ margin-right: 10%;
 margin-top: 50px; 
 padding: 20px;
 
+
 h2{
     padding: 10px;
 }
