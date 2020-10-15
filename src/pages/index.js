@@ -126,6 +126,7 @@ justify-content: center;
     }
 
     h1{
+        font-family: PT Serif;
         margin-bottom: 100px;
         @media (max-width: 705px) {
         font-size: 30px;

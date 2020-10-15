@@ -66,9 +66,9 @@ class Header extends React.Component {
             <div className="test">
               <Link to="/"><img id="logo" alt="Brand Wine Estates Logo" src={Logo} alt="brand wine estates logo" /></Link>
               <ul className="horizontal-menu">
-              <li>
+             {/*  <li>
                   <Link to="/" activeClassName="active-link">{this.props.home}</Link>
-                </li>
+                </li> */}
                 <li>
                   <Link to="/sortiment" activeClassName="active-link">{this.props.sortiment}</Link>
                 </li>
@@ -99,9 +99,9 @@ class Header extends React.Component {
           <DropDownMenu className={isExpanded ? '' : 'hidden'}>
             <div className="flex-container">
               <div className="content-container">
-              <li>
+             {/*  <li>
                   <Link to="/" activeClassName="active-link">{this.props.home}</Link>
-                </li>
+                </li> */}
                 <li>
                   <Link to="/sortiment" activeClassName="active-link">{this.props.sortiment}</Link>
                 </li>
