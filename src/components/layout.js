@@ -50,7 +50,7 @@ const Layout = ({ children, path, newPath }) => {
               productlist={"Restaurang"}
               contact={"Kontakt"} /> : null}
             <main ref={el => { opacityEase = el }}>{children}</main>
-            {path !== "/contact" && path !== "/contact/" && newPath !== "/under-20" && newPath !== "/under-20/" ? <Footer /> : null}
+            {path !== "/kontakt" && path !== "/kontakt/" && newPath !== "/under-20" && newPath !== "/under-20/" ? <Footer /> : null}
           </MainWrapper>
         </>
       )}

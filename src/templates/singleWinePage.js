@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useState } from 'react'
 import styled from "styled-components"
 import tw from 'twin.macro'
 import { graphql } from 'gatsby'
@@ -99,16 +99,26 @@ query SingleWineQuery($id: String) {
 
 
 
-const singleWinePage = (props) => {
-
-
-
-  /*   console.log(props); */
+const SingleWinePage = (props) => {
 
   const content = props.data.prismic.allSingle_wine_pages.edges[0].node;
   const iconSlice = props.data.prismic.allSingle_wine_pages.edges[0].node.body[0].fields;
 
-  console.log(content.wine_image.alt);
+  const [hover, setHover] = useState(false)
+
+    const focusFalse = () => setHover(false)
+    const focusTrue = () => setHover(true)
+
+
+    let divStyle;
+    if (hover) {
+        divStyle = { opacity: '100', transition: '0.3s ease-in-out' }
+    } else {
+        divStyle = { opacity: '0', transition: '0.3s ease-in-out' }
+    }
+ 
+
+ 
 
 
 
@@ -118,7 +128,9 @@ const singleWinePage = (props) => {
     <Layout>
       <GlobalStyle />
       <CardWrapper>
-        <div>
+        <div 
+         onMouseOver={focusTrue}
+         onMouseLeave={focusFalse} >
           <Image
             fixed={content.wine_imageSharp.childImageSharp.fixed}
             imgStyle={{ objectFit: 'contain' }}
@@ -130,12 +142,12 @@ const singleWinePage = (props) => {
           <div className="prod-type">
             <h4>{content.producer}</h4>
             <div className="type">
-              {content.type === "Rött" ? <>{/* <h5 id="type-text">Rött</h5> */} <img src={RedWine} id="type-img" alt="icon of red wine" /> </> : null}
-              {content.type === "Vitt" ? <><h5 id="type-text">Vitt</h5> <img src={WhiteWine} id="type-img" alt="icon of white wine" /> </> : null}
-              {content.type === "Rosé" ? <><h5 id="type-text">Rosé</h5> <img src={Rose} id="type-img" alt="icon of rose wine" /> </> : null}
-              {content.type === "Mousserande" ? <>{/* <h5 id="type-text">Mousserande</h5> */} <img src={Sparkling} id="type-img" alt="icon of sparkling wine" /> </> : null}
-              {content.type === "Gin" ? <><h5 id="type-text">Gin</h5> <img src={Gin} id="type-img" alt="icon of gin drink" /> </> : null}
-              {content.type === "Desertvin" ? <><h5 id="type-text">Desertvin</h5> <img src={DessertWine} id="type-img" alt="icon of dessert wine" /> </> : null}
+              {content.type === "Rött" ? <> <div style={divStyle}><h5 id="type-text">Rödvin</h5></div><img src={RedWine} id="type-img"  alt="icon of red wine" /> </> : null}
+              {content.type === "Vitt" ? <><div style={divStyle}><h5 id="type-text">Vitvin</h5></div> <img src={WhiteWine} id="type-img" alt="icon of white wine" /> </> : null}
+              {content.type === "Rosé" ? <><div style={divStyle}><h5 id="type-text">Rosévin</h5></div> <img src={Rose} id="type-img" alt="icon of rose wine" /> </> : null}
+              {content.type === "Mousserande" ? <><div style={divStyle}><h5 id="type-text">Mousserande</h5></div> <img src={Sparkling} id="type-img" alt="icon of sparkling wine" /> </> : null}
+              {content.type === "Gin" ? <><div style={divStyle}><h5 id="type-text">Gin</h5></div> <img src={Gin} id="type-img" alt="icon of gin drink" /> </> : null}
+              {content.type === "Desertvin" ? <><div style={divStyle}><h5 id="type-text">Desertvin</h5></div> <img src={DessertWine} id="type-img" alt="icon of dessert wine" /> </> : null}
 
             </div>
           </div>
@@ -221,7 +233,7 @@ const singleWinePage = (props) => {
 };
 
 
-export default singleWinePage;
+export default SingleWinePage;
 
 const Line = styled.div`
 
@@ -335,12 +347,13 @@ border-radius: 5px;
 
 .type{
   display: flex;
+  flex-direction: row-reverse;
   align-items: center;
 }
 
 #type-text{
   margin-bottom: 0;
-  margin-right: 10px;
+  margin-left: 10px;
 }
 
 #type-img{

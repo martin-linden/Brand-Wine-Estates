@@ -15,10 +15,15 @@ const ProductListItem = (Props) => {
                 <table>
                     <tbody>
                         <tr>
-                            <td onClick={() => navigate(`/${link}`)}>{wine.name}</td>
+                            <td id="td-name" onClick={() => navigate(`/${link}`)}>{wine.name}</td>
                             <td>{wine.producer}</td>
                             <td>{wine.year}</td>
-                            <td>{wine.type}</td>
+                            {wine.type === "Rött" ? <td>Rödvin</td>: null}
+                            {wine.type === "Vitt" ? <td>Vitvin</td>: null}
+                            {wine.type === "Rosé" ? <td>Rosévin</td>: null}
+                            {wine.type === "Mousserande" ? <td>Mousserande</td>: null}
+                            {wine.type === "Gin" ? <td>Sprit</td>: null}
+                            {wine.type === "Desertvin" ? <td>Desertvin</td>: null}
                             <td>{wine.price}</td>
                         </tr>
                     </tbody>
@@ -40,14 +45,16 @@ export const FlexContainer = styled.div`
 
 export const Container = styled.div`
 
-/* display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr
-   */
 
     td{
         padding: 10px;
         width: 15%;
     }
+
+    #td-name{
+        cursor: pointer;
+    }
+
 
 
 `
