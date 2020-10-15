@@ -2,7 +2,7 @@ import { Link } from "gatsby"
 import React from "react"
 import styled from "styled-components"
 import tw from 'twin.macro'
-import Logo from '../images/bwe-logo.png'
+import Logo from '../images/logo-black-text.svg'
 import { RiMenu2Line, RiTruckLine } from 'react-icons/ri';
 import Headroom from 'react-headroom'
 import HamburgerMenu from 'react-hamburger-menu'

@@ -134,7 +134,7 @@ const ContactPage = (props) => {
           </div>
         </div>
       </ContactWrapper>
-      <SEO title="Kontakt" keywords={[`Kontakt`, `Frida Brunnström`, `frida@brandwineestates.com`]} />
+      <SEO title="Kontakta oss" keywords={[`Kontakt`, `Frida Brunnström`, `frida@brandwineestates.com`]} />
     </Layout>
 
 

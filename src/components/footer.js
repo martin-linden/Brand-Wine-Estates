@@ -5,7 +5,7 @@ import InstaLogo from '../images/insta-logo.svg'
 import LinkedinLogo from '../images/linkedin-logo.svg'
 import MailLogo from '../images/mail-logo.svg'
 import PhoneLogo from '../images/phone-logo.svg'
-import Logo from '../images/bwe-logo.png'
+import Logo from '../images/logo-black-text.svg'
 import MlLogo from '../images/ml-logo.svg'
 
 const Footer = () => (
