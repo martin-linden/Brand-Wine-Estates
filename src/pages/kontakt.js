@@ -86,21 +86,17 @@ const ContactPage = (props) => {
           className="overlay"
           backgroundColor={`#040e18`}
         >
+          <div className="intro-wrapper">
+          <div className="contact-intro">
+  <h2>Kontakta oss</h2>
+</div>
+          <img src={PaperPlane} className="paper-plane" alt="icon of paper plane"></img>
+          </div>
         </BackgroundImage>
       </BgWrapper>
       <ContactWrapper>
         <div className="top-wrapper">
-
-          <div className="intro-wrapper">
-
-            <div className="contact-intro">
-              <h2>Kontakta oss</h2>
-            </div>
-            <img src={PaperPlane} className="paper-plane" alt="icon of paper plane"></img>
-          </div>
-
-          <div className="content-wrapper">
-
+        <div className="content-wrapper">
             <div className="content-text-wrapper">
               <div className="contact-intro">
                 <h3>{data.contact_name}</h3>
@@ -160,6 +156,22 @@ const BgWrapper = styled.div`
 .overlay{
   height: 300px;
 }
+
+.intro-wrapper{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  height: 100%;
+  background: rgb(0 0 0 / 31%);
+
+}
+
+.paper-plane{
+    width: 60px;
+  /*   margin-top: 15px; */
+  }
 `
 
 const ContactWrapper = styled.div`
@@ -174,7 +186,7 @@ margin-right: auto;
 /* color: white; */
 
 .top-wrapper{
-  margin-top: 25px;
+/*   margin-top: 25px; */
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -187,13 +199,7 @@ margin-right: auto;
   margin-bottom: 30px;
 }
 
-.intro-wrapper{
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
 
-}
 
 a:hover{
      color: #cdcdcdee;
@@ -286,10 +292,7 @@ a:hover{
     color: black;
   }
 
-  .paper-plane{
-    width: 60px;
-  /*   margin-top: 15px; */
-  }
+
 
 .plane-wrapper{
   display: flex;
