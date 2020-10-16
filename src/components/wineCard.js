@@ -40,7 +40,9 @@ const WineCard = ({ name, country, producer, year, imageSharp, link, type, alt }
                     imgStyle={{ objectFit: 'contain' }}
                     style={{ minHeight: 200, maxHeight: 200 }}
                     loading="lazy"
+                    fadeIn={true}
                     alt={alt}
+                    draggable={false}
                 />
             </div>
             <div className="info-section">
