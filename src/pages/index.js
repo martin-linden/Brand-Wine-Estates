@@ -22,7 +22,7 @@ query HomePageQuery {
             background_image
             background_imageSharp {
               childImageSharp {
-                fluid(maxWidth: 1080, quality: 100) {
+                fluid(maxWidth: 800, quality: 60) {
                     ...GatsbyImageSharpFluid
                 }
               }
@@ -51,7 +51,7 @@ return(
             fluid={data.background_imageSharp.childImageSharp.fluid}
             className="bg-image"
             alt={data.background_image.alt}
-            imgStyle={{ objectPosition: '100 500' }}
+            fadeIn={true}
         >
             <div className="bg-content-wrapper">
                 <img src={logo} alt={data.logo.alt} id="logo"></img>
@@ -95,7 +95,7 @@ justify-content: center;
     justify-content: center;
     align-items: center;
     color: #fff;
-    background-color: rgb(0 0 0 / 17%);
+   /*  background-color: rgb(0 0 0 / 17%); */
     @media (max-width: 480px) {
         height: calc(100vh - 96px);
     }

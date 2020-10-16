@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { lazy, useState } from 'react'
 import styled from "styled-components"
 import tw from 'twin.macro'
 import { graphql } from 'gatsby'
@@ -138,6 +138,8 @@ const SingleWinePage = (props) => {
             imgStyle={{ objectFit: 'contain' }}
             className="wine-wrapper"
             alt={content.wine_image.alt}
+            draggable={false}
+            fadeIn={true}
           />
         </div>
         <div className="content-wrapper">
@@ -194,7 +196,7 @@ const SingleWinePage = (props) => {
           </div>
           {content.launch_date ? <h4>Lanseras: {content.launch_date.split('T')[0]}</h4> : null}
           <div>
-            {content.product_sheet ? <a href={content.product_sheet.url} target="_blank" id="link">Ladda ner produkblad</a> : null}
+            {content.product_sheet ? <a href={content.product_sheet.url} target="_blank" id="link">Ladda ned produkblad</a> : null}
           </div>
 
 

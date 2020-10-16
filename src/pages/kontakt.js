@@ -47,7 +47,7 @@ query MyQuery {
                 background_image
                 background_imageSharp {
                   childImageSharp {
-                    fluid(maxWidth: 1080, quality: 100) {
+                    fluid(maxWidth: 800, quality: 60) {
                       ...GatsbyImageSharpFluid
                     }
                   }
@@ -81,9 +81,9 @@ const ContactPage = (props) => {
         <BackgroundImage
           fluid={data.background_imageSharp.childImageSharp.fluid}
           alt={data.background_image.alt}
-          imgStyle={{ objectFit: 'cover' }}
           className="overlay"
           backgroundColor={`#040e18`}
+          fadeIn={true}
         >
           <div className="intro-wrapper">
           <div className="contact-intro">
@@ -167,7 +167,7 @@ const BgWrapper = styled.div`
   align-items: center;
   color: white;
   height: 100%;
-  background: rgb(0 0 0 / 15%);
+  /* background: rgb(0 0 0 / 15%); */
 
 }
 
