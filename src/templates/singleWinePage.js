@@ -57,6 +57,7 @@ query SingleWineQuery($id: String) {
           alcohol
           country
           number
+          price_system
           producer
           product_sheet {
             ... on PRISMIC__FileLink {
@@ -103,6 +104,7 @@ const SingleWinePage = (props) => {
 
   const content = props.data.prismic.allSingle_wine_pages.edges[0].node;
   const iconSlice = props.data.prismic.allSingle_wine_pages.edges[0].node.body[0].fields;
+  console.log(content);
 
   const [hover, setHover] = useState(false)
 
@@ -139,18 +141,9 @@ const SingleWinePage = (props) => {
           />
         </div>
         <div className="content-wrapper">
-          <div className="prod-type">
-            <h4>{content.producer}</h4>
-            <div className="type">
-              {content.type === "Rött" ? <> <div style={divStyle}><h5 id="type-text">Rödvin</h5></div><img src={RedWine} id="type-img"  alt="icon of red wine" /> </> : null}
-              {content.type === "Vitt" ? <><div style={divStyle}><h5 id="type-text">Vitvin</h5></div> <img src={WhiteWine} id="type-img" alt="icon of white wine" /> </> : null}
-              {content.type === "Rosé" ? <><div style={divStyle}><h5 id="type-text">Rosévin</h5></div> <img src={Rose} id="type-img" alt="icon of rose wine" /> </> : null}
-              {content.type === "Mousserande" ? <><div style={divStyle}><h5 id="type-text">Mousserande</h5></div> <img src={Sparkling} id="type-img" alt="icon of sparkling wine" /> </> : null}
-              {content.type === "Gin" ? <><div style={divStyle}><h5 id="type-text">Gin</h5></div> <img src={Gin} id="type-img" alt="icon of gin drink" /> </> : null}
-              {content.type === "Desertvin" ? <><div style={divStyle}><h5 id="type-text">Desertvin</h5></div> <img src={DessertWine} id="type-img" alt="icon of dessert wine" /> </> : null}
-
-            </div>
-          </div>
+         
+            <h4 id="producer-h4">{content.producer}</h4>
+        
           <h3>{content.name} - {content.year}</h3>
 
           <div className="taste-text">
@@ -181,8 +174,21 @@ const SingleWinePage = (props) => {
 
             )}
           </div>
+
+          <div className="price-type-wrapper">
+          {content.price_system ?  <div className="price-content"><h5>Pris</h5><p>{content.price_system} kr</p></div> : <div className="price-content"><h5>Pris</h5><p>Endast horeca</p></div>}
+              <div className="type-content">
+                <h5>Typ</h5>
+              {content.type === "Rött" ? <p>Rödvin</p> : null}
+              {content.type === "Vitt" ?  <p>Vitvin</p>: null}
+              {content.type === "Rosé" ?  <p>Rosévin</p>: null}
+              {content.type === "Mousserande" ? <p>Mousserande</p>: null}
+              {content.type === "Gin" ?  <p>Gin</p>: null}
+              {content.type === "Desertvin" ?  <p>Desertvin</p>: null}
+              </div>
+            </div>
           <div className="extern-link">
-            {content.extern_link ? <a href={content.extern_link.url} target="_blank" id="link">Visa på systembolaget</a> : <h4>Endast Horeca</h4>}
+            {content.extern_link ? <a href={content.extern_link.url} target="_blank" id="link">Visa på systembolaget</a> : null}
 
             {content.number ? <h5 id="art-number">ART:NR: {content.number}</h5> : null}
           </div>
@@ -235,16 +241,7 @@ const SingleWinePage = (props) => {
 
 export default SingleWinePage;
 
-const Line = styled.div`
 
-
-/* hr{
-  border-top: 1px solid black;
- 
-} */
-
-
-`
 
 const Arrow = styled.div`
 display: flex;
@@ -313,18 +310,9 @@ border-radius: 5px;
   
 }
 
-.prod-type{
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  margin-bottom: 25px;
-  h4{
-    margin: 0px;
-    margin-right: 7px;
-  }
   
 
-}
+
 
 .category-wrapper{
   ${tw` flex items-center`}
@@ -383,16 +371,12 @@ border-radius: 5px;
 .taste-text{
   max-height: 400px;
   overflow-x: hidden; 
-  /* -webkit-mask-image: linear-gradient(to bottom, black 50%, transparent 100%); */
-  /* -webkit-mask-image: linear-gradient(to top, black 90%, transparent 100%); */
   p{
   margin-top: 10px;
   }
 
 }
-/* :-webkit-scrollbar{
-    background-color: red;
-  } */
+
 
 .goes-with{
   ${tw` mt-6 mb-6 flex flex-wrap`}
@@ -421,6 +405,25 @@ img{
   ${tw`mb-2`}
 }
 
+.price-type-wrapper{
+  display: flex;
+  margin-top: 10px;
+
+  h5{
+    margin-bottom: 5px;
+    font-weight: 600;
+  }
+
+  .price-content{
+    margin-right: 50px;
+  }
+}
+
+#producer-h4{
+  margin-bottom: 10px;
+}
+
+
 `
 
 const TextInfoWrapper = styled.div`
@@ -435,9 +438,6 @@ margin-right: auto;
 p{
   
 }
-
-
-
 
 `
 
