@@ -159,7 +159,9 @@ const StyledHeader = styled.div`
  
  .test{
     ${tw`flex justify-center items-center`}
-    
+    #logo{
+      height: 55px;
+    }
   }
 
   .hidden-menu{

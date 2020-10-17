@@ -22,7 +22,7 @@ query HomePageQuery {
             background_image
             background_imageSharp {
               childImageSharp {
-                fluid(maxWidth: 800, quality: 60) {
+                fluid(quality: 90, maxWidth: 1920) {
                     ...GatsbyImageSharpFluid
                 }
               }
@@ -52,6 +52,7 @@ return(
             className="bg-image"
             alt={data.background_image.alt}
             fadeIn={true}
+            backgroundColor={`#040e18`}
         >
             <div className="bg-content-wrapper">
                 <img src={logo} alt={data.logo.alt} id="logo"></img>
@@ -138,6 +139,7 @@ justify-content: center;
 
     #logo{
         width: 250px;
+        height: 100px;
         margin-bottom: 100px;
         @media (max-width: 480px) {
         width: 190px;
