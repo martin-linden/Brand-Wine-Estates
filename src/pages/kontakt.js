@@ -48,7 +48,7 @@ query MyQuery {
                 background_imageSharp {
                   childImageSharp {
                     fluid(quality: 90, maxWidth: 1920) {
-                      ...GatsbyImageSharpFluid
+                      ...GatsbyImageSharpFluid_withWebp
                     }
                   }
                 }
@@ -84,7 +84,6 @@ const ContactPage = (props) => {
           className="overlay"
           backgroundColor={`#040e18`}
           fadeIn={true}
-          backgroundColor={`#040e18`}
         >
           <div className="intro-wrapper">
           <div className="contact-intro">
