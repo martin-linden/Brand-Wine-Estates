@@ -47,8 +47,8 @@ query MyQuery {
                 background_image
                 background_imageSharp {
                   childImageSharp {
-                    fluid(maxWidth: 800, quality: 60) {
-                      ...GatsbyImageSharpFluid
+                    fluid(quality: 90, maxWidth: 1920) {
+                      ...GatsbyImageSharpFluid_withWebp
                     }
                   }
                 }
@@ -87,9 +87,9 @@ const ContactPage = (props) => {
         >
           <div className="intro-wrapper">
           <div className="contact-intro">
-  <h2>Kontakta oss</h2>
+  <h1>Kontakta oss</h1>
 </div>
-          <img src={PaperPlane} className="paper-plane" alt="icon of paper plane"></img>
+          {/* <img src={PaperPlane} className="paper-plane" alt="icon of paper plane"></img> */}
           </div>
         </BackgroundImage>
       </BgWrapper>
@@ -102,13 +102,14 @@ const ContactPage = (props) => {
                 <h3>{data.job_title}</h3>
               </div>
               <div className="contact-image-wrapper">
-                <Image
+              {/*   <Image
                   fixed={data.contact_imageSharp.childImageSharp.fixed}
                   alt={data.contact_image.alt}
                   imgStyle={{ objectFit: 'cover' }}
                   style={{ maxWidth: 180, maxHeight: 180 }}
                   className="contact-image"
-                />
+                /> */}
+                <img src={PaperPlane} className="paper-plane" alt="icon of paper plane"></img>
               </div>
 
               <div className="contact-content">
@@ -151,6 +152,9 @@ export default ContactPage
 
 const BgWrapper = styled.div`
 
+h1{
+  font-family: PT Serif;
+}
 
 .overlay{
   height: 300px;
@@ -171,11 +175,6 @@ const BgWrapper = styled.div`
 
 }
 
-.paper-plane{
-    width: 60px;
-    margin: 0px;
-  /*   margin-top: 15px; */
-  }
 `
 
 const ContactWrapper = styled.div`
@@ -201,6 +200,14 @@ margin-right: auto;
   display: flex;
   justify-content: center;
   margin-bottom: 30px;
+
+
+.paper-plane{
+    width: 60px;
+    height: 60px;
+    margin: 0px;
+  /*   margin-top: 15px; */
+  }
 }
 
 
