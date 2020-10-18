@@ -196,7 +196,7 @@ const SingleWinePage = (props) => {
           </div>
           {content.launch_date ? <h4>Lanseras: {content.launch_date.split('T')[0]}</h4> : null}
           <div>
-            {content.product_sheet ? <a href={content.product_sheet.url} target="_blank" id="link">Ladda ned produkblad</a> : null}
+            {content.product_sheet ? <a href={content.product_sheet.url} target="_blank" id="link">Ladda ned produktblad</a> : null}
           </div>
 
 
