@@ -21,10 +21,8 @@ Brand Wine Estates work with producers from the classic wine countries and regio
 
 ## Images - Desktop
 
-![Landig](src/docs/landing.png "landing")  
-![Assortment](src/docs/assortment.png "assortment")  
-![Winepage](src/docs/winepage.png "winepage")  
-![list](src/docs/list.png "list")
+![Landig](src/docs/desktop1.png "landing")  
+![assortment](src/docs/desktop4.png "Assortment")
 
 ## Images - Mobile
 
