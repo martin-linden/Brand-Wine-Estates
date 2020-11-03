@@ -19,13 +19,10 @@ Brand Wine Estates work with producers from the classic wine countries and regio
 
 - **Martin Lindén** - _Designer & Developer_ - [martin-linden](https://github.com/martin-linden)
 
-## Images - Desktop
+## Images
 
-![Landig](src/docs/desktop1.png "landing")  
-![assortment](src/docs/desktop4.png "Assortment")
+![Landing](src/docs/desktop1.png "landing")  
+![Assortment](src/docs/desktop4.png "Assortment")
 ![Platfrom](src/docs/cross-platform.png "platform")
-
-## Images - Mobile
-
-![mobile1](src/docs/phone2.png "mobile1")  
-![menu1](src/docs/menu1.png "menu1")
+![mobile](src/docs/phone2.png "mobile")  
+![open menu](src/docs/menu1.png "open menu")
