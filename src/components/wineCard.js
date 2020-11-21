@@ -64,7 +64,7 @@ const WineCard = ({ name, country, producer, year, imageSharp, link, type, alt }
                     <div style={divStyle}>
                         <img src={Arrow} id="read-more-img" alt="icon of arrow"></img>
                     </div>
-                    <h6 id="read-more-text">Läs mer</h6>
+                    <h6 id="read-more-text">Les mer</h6>
                 </div>
             </div>
 

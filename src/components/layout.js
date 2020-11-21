@@ -46,10 +46,10 @@ const Layout = ({ children, path, newPath }) => {
           <MainWrapper>
             {newPath !== "/under-20" && newPath !== "/under-20/" ? <Header
               siteTitle={data.site.siteMetadata.title}
-              home={"Hem"}
+              home={"Hjem"}
               sortiment={"Sortiment"}
-              productlist={"Restaurang"}
-              contact={"Kontakta oss"} /> : null}
+              productlist={"Restaurant"}
+              contact={"Kontakt oss"} /> : null}
             <main ref={el => { opacityEase = el }}>{children}</main>
             {path !== "/kontakt" && path !== "/kontakt/" && newPath !== "/under-20" && newPath !== "/under-20/" ? <Footer /> : null}
           </MainWrapper>

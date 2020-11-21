@@ -68,9 +68,9 @@ query MyQuery {
 
 
 const ContactPage = (props) => {
-
+console.log(props);
   /* console.log(props.data.prismic.allContacts.edges[0].node.body[0]); */
-  const data = props.data.prismic.allContacts.edges[0].node.body[0].primary;
+  const data = props.data.prismic.allContacts.edges[1].node.body[0].primary;
   /* console.log(data); */
   console.log(props);
   return (
@@ -87,7 +87,7 @@ const ContactPage = (props) => {
         >
           <div className="intro-wrapper">
           <div className="contact-intro">
-  <h1>Kontakta oss</h1>
+  <h1>Kontakt oss</h1>
 </div>
           {/* <img src={PaperPlane} className="paper-plane" alt="icon of paper plane"></img> */}
           </div>
@@ -119,7 +119,7 @@ const ContactPage = (props) => {
 
               <div className="contact-content ">
                 <img src={MailLogo} alt="phone icon" className="icon" />
-                <a href={data.email.url}>frida@brandwineestates.com</a>
+                <a href={data.email.url}>{data.email.url}</a>
               </div>
 
               <div className="contact-content ">
