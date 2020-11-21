@@ -69,7 +69,7 @@ const restaurantPage = (props, i) => {
 
 
 	const content = props.data.prismic.allWine_lists.edges[0].node.body[1].fields;
-	const termsContent = props.data.prismic.allWine_lists.edges[0].node.body[0].primary.terms;
+	const termsContent = props.data.prismic.allWine_lists.edges[1].node.body[0].primary.terms;
 	const termsPdf = props.data.prismic.allWine_lists.edges[0].node.body[0].primary.price_list.url
 	/* 	console.log(props.data.prismic.allWine_lists.edges[0].node.body[0].primary.price_list.url) */
 

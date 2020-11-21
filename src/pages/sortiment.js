@@ -59,7 +59,7 @@ const SortimentPage = (props, i) => {
 	console.log(props);
 
 
-	const content = props.data.prismic.allWine_lists.edges[0].node.body[1].fields
+	const content = props.data.prismic.allWine_lists.edges[1].node.body[1].fields
 
 
 	/* console.log(content); */
